@@ -66,9 +66,9 @@ export default function TestimonialsSection({ onCTAClick }: TestimonialsSectionP
       role: "Beauty Clinic"
     },
     {
-      quote: "Thanks to Geoffrey for the great service. Excellent comms, fast turnaround.",
-      author: "Emily",
-      role: "Technology Consulting"
+      quote: "Super quick turnaround, great communication, and a smooth overall experience.",
+      author: "Michael",
+      role: "Logistics"
     }
   ]
 
