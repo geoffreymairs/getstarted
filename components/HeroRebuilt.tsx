@@ -26,7 +26,7 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
         >
           <Zap className="w-4 h-4 text-red-400 flex-shrink-0" />
           <p className="text-sm font-bold text-red-300 uppercase tracking-wider">
-            Auckland Workshop Almost Full – Only 30 Spots Left
+            Auckland Workshop – Strictly Limited to 30 People
           </p>
         </motion.div>
 
