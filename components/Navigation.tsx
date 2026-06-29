@@ -17,9 +17,9 @@ export default function Navigation({ onCTAClick, showCTA = true, hideMenu = fals
 
   const navItems = [
     { label: 'Home', href: '#home' },
+    { label: 'Training', href: '#training' },
     { label: 'About Us', href: '#about' },
     { label: 'Who It\'s For', href: '#who-for' },
-    { label: 'Workshop', href: '#workshop' },
     { label: 'Testimonials', href: '#testimonials' },
     { label: 'FAQ', href: '#faq' }
   ]
