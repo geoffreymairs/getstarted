@@ -115,23 +115,23 @@ export default function TestimonialsSection({ onCTAClick }: TestimonialsSectionP
         >
           <div className="text-center">
             <p className="text-5xl font-black bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent mb-3">
-              100+
+              25+
             </p>
-            <p className="text-gray-300">Attendees since launch</p>
+            <p className="text-gray-300">Years in digital &amp; business</p>
           </div>
 
           <div className="text-center">
             <p className="text-5xl font-black bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent mb-3">
-              100%
+              On-Site
             </p>
-            <p className="text-gray-300">Walked out with live website</p>
+            <p className="text-gray-300">Delivered at your workplace</p>
           </div>
 
           <div className="text-center">
             <p className="text-5xl font-black bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent mb-3">
-              4.9/5
+              NZ-Wide
             </p>
-            <p className="text-gray-300">Average workshop rating</p>
+            <p className="text-gray-300">Training across New Zealand</p>
           </div>
         </motion.div>
 

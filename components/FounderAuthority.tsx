@@ -13,13 +13,13 @@ export default function FounderAuthority() {
     },
     {
       icon: Award,
-      title: '100+ Websites Deployed',
-      description: 'From simple landing pages to complex SaaS platforms. We know what works and what doesn\'t.'
+      title: 'Trusted By NZ Businesses',
+      description: 'We have helped business owners across New Zealand adopt practical tools that actually work.'
     },
     {
       icon: Zap,
-      title: 'AI-First Mentality Since Day 1',
-      description: 'We stopped doing things manually years ago. This workshop teaches what actually saves us 20+ hours per week.'
+      title: 'AI-First In Our Own Work',
+      description: 'We use these tools every day. Our training teaches exactly what saves us hours every week.'
     }
   ]
 
@@ -49,12 +49,12 @@ export default function FounderAuthority() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight">
-            Who's Teaching This <br />
+          <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-balance">
+            Who You&apos;re Learning From <br />
             <span className="text-accent">(And Why You Can Trust Us)</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            You're learning from people who actually do this work every day. Not people who teach for a living. People who build for a living and are sharing exactly what works.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
+            You&apos;re learning from people who use these tools every day to run real businesses. We don&apos;t just teach AI &mdash; we use it, and we share exactly what works.
           </p>
         </motion.div>
 
@@ -161,17 +161,17 @@ export default function FounderAuthority() {
 
             <p>
               <span className="text-accent font-bold">Results over process.</span> {' '}
-              We don't care if you understand every step. We care that you walk out with a working website.
+              We care that your team can use AI to save real time, not memorise theory.
             </p>
 
             <p>
               <span className="text-accent font-bold">Real tools over tutorials.</span> {' '}
-              You'll use the same AI tools we use every day. Not sandbox environments or demo platforms.
+              You&apos;ll use the same AI tools we use every day. Not sandbox environments or demo platforms.
             </p>
 
             <p>
-              <span className="text-accent font-bold">Your idea, not ours.</span> {' '}
-              This workshop works for your business idea, your niche, your vision. You're not building our template.
+              <span className="text-accent font-bold">Your business, not ours.</span> {' '}
+              Every session is tailored to your team, your industry and the way you actually work.
             </p>
           </div>
         </motion.div>

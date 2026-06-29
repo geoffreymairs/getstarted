@@ -3,9 +3,11 @@
 import { motion } from 'framer-motion'
 import { AlertCircle } from 'lucide-react'
 import Link from 'next/link'
+import Footer from '@/components/Footer'
 
 export default function CancelPage() {
   return (
+    <>
     <div className="min-h-screen bg-dark flex items-center justify-center px-6">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
@@ -25,5 +27,7 @@ export default function CancelPage() {
         </Link>
       </motion.div>
     </div>
+    <Footer />
+    </>
   )
 }

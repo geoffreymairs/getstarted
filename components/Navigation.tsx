@@ -6,23 +6,40 @@ import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
+interface NavItem {
+  label: string
+  href: string
+}
+
 interface NavigationProps {
   onCTAClick?: () => void
   showCTA?: boolean
   hideMenu?: boolean
+  menuItems?: NavItem[]
+  consultationActive?: boolean
+  ctaLabel?: string
 }
 
-export default function Navigation({ onCTAClick, showCTA = true, hideMenu = false }: NavigationProps) {
+const defaultNavItems: NavItem[] = [
+  { label: 'Home', href: '#home' },
+  { label: 'Training', href: '#training' },
+  { label: 'About Us', href: '#about' },
+  { label: 'Who It\'s For', href: '#who-for' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'FAQ', href: '#faq' }
+]
+
+export default function Navigation({
+  onCTAClick,
+  showCTA = true,
+  hideMenu = false,
+  menuItems,
+  consultationActive = false,
+  ctaLabel = 'Book Now',
+}: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About Us', href: '#about' },
-    { label: 'Who It\'s For', href: '#who-for' },
-    { label: 'Workshop', href: '#workshop' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'FAQ', href: '#faq' }
-  ]
+  const navItems = menuItems ?? defaultNavItems
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false)
@@ -75,6 +92,15 @@ export default function Navigation({ onCTAClick, showCTA = true, hideMenu = fals
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-accent to-purple-glow group-hover:w-full transition-all duration-300" />
               </button>
             ))}
+            <Link
+              href="/consultation"
+              aria-current={consultationActive ? 'page' : undefined}
+              className={`text-sm font-semibold transition-colors duration-200 ${
+                consultationActive ? 'text-accent' : 'text-accent hover:text-accent-light'
+              }`}
+            >
+              AI Consultation
+            </Link>
           </div>
         )}
 
@@ -89,7 +115,7 @@ export default function Navigation({ onCTAClick, showCTA = true, hideMenu = fals
                 boxShadow: '0 0 30px rgba(59, 130, 246, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.2)',
               }}
             >
-              Book Now
+              {ctaLabel}
               <span className="group-hover:translate-x-1 inline-block transition-transform ml-2">→</span>
             </button>
           </div>
@@ -107,7 +133,7 @@ export default function Navigation({ onCTAClick, showCTA = true, hideMenu = fals
                 boxShadow: '0 0 20px rgba(59, 130, 246, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.15)',
               }}
             >
-              Book Now
+              {ctaLabel}
             </button>
           )}
           {!hideMenu && (
@@ -146,6 +172,13 @@ export default function Navigation({ onCTAClick, showCTA = true, hideMenu = fals
                 {item.label}
               </button>
             ))}
+            <Link
+              href="/consultation"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block w-full text-left px-4 py-3 rounded-lg text-accent hover:bg-accent/20 hover:text-accent-light font-semibold transition-all duration-200"
+            >
+              AI Consultation
+            </Link>
           </div>
         </motion.div>
       )}

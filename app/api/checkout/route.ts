@@ -2,9 +2,27 @@ import Stripe from 'stripe'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
 
+// Prices include 15% NZ GST, in cents (NZD)
+const PACKAGES = {
+  'one-on-one': {
+    name: '1-on-1 AI Training',
+    description: 'Personalised, on-site AI training tailored to your business (approx. 2 hours)',
+    unit_amount: 22885, // $199 + 15% GST
+  },
+  team: {
+    name: 'Team AI Workshop',
+    description: 'On-site, hands-on AI workshop for up to 20 participants (approx. 3 hours)',
+    unit_amount: 114885, // $999 + 15% GST
+  },
+} as const
+
+type PackageType = keyof typeof PACKAGES
+
 export async function POST(req: Request) {
   try {
-    const { email, name } = await req.json()
+    const { email, name, packageType } = await req.json()
+
+    const selected = PACKAGES[(packageType as PackageType)] ?? PACKAGES['one-on-one']
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -13,10 +31,10 @@ export async function POST(req: Request) {
           price_data: {
             currency: 'nzd',
             product_data: {
-              name: 'Get Started AI Workshop - Tuesday 2 June',
-              description: 'Live hands-on workshop: Build & launch your AI-powered website in 3 hours',
+              name: `GetStarted AI — ${selected.name}`,
+              description: selected.description,
             },
-            unit_amount: 34415, // $344.15 NZD (inc. GST) - $299 + 15% GST in cents
+            unit_amount: selected.unit_amount,
           },
           quantity: 1,
         },
@@ -27,6 +45,7 @@ export async function POST(req: Request) {
       customer_email: email,
       metadata: {
         name: name,
+        packageType: packageType ?? 'one-on-one',
       },
     })
 

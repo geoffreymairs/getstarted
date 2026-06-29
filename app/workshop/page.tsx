@@ -6,6 +6,7 @@ import { Lock, Zap, Code, Copy, Check } from 'lucide-react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import AIToolsOverview from '@/components/AIToolsOverview'
+import Footer from '@/components/Footer'
 
 const ToolPrompt = ({ toolName, toolColor, prompt, promptNumber }: { toolName: string; toolColor: string; prompt: string; promptNumber?: number }) => {
   const [copied, setCopied] = useState(false)
@@ -1119,6 +1120,7 @@ Keep the existing design and mobile responsive styling.`}
         </motion.div>
       </div>
       </div>
+      <Footer />
     </>
   )
 }

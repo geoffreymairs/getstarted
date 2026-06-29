@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Get Started AI Workshop for Beginners | Build Your Website in 3 Hours',
-  description: 'The Get Started AI Workshop for Beginners. Learn to build and launch a professional website using AI in just 3 hours. No coding experience needed.',
+  title: 'GetStarted AI | Practical AI Training For Your Business',
+  description: 'On-site, hands-on AI training for New Zealand businesses. We come to your workplace and teach your team to save time and confidently use tools like ChatGPT, Claude, Gemini and Microsoft Copilot. No technical knowledge required.',
   viewport: 'width=device-width, initial-scale=1',
   icons: {
     icon: '/favicon.png',

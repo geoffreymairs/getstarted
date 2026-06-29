@@ -2,17 +2,14 @@
 
 import { useRef } from 'react'
 import HeroRebuilt from '@/components/HeroRebuilt'
-import WebsiteIsTheBeginning from '@/components/WebsiteIsTheBeginning'
-import PainRebuilt from '@/components/PainRebuilt'
+import AITrainingWeDeliver from '@/components/AITrainingWeDeliver'
 import WhyThisWorks from '@/components/WhyThisWorks'
 import FounderAuthority from '@/components/FounderAuthority'
 import WhoThisIsFor from '@/components/WhoThisIsFor'
 import WorkshopBreakdown from '@/components/WorkshopBreakdown'
 import TestimonialsSection from '@/components/TestimonialsSection'
-import UrgencySection from '@/components/UrgencySection'
 import FAQ from '@/components/FAQ'
 import WhoThisIsNotFor from '@/components/WhoThisIsNotFor'
-import RiskReversal from '@/components/RiskReversal'
 import FinalCTA from '@/components/FinalCTA'
 import Navigation from '@/components/Navigation'
 import AnimatedBackground from '@/components/AnimatedBackground'
@@ -32,28 +29,28 @@ export default function Home() {
 
       {/* ==================== SEAMLESS CINEMATIC EXPERIENCE ==================== */}
 
-      {/* PART 1: HERO WITH CINEMATIC VIDEO - Premium cinematic background */}
+      {/* PART 1: HERO - Modern workplace AI training */}
       <div
         id="home"
         className="relative min-h-screen overflow-hidden pt-16"
       >
-        {/* Background video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/videos/cinematic-vision.mp4" type="video/mp4" />
-        </video>
+        {/* Background image - professionals learning AI in an office */}
+        <div
+          className="absolute inset-0 w-full h-full"
+          style={{
+            backgroundImage: 'url(/hero-training.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
         {/* Top fade overlay - subtle fade from top */}
         <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-dark/70 via-dark/40 to-transparent pointer-events-none z-5" />
 
         {/* Side vignette overlays - protect focal points */}
         <div className="absolute inset-0 bg-gradient-to-r from-dark/40 via-transparent to-dark/40 pointer-events-none z-5" />
 
-        {/* Central glow overlay - enhance cosmic feel */}
+        {/* Central glow overlay - enhance brand feel */}
         <div className="absolute inset-0 pointer-events-none z-5" style={{
           background: 'radial-gradient(ellipse at center 35%, rgba(0, 153, 255, 0.12) 0%, rgba(168, 85, 247, 0.06) 40%, transparent 75%)',
         }} />
@@ -63,10 +60,10 @@ export default function Home() {
           <AnimatedBackground />
         </div>
 
-        {/* Hero content: AGGRESSIVE CONVERSION HEADLINE */}
+        {/* Hero content */}
         <div className="relative z-10">
           <HeroRebuilt onCTAClick={scrollToCTA} onHowItWorksClick={() => {
-            document.getElementById('workshop-breakdown')?.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('training')?.scrollIntoView({ behavior: 'smooth' });
           }} />
         </div>
 
@@ -79,10 +76,7 @@ export default function Home() {
         />
       </div>
 
-      {/* Website is Just the Beginning Section */}
-      <WebsiteIsTheBeginning />
-
-      {/* PART 2: CONVERSION-FOCUSED MIDDLE SECTION */}
+      {/* PART 2: CONTENT SECTION */}
       <div
         className="relative overflow-hidden"
         style={{
@@ -125,10 +119,13 @@ export default function Home() {
           <AnimatedBackground />
         </div>
 
-        {/* Content: CONVERSION PSYCHOLOGY FLOW */}
+        {/* Content */}
         <div className="relative z-10">
-          <PainRebuilt onCTAClick={scrollToCTA} />
           <WhyThisWorks onCTAClick={scrollToCTA} />
+          <div id="training">
+            <AITrainingWeDeliver />
+          </div>
+          <WorkshopBreakdown onCTAClick={scrollToCTA} />
           <div id="about">
             <FounderAuthority />
           </div>
@@ -136,26 +133,12 @@ export default function Home() {
             <WhoThisIsFor onCTAClick={scrollToCTA} />
           </div>
           <WhoThisIsNotFor />
-          <div className="relative py-8 px-6 text-center">
-            <button
-              onClick={scrollToCTA}
-              className="group inline-flex items-center gap-3 button-premium px-8 py-5 bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-lg uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105"
-            >
-              Reserve Your Seat Now - $299+gst (Early Bird)
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </button>
-          </div>
-          <div id="workshop">
-            <WorkshopBreakdown onCTAClick={scrollToCTA} />
-          </div>
           <div id="testimonials">
             <TestimonialsSection onCTAClick={scrollToCTA} />
           </div>
-          <UrgencySection onCTAClick={scrollToCTA} />
           <div id="faq">
             <FAQ onCTAClick={scrollToCTA} />
           </div>
-          <RiskReversal onCTAClick={scrollToCTA} />
         </div>
 
         {/* BOTTOM SOFT TRANSITION FADE */}
@@ -168,11 +151,11 @@ export default function Home() {
         />
       </div>
 
-      {/* PART 3: FINAL CTA WITH BOTTOM.JPG - Powerful dramatic finale */}
+      {/* PART 3: PRICING & BOOKING - Powerful dramatic finale */}
       <div
         id="pricing"
         ref={ctaRef}
-        className="relative min-h-screen overflow-hidden flex items-center"
+        className="relative overflow-hidden flex items-center"
         style={{
           backgroundImage: 'url(/bottom.jpg)',
           backgroundSize: 'cover',
@@ -196,9 +179,6 @@ export default function Home() {
         {/* Side vignette overlays - protect focal points */}
         <div className="absolute inset-0 bg-gradient-to-r from-dark/35 via-transparent to-dark/35 pointer-events-none z-5" />
 
-        {/* Top subtle overlay */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-dark/40 to-transparent pointer-events-none z-5" />
-
         {/* Powerful dramatic glows for final moment */}
         <div
           className="absolute inset-0 pointer-events-none z-5"
@@ -207,20 +187,12 @@ export default function Home() {
           }}
         />
 
-        {/* Strong bottom glow - rocket/energy feel */}
-        <div
-          className="absolute inset-0 pointer-events-none z-5"
-          style={{
-            background: 'radial-gradient(ellipse at center bottom, rgba(0, 191, 255, 0.2) 0%, rgba(168, 85, 247, 0.1) 35%, transparent 60%)',
-          }}
-        />
-
         {/* Animated ambient elements */}
         <div className="absolute inset-0 pointer-events-none z-5">
           <AnimatedBackground />
         </div>
 
-        {/* CTA - The climax, naturally centered in the scene */}
+        {/* Pricing & booking */}
         <div className="relative z-10 w-full py-24">
           <FinalCTA ctaRef={ctaRef} />
         </div>
