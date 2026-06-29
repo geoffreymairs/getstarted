@@ -1,39 +1,44 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Check, X } from 'lucide-react'
+import { Hand, MapPin, Building2, Clock, ShieldCheck } from 'lucide-react'
 
 interface WhyThisWorksProps {
   onCTAClick: () => void
 }
 
 export default function WhyThisWorks({ onCTAClick }: WhyThisWorksProps) {
-  const comparisons = [
+  const reasons = [
     {
-      category: 'What You Learn',
-      traditional: 'Theory, concepts, slides, videos',
-      thisWorkshop: 'Live execution, real prompts, deployment steps'
+      icon: Hand,
+      title: 'Practical, Hands-On Learning',
+      description:
+        'No long lectures or slideshows. Your team learns by doing, using real AI tools throughout the session.',
     },
     {
-      category: 'How You Build',
-      traditional: 'Homework assignments, solo projects',
-      thisWorkshop: 'Live with the workshop, full support, real-time fixes'
+      icon: MapPin,
+      title: 'Designed For New Zealand Businesses',
+      description:
+        'Training built around the way Kiwi businesses actually work, with examples that make sense locally.',
     },
     {
-      category: 'What You Leave With',
-      traditional: 'Certificate, notes, maybe a template',
-      thisWorkshop: 'Working live website deployed to the internet'
+      icon: Building2,
+      title: 'We Teach Using Your Own Processes',
+      description:
+        'We tailor every session to your business, so what your team learns applies to their day-to-day work.',
     },
     {
-      category: 'Support',
-      traditional: 'Community forum (if you\'re lucky)',
-      thisWorkshop: 'Live instructor, real answers, 60-day replay access'
+      icon: Clock,
+      title: 'Save Hours Every Week',
+      description:
+        'Focus on automating repetitive tasks and speeding up everyday work so your team gets time back.',
     },
     {
-      category: 'Time to Live',
-      traditional: '3-6 months of learning first',
-      thisWorkshop: 'Same day. By noon.'
-    }
+      icon: ShieldCheck,
+      title: 'No Technical Experience Required',
+      description:
+        'Everything is explained in plain language. If your team can use email, they can use AI.',
+    },
   ]
 
   return (
@@ -47,89 +52,46 @@ export default function WhyThisWorks({ onCTAClick }: WhyThisWorksProps) {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight">
-            Why This Works <br />
-            <span className="text-accent">(When Other Courses Don't)</span>
+          <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-balance">
+            Why Choose <span className="text-accent">Us</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Most AI courses teach theory. This teaches execution. You don't learn about AI—you build with AI, live, with real support.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
+            We focus on practical business outcomes, not AI hype. Our goal is simple: help
+            your team use AI to work smarter and get real results.
           </p>
         </motion.div>
 
-        {/* Comparison Table */}
+        {/* Reasons Grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="space-y-4 mb-12"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
         >
-          {comparisons.map((comp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-6 rounded-xl"
-              style={{
-                background: 'linear-gradient(135deg, rgba(0, 153, 255, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%)',
-                border: '1px solid rgba(0, 153, 255, 0.15)'
-              }}
-            >
-              {/* Category */}
-              <div>
-                <p className="text-sm text-gray-400 uppercase tracking-wide mb-1">Category</p>
-                <p className="text-lg font-bold text-white">{comp.category}</p>
-              </div>
-
-              {/* Traditional Approach */}
-              <div className="flex gap-3">
-                <X className="w-5 h-5 text-gray-500 flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="text-sm text-gray-400 uppercase tracking-wide mb-1">Typical Course</p>
-                  <p className="text-gray-300">{comp.traditional}</p>
+          {reasons.map((reason, index) => {
+            const Icon = reason.icon
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.08 }}
+                className="relative p-8 rounded-xl"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(0, 153, 255, 0.06) 0%, rgba(168, 85, 247, 0.05) 100%)',
+                  border: '1px solid rgba(0, 153, 255, 0.15)',
+                }}
+              >
+                <div className="mb-5 p-3 rounded-lg bg-accent/20 w-fit">
+                  <Icon className="w-6 h-6 text-accent" />
                 </div>
-              </div>
-
-              {/* This Workshop */}
-              <div className="flex gap-3">
-                <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="text-sm text-gray-400 uppercase tracking-wide mb-1">This Workshop</p>
-                  <p className="text-accent-light font-semibold">{comp.thisWorkshop}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Key Promise Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative p-8 sm:p-10 rounded-2xl mb-12"
-          style={{
-            background: 'linear-gradient(135deg, rgba(0, 153, 255, 0.1) 0%, rgba(168, 85, 247, 0.08) 100%)',
-            border: '2px solid rgba(0, 153, 255, 0.3)'
-          }}
-        >
-          <div className="flex gap-6">
-            <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0 mt-2" />
-            <div>
-              <h3 className="text-2xl font-black text-white mb-3">
-                You Leave With a Real, Live Website
-              </h3>
-              <p className="text-lg text-gray-300 mb-4">
-                Not a certificate. Not a template. Not a promise of "what could be." A working website deployed to the internet that people can visit right now.
-              </p>
-              <p className="text-accent-light font-semibold">
-                That's the difference between learning about building and actually building.
-              </p>
-            </div>
-          </div>
+                <h3 className="text-lg font-bold text-white mb-3">{reason.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{reason.description}</p>
+              </motion.div>
+            )
+          })}
         </motion.div>
 
         {/* Bottom CTA */}
@@ -137,14 +99,14 @@ export default function WhyThisWorks({ onCTAClick }: WhyThisWorksProps) {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="text-center"
         >
           <button
             onClick={onCTAClick}
             className="group inline-flex items-center gap-3 px-8 py-4 button-premium bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 text-lg uppercase tracking-wide"
           >
-            Reserve Your Seat Now - $299+gst (Early Bird)
+            View Training Packages
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </button>
         </motion.div>

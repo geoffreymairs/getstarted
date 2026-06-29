@@ -28,13 +28,13 @@ export default function AIToolsOverview({ onCTAClick }: AIToolsOverviewProps) {
         'A business owner needs to write a professional proposal for a large client and uses Claude to help structure it, improve the wording, and make it sound more premium and persuasive.'
     },
     {
-      name: 'Vercel',
-      bestFor: 'Building and launching websites fast',
+      name: 'Vercel & v0',
+      bestFor: 'Building and launching websites and simple tools fast',
       description:
-        'Vercel allows you to turn your AI-generated ideas into a real live website without needing to be a developer. It helps you build, edit, and publish professional websites quickly.',
-      strength: 'Fastest way to go from idea to live website.',
+        'Vercel and v0 let you turn AI-generated ideas into real, live websites and simple tools without needing to be a developer. They help you build, edit, and publish professional results quickly.',
+      strength: 'The fastest way to go from idea to a live website or tool.',
       example:
-        'Someone attending the workshop uses ChatGPT to plan their new business website, then uses Vercel to turn that plan into a live website and publish it before lunch.'
+        'A business owner uses ChatGPT to plan a new landing page, then uses v0 and Vercel to turn that plan into a live website without writing code.'
     },
     {
       name: 'ElevenLabs',

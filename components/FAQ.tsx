@@ -59,32 +59,32 @@ interface FAQProps {
 export default function FAQ({ onCTAClick }: FAQProps) {
   const faqs: FAQItem[] = [
     {
-      question: "Do I need to know how to code or have technical skills?",
-      answer: "No. Zero coding required. We use AI tools that are designed for non-technical people. If you can follow instructions and use Google, you can do this workshop. Seriously. Most attendees are complete beginners."
+      question: "Where does the training take place?",
+      answer: "We come to you. All of our training is delivered on-site at your workplace, anywhere in New Zealand. This means your team learns in their own environment, using examples that relate directly to your business."
     },
     {
-      question: "What if I fall behind or get stuck during the workshop?",
-      answer: "Real support. We're there to help. We keep the group intentionally small (only 20 people) so you get actual attention. If you get stuck, we stop and fix it together. Plus you get 60-day replay access, so you can watch anything you missed."
+      question: "Does my team need any technical knowledge?",
+      answer: "No. Our training is designed for everyday business people, not developers. Everything is explained in plain language. If your team can use email and the internet, they can follow along comfortably."
     },
     {
-      question: "Do I need to pay for any tools to do this?",
-      answer: "No. You can use the free tiers of our AI tools to build your website. We'll show you exactly how. If you want premium versions of these tools later, that's optional—not required for this workshop."
+      question: "Can the training be tailored to our business?",
+      answer: "Yes. We take time to understand how your business works and build the session around your real tasks and goals. The examples we use come from your own day-to-day work, so what your team learns applies immediately."
     },
     {
-      question: "Can I use my own business idea or do I have to use your example?",
-      answer: "Your own idea. 100%. This workshop works for any business idea, any niche, any industry. Whether you're starting a service business, e-commerce store, coaching business, or anything else—you'll build YOUR website, not mine."
+      question: "What's the difference between the 1-on-1 and Team Workshop?",
+      answer: "The 1-on-1 session is ideal for an individual business owner or professional who wants personalised training. The Team Workshop is designed for businesses with up to 20 participants who want their whole team trained together."
     },
     {
-      question: "Is this actually beginner friendly? I've never done anything like this before.",
-      answer: "Completely beginner friendly. We assume zero prior knowledge. We explain every step, why we're doing it, and what it means. If something feels confusing, ask. That's what we're here for. Most attendees are first-timers."
+      question: "What do we need to provide for a Team Workshop?",
+      answer: "Just a suitable space and a large TV or projector so participants can clearly follow the demonstrations. We bring everything else and guide your team through each step."
     },
     {
-      question: "Will I actually leave with a real, live website? Or is this a template?",
-      answer: "Real, live website deployed to the internet. You'll own it, you can update it, and anyone can visit it. Not a template, not a demo, not a promise. A working website with your domain, live today."
+      question: "Which AI tools do you cover?",
+      answer: "We focus on the leading, practical tools your team can use right away, including ChatGPT, Claude, Gemini and Microsoft Copilot. We also help you understand which tool is best suited to different tasks in your business."
     },
     {
-      question: "What if I try but still can't get it working by the end?",
-      answer: "We keep working with you until you do. This is our guarantee. You're paying for results—a live website. If you don't leave with one, we don't stop supporting you. We'll help you get there."
+      question: "Do we need to pay for AI tools to take part?",
+      answer: "No. The free versions of these tools are enough to get real value during the training. If you decide to upgrade to premium versions later, that's optional and based on your own needs."
     }
   ]
 
@@ -127,7 +127,7 @@ export default function FAQ({ onCTAClick }: FAQProps) {
             onClick={onCTAClick}
             className="group button-premium inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-lg uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 transition-all"
           >
-            Reserve Your Seat Now - $299+gst (Early Bird)
+            View Training Packages
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </button>
         </motion.div>

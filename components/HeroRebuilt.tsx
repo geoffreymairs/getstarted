@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Zap, Clock, Users, Laptop } from 'lucide-react'
+import { ArrowRight, MapPin, Users, ShieldCheck } from 'lucide-react'
 
 interface HeroRebuiltProps {
   onCTAClick: () => void
@@ -17,16 +17,16 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
       }} />
 
       <div className="max-w-4xl mx-auto relative z-10">
-        {/* Urgency Banner */}
+        {/* Intro Banner */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="flex items-center justify-center gap-2 mb-8 px-4 py-3 rounded-full bg-red-600/20 border border-red-500/50 w-fit mx-auto backdrop-blur-sm"
+          className="flex items-center justify-center gap-2 mb-8 px-4 py-3 rounded-full bg-accent/15 border border-accent/40 w-fit mx-auto backdrop-blur-sm"
         >
-          <Zap className="w-4 h-4 text-red-400 flex-shrink-0" />
-          <p className="text-sm font-bold text-red-300 uppercase tracking-wider">
-            Auckland Workshop – Strictly Limited to 30 People
+          <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
+          <p className="text-sm font-bold text-accent-light uppercase tracking-wider">
+            On-Site AI Training For Businesses Across New Zealand
           </p>
         </motion.div>
 
@@ -37,13 +37,12 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-center mb-8"
         >
-          <h1 className="text-6xl sm:text-7xl lg:text-7xl font-black leading-tight text-white mb-6 tracking-tight">
-            Build Your First
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight text-white mb-6 tracking-tight text-balance">
+            Practical AI Training
             <br />
             <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent">
-              AI Website
+              For Your Business
             </span>
-            {' '}in 3 Hours
           </h1>
         </motion.div>
 
@@ -54,8 +53,11 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
           transition={{ duration: 0.8, delay: 0.15 }}
           className="text-center mb-8"
         >
-          <p className="text-xl sm:text-2xl text-gray-200 font-semibold max-w-3xl mx-auto">
-            Then learn how to build anything with AI — tools, automations, and more.
+          <p className="text-xl sm:text-2xl text-gray-200 font-semibold max-w-3xl mx-auto text-pretty">
+            We come to your workplace and deliver practical, hands-on AI training
+            tailored to your business. Help your team save time, automate repetitive
+            work and confidently use modern AI tools such as ChatGPT, Claude, Gemini and
+            Microsoft Copilot.
           </p>
         </motion.div>
 
@@ -68,7 +70,7 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
         >
           <div className="inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
             <p className="text-base text-gray-200 font-medium">
-              👥 For business owners, tradies, and beginners (no tech skills needed)
+              No technical knowledge required
             </p>
           </div>
         </motion.div>
@@ -78,7 +80,7 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25 }}
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-8"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12"
         >
           {/* Primary CTA */}
           <button
@@ -89,7 +91,7 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
               boxShadow: '0 0 30px rgba(59, 130, 246, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.2)',
             }}
           >
-            🚀 Secure My Spot
+            View Training Packages
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
 
@@ -98,58 +100,43 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
             onClick={onHowItWorksClick}
             className="group px-8 py-4 sm:py-4 text-white font-black text-base sm:text-lg uppercase tracking-wide flex items-center gap-3 justify-center rounded-xl border-2 border-white/30 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300 hover:scale-105 active:scale-98"
           >
-            ▶️ See How It Works
+            See What We Teach
           </button>
-        </motion.div>
-
-        {/* Trust Signal */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-center mb-12"
-        >
-          <div className="flex items-center justify-center gap-2">
-            <span className="text-3xl">★★★★★</span>
-            <p className="text-gray-200 font-semibold">
-              Rated 4.9 by business owners across Auckland
-            </p>
-          </div>
         </motion.div>
 
         {/* Benefit Cards - 3 Column */}
         <div className="relative z-50 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-          {/* Card 1 - No Coding */}
+          {/* Card 1 - On-site */}
           <div className="relative z-50 p-4 rounded-xl bg-white/8 border border-white/15 backdrop-blur-sm hover:bg-white/12 hover:border-white/25 transition-all duration-300">
             <div className="flex items-center gap-3 mb-2">
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/20">
-                <Zap className="w-5 h-5 text-blue-400" />
+                <MapPin className="w-5 h-5 text-blue-400" />
               </div>
             </div>
-            <h3 className="text-base font-bold text-white mb-1">No coding</h3>
-            <p className="text-xs text-gray-400">No tech skills needed</p>
+            <h3 className="text-base font-bold text-white mb-1">Delivered on-site</h3>
+            <p className="text-xs text-gray-400">We come to your workplace</p>
           </div>
 
-          {/* Card 2 - Build Live Website */}
+          {/* Card 2 - Tailored */}
           <div className="relative z-50 p-4 rounded-xl bg-white/8 border border-white/15 backdrop-blur-sm hover:bg-white/12 hover:border-white/25 transition-all duration-300">
             <div className="flex items-center gap-3 mb-2">
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/20">
-                <Zap className="w-5 h-5 text-blue-400" />
+                <Users className="w-5 h-5 text-blue-400" />
               </div>
             </div>
-            <h3 className="text-base font-bold text-white mb-1">Build a live website</h3>
-            <p className="text-xs text-gray-400">By 12PM</p>
+            <h3 className="text-base font-bold text-white mb-1">Tailored to you</h3>
+            <p className="text-xs text-gray-400">Built around your business</p>
           </div>
 
-          {/* Card 3 - Learn AI Tools */}
+          {/* Card 3 - Practical */}
           <div className="relative z-50 p-4 rounded-xl bg-white/8 border border-white/15 backdrop-blur-sm hover:bg-white/12 hover:border-white/25 transition-all duration-300">
             <div className="flex items-center gap-3 mb-2">
               <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/20">
-                <Laptop className="w-5 h-5 text-blue-400" />
+                <ShieldCheck className="w-5 h-5 text-blue-400" />
               </div>
             </div>
-            <h3 className="text-base font-bold text-white mb-1">Learn AI tools</h3>
-            <p className="text-xs text-gray-400">That replace developers</p>
+            <h3 className="text-base font-bold text-white mb-1">No tech experience</h3>
+            <p className="text-xs text-gray-400">Beginner friendly</p>
           </div>
         </div>
       </div>

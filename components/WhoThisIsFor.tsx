@@ -11,27 +11,27 @@ export default function WhoThisIsFor({ onCTAClick }: WhoThisIsForProps) {
   const audiences = [
     {
       title: 'Small Business Owners',
-      description: 'Tired of paying agencies $5k-10k for a website. Build and own your digital presence in 3 hours.'
+      description: 'Want to save time on admin, marketing and everyday tasks using practical AI tools.'
     },
     {
-      title: 'Trades & Service Professionals',
-      description: 'Plumbers, electricians, cleaners. Get online without technical knowledge or ongoing costs.'
+      title: 'Office & Admin Teams',
+      description: 'Spend less time on repetitive work like documents, emails and data entry.'
     },
     {
-      title: 'Consultants & Coaches',
-      description: 'Establish credibility online, showcase your expertise, and capture leads from day one.'
+      title: 'Trades & Service Businesses',
+      description: 'Quote faster, follow up leads and handle paperwork with less effort.'
     },
     {
-      title: 'Solopreneurs',
-      description: 'Launch your business idea quickly without hiring developers or learning to code.'
+      title: 'Sales & Marketing Teams',
+      description: 'Create content, proposals and campaigns more quickly and consistently.'
     },
     {
-      title: 'Local Service Businesses',
-      description: 'Get found locally, build trust with potential customers, and manage your online presence.'
+      title: 'Professional Services',
+      description: 'Accountants, consultants and agencies wanting their team to work smarter with AI.'
     },
     {
-      title: 'Career Changers',
-      description: 'Pivot into your own business venture with a professional web presence built instantly.'
+      title: 'Business Owners New To AI',
+      description: 'Want a clear, jargon-free introduction so they know exactly where to start.'
     }
   ]
 
@@ -49,8 +49,9 @@ export default function WhoThisIsFor({ onCTAClick }: WhoThisIsForProps) {
           <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight">
             Who This Is <span className="text-accent">For</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            This workshop is designed for busy business owners who want to get online without months of learning or thousands in agency fees.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
+            Our training is designed for businesses and teams that want to use AI to save
+            time and work smarter &mdash; no technical background needed.
           </p>
         </motion.div>
 

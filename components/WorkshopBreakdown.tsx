@@ -1,40 +1,37 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CheckCircle2, Zap, Code2, Rocket } from 'lucide-react'
+import { CheckCircle2, Search, GraduationCap, Wrench } from 'lucide-react'
 import Image from 'next/image'
 
 const phases = [
   {
-    title: 'PLAN',
-    icon: Zap,
-    color: 'from-blue-400 to-cyan-400',
+    title: 'UNDERSTAND',
+    icon: Search,
     outcomes: [
-      'Brainstorm your business idea using AI tools',
-      'Define your unique offer and positioning',
-      'Map out your website structure'
-    ]
+      'We learn how your business and team currently work',
+      'Identify the tasks that take the most time',
+      'Tailor the session to your goals',
+    ],
   },
   {
-    title: 'BUILD',
-    icon: Code2,
-    color: 'from-purple-400 to-pink-400',
+    title: 'LEARN',
+    icon: GraduationCap,
     outcomes: [
-      'Generate a professional website using AI',
-      'Create compelling copy and branding',
-      'Customize and polish your site'
-    ]
+      'Hands-on training with the leading AI tools',
+      'Plain-language explanations, no jargon',
+      'Real examples from your own business',
+    ],
   },
   {
-    title: 'LAUNCH',
-    icon: Rocket,
-    color: 'from-orange-400 to-red-400',
+    title: 'APPLY',
+    icon: Wrench,
     outcomes: [
-      'Deploy your website to the internet',
-      'Set up your custom domain',
-      'Walk away with a live, working website'
-    ]
-  }
+      'Put AI to work on real tasks during the session',
+      'Build simple workflows your team can reuse',
+      'Leave with tools you can use immediately',
+    ],
+  },
 ]
 
 const containerVariants = {
@@ -63,7 +60,7 @@ interface WorkshopBreakdownProps {
 
 export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps) {
   return (
-    <section id="workshop-breakdown" className="relative py-24 px-6 overflow-hidden">
+    <section className="relative py-24 px-6 overflow-hidden">
       {/* Background element */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-accent/3 rounded-full blur-3xl"></div>
@@ -79,17 +76,17 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
           className="text-center mb-16"
         >
           <div className="inline-block px-3 py-1 rounded-full bg-accent/10 border border-accent/30 mb-6">
-            <p className="text-xs text-accent font-semibold uppercase tracking-wide">Live Workshop Breakdown</p>
+            <p className="text-xs text-accent font-semibold uppercase tracking-wide">How It Works</p>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black mb-4 tracking-tight">
-            Three Phases. <br />
+          <h2 className="text-4xl sm:text-5xl font-black mb-4 tracking-tight text-balance">
+            On-Site Training, <br />
             <span className="bg-gradient-to-r from-accent via-accent-light to-accent-dark bg-clip-text text-transparent">
-              One Complete Result
+              Built Around Your Business
             </span>
           </h2>
-          <p className="text-sm font-bold text-purple-glow uppercase tracking-widest mb-4">📍 Live In Auckland</p>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            From idea to live website. Everything in 3 hours. Meet in person, network, and leave with a real, live website.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
+            We come to your workplace and keep it practical from start to finish. Here is how
+            a typical session runs.
           </p>
         </motion.div>
 
@@ -108,14 +105,14 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
                 style={{
                   background: 'rgba(0, 0, 0, 0.4)',
                   backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(0, 153, 255, 0.2)'
+                  border: '1px solid rgba(0, 153, 255, 0.2)',
                 }}
                 whileHover={{
                   boxShadow: '0 0 32px rgba(0, 153, 255, 0.3)',
-                  y: -4
+                  y: -4,
                 }}
               >
-                {/* Phase Number Badge */}
+                {/* Phase Badge */}
                 <div className="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full bg-accent/10 border border-accent/30">
                   <Icon className="w-4 h-4 text-accent" />
                   <p className="text-xs text-accent font-bold uppercase tracking-wider">{phase.title}</p>
@@ -145,7 +142,7 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
           })}
         </div>
 
-        {/* Bottom Section - Why This Matters */}
+        {/* Bottom Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -155,19 +152,19 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
         >
           {/* Left: Key Benefits */}
           <div>
-            <h3 className="text-2xl font-black text-white mb-6">Why This Structure Works</h3>
+            <h3 className="text-2xl font-black text-white mb-6">What Makes It Work</h3>
             <div className="space-y-4">
               <div className="flex gap-4">
                 <div className="w-1 h-1 bg-accent rounded-full flex-shrink-0 mt-2" />
-                <p className="text-gray-300"><span className="text-accent font-bold">No Theory.</span> Pure execution.</p>
+                <p className="text-gray-300"><span className="text-accent font-bold">Practical.</span> Learning by doing, not watching.</p>
               </div>
               <div className="flex gap-4">
                 <div className="w-1 h-1 bg-accent rounded-full flex-shrink-0 mt-2" />
-                <p className="text-gray-300"><span className="text-accent font-bold">No Fluff.</span> Every step builds toward your website.</p>
+                <p className="text-gray-300"><span className="text-accent font-bold">Relevant.</span> Every example uses your real work.</p>
               </div>
               <div className="flex gap-4">
                 <div className="w-1 h-1 bg-accent rounded-full flex-shrink-0 mt-2" />
-                <p className="text-gray-300"><span className="text-accent font-bold">No Questions.</span> You'll understand exactly why we do each step.</p>
+                <p className="text-gray-300"><span className="text-accent font-bold">Useful.</span> Your team can apply it the very next day.</p>
               </div>
             </div>
           </div>
@@ -182,22 +179,13 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
           >
             <div className="relative rounded-2xl overflow-hidden shadow-glow hover:shadow-glow-lg transition-all">
               <Image
-                src="/workshop-result.jpg"
-                alt="Workshop success - person celebrating with launch successful screen"
+                src="/training-session.png"
+                alt="An on-site AI training session with a presenter teaching a small team in a modern office"
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover rounded-2xl"
               />
             </div>
-
-            {/* Floating badges */}
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="absolute -top-4 -right-4 px-4 py-2 bg-gradient-to-r from-accent to-accent-light text-dark text-sm font-semibold rounded-lg shadow-lg"
-            >
-              ✓ Live Today
-            </motion.div>
           </motion.div>
         </motion.div>
 
@@ -214,7 +202,7 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
               onClick={onCTAClick}
               className="group button-premium inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-lg uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 transition-all"
             >
-              Ready to Build?
+              View Training Packages
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </button>
           </motion.div>

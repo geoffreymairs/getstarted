@@ -6,20 +6,20 @@ import { XCircle } from 'lucide-react'
 export default function WhoThisIsNotFor() {
   const notFor = [
     {
-      title: 'Enterprise-Level Businesses',
-      description: 'If you need a custom system handling 10k+ transactions daily, this isn\'t the right fit.'
-    },
-    {
       title: 'Advanced Developers',
-      description: 'If you already build full-stack applications, you don\'t need a beginner workshop.'
+      description: 'If your team already builds AI systems and full-stack applications, this introductory training isn\'t the right fit.'
     },
     {
       title: 'AI Researchers',
-      description: 'We don\'t dive into how AI models work internally. This is about practical application, not deep theory.'
+      description: 'We don\'t dive into how AI models work internally. This is about practical business use, not deep theory.'
     },
     {
-      title: 'People Avoiding Action',
-      description: 'This workshop requires you to build during the 3 hours. If you just want to \"learn about\" AI, keep watching YouTube.'
+      title: 'Fully Remote-Only Teams',
+      description: 'Our training is delivered on-site at your workplace. If your team can\'t gather in one location, get in touch first.'
+    },
+    {
+      title: 'Businesses Not Ready To Apply It',
+      description: 'This is hands-on. You\'ll get the most value if your team is ready to actually use AI in their day-to-day work.'
     }
   ]
 
@@ -37,8 +37,8 @@ export default function WhoThisIsNotFor() {
           <h2 className="text-4xl sm:text-5xl font-black mb-6">
             Who This Is <span className="text-red-400">Not</span> For
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            We're honest about who this workshop is designed for. If you're in one of these groups, we can recommend better resources.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
+            We&apos;re honest about who our training is designed for. If you&apos;re in one of these groups, we&apos;re happy to point you toward better-suited resources.
           </p>
         </motion.div>
 
