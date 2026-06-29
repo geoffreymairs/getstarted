@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { CheckCircle, CalendarCheck, Building2, Sparkles } from 'lucide-react'
 import Link from 'next/link'
+import Footer from '@/components/Footer'
 
 export default function ThankYouPage() {
   const steps = [
@@ -24,6 +25,7 @@ export default function ThankYouPage() {
   ]
 
   return (
+    <>
     <main className="min-h-screen bg-dark py-20 px-6 overflow-hidden">
       {/* Subtle background gradient */}
       <div className="absolute inset-0 pointer-events-none" style={{
@@ -96,5 +98,7 @@ export default function ThankYouPage() {
         </motion.div>
       </div>
     </main>
+    <Footer />
+    </>
   )
 }

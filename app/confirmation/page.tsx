@@ -2,9 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { CheckCircle, MapPin, Zap } from 'lucide-react'
+import Footer from '@/components/Footer'
 
 export default function ConfirmationPage() {
   return (
+    <>
     <div className="min-h-screen bg-dark py-20 px-6">
       <div className="max-w-3xl mx-auto">
         {/* Hero Section */}
@@ -149,5 +151,7 @@ export default function ConfirmationPage() {
         </motion.div>
       </div>
     </div>
+    <Footer />
+    </>
   )
 }
