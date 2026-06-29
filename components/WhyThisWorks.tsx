@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Hand, MapPin, Building2, Clock, ShieldCheck } from 'lucide-react'
+import { Hand, MapPin, Building2, Clock, ShieldCheck, Sparkles } from 'lucide-react'
 
 interface WhyThisWorksProps {
   onCTAClick: () => void
@@ -38,6 +38,12 @@ export default function WhyThisWorks({ onCTAClick }: WhyThisWorksProps) {
       title: 'No Technical Experience Required',
       description:
         'Everything is explained in plain language. If your team can use email, they can use AI.',
+    },
+    {
+      icon: Sparkles,
+      title: 'Up-To-Date With The Latest Tools',
+      description:
+        'AI moves fast. We keep our training current so your team learns the tools and techniques that matter right now.',
     },
   ]
 
