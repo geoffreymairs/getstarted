@@ -75,6 +75,12 @@ export default function Navigation({ onCTAClick, showCTA = true, hideMenu = fals
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-accent to-purple-glow group-hover:w-full transition-all duration-300" />
               </button>
             ))}
+            <a
+              href="https://www.getstarted.co.nz/consultation"
+              className="text-sm font-semibold text-accent hover:text-accent-light transition-colors duration-200"
+            >
+              AI Consultation
+            </a>
           </div>
         )}
 
@@ -146,6 +152,12 @@ export default function Navigation({ onCTAClick, showCTA = true, hideMenu = fals
                 {item.label}
               </button>
             ))}
+            <a
+              href="https://www.getstarted.co.nz/consultation"
+              className="block w-full text-left px-4 py-3 rounded-lg text-accent hover:bg-accent/20 hover:text-accent-light font-semibold transition-all duration-200"
+            >
+              AI Consultation
+            </a>
           </div>
         </motion.div>
       )}
