@@ -33,8 +33,8 @@ const packages = [
     icon: User,
     tagline: 'Perfect for business owners or professionals who want personalised training.',
     cta: 'Book a 1-on-1 Session',
-    images: ['/workshop-coaching.jpg'],
-    imageAlt: ['A GetStarted trainer giving one-on-one AI coaching on a laptop'],
+    images: ['/workshop-one-on-one.jpg'],
+    imageAlt: ['A GetStarted trainer giving one-on-one AI coaching, pointing at a laptop screen'],
     features: [
       'Training delivered at your workplace',
       'Approximately 2 hours',
