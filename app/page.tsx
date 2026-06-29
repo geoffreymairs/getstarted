@@ -7,7 +7,6 @@ import WhyThisWorks from '@/components/WhyThisWorks'
 import FounderAuthority from '@/components/FounderAuthority'
 import WhoThisIsFor from '@/components/WhoThisIsFor'
 import WorkshopBreakdown from '@/components/WorkshopBreakdown'
-import AIToolsOverview from '@/components/AIToolsOverview'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import FAQ from '@/components/FAQ'
 import WhoThisIsNotFor from '@/components/WhoThisIsNotFor'
@@ -127,7 +126,6 @@ export default function Home() {
             <AITrainingWeDeliver />
           </div>
           <WorkshopBreakdown onCTAClick={scrollToCTA} />
-          <AIToolsOverview />
           <div id="about">
             <FounderAuthority />
           </div>
