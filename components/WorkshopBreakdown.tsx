@@ -148,7 +148,7 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-12 border-t border-accent/20"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center pt-12 border-t border-accent/20"
         >
           {/* Left: Key Benefits */}
           <div>
@@ -183,7 +183,7 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
                 alt="A GetStarted on-site AI training session with attendees seated around the table while the presenter shows AI tools on a large screen"
                 width={600}
                 height={400}
-                className="w-full h-auto object-cover rounded-2xl"
+                className="w-full h-64 sm:h-72 object-cover rounded-2xl"
               />
             </div>
           </motion.div>
