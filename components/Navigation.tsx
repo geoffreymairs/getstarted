@@ -6,23 +6,38 @@ import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
+interface NavItem {
+  label: string
+  href: string
+}
+
 interface NavigationProps {
   onCTAClick?: () => void
   showCTA?: boolean
   hideMenu?: boolean
+  menuItems?: NavItem[]
+  consultationActive?: boolean
 }
 
-export default function Navigation({ onCTAClick, showCTA = true, hideMenu = false }: NavigationProps) {
+const defaultNavItems: NavItem[] = [
+  { label: 'Home', href: '#home' },
+  { label: 'Training', href: '#training' },
+  { label: 'About Us', href: '#about' },
+  { label: 'Who It\'s For', href: '#who-for' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'FAQ', href: '#faq' }
+]
+
+export default function Navigation({
+  onCTAClick,
+  showCTA = true,
+  hideMenu = false,
+  menuItems,
+  consultationActive = false,
+}: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Training', href: '#training' },
-    { label: 'About Us', href: '#about' },
-    { label: 'Who It\'s For', href: '#who-for' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'FAQ', href: '#faq' }
-  ]
+  const navItems = menuItems ?? defaultNavItems
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false)
@@ -77,7 +92,10 @@ export default function Navigation({ onCTAClick, showCTA = true, hideMenu = fals
             ))}
             <Link
               href="/consultation"
-              className="text-sm font-semibold text-accent hover:text-accent-light transition-colors duration-200"
+              aria-current={consultationActive ? 'page' : undefined}
+              className={`text-sm font-semibold transition-colors duration-200 ${
+                consultationActive ? 'text-accent' : 'text-accent hover:text-accent-light'
+              }`}
             >
               AI Consultation
             </Link>

@@ -8,6 +8,7 @@ import Footer from '@/components/Footer'
 
 const services = [
   {
+    id: 'ai-receptionists',
     icon: Phone,
     tag: 'ALWAYS ON',
     title: 'AI Receptionists',
@@ -24,6 +25,7 @@ const services = [
     result: 'Result: More leads captured. Fewer missed calls. Less time on the phone.',
   },
   {
+    id: 'ai-agents',
     icon: Bot,
     tag: 'WORK SMARTER',
     title: 'AI Agents',
@@ -41,6 +43,7 @@ const services = [
     result: 'Result: Hours of admin saved every week. Faster response times. Happier customers.',
   },
   {
+    id: 'ai-workflows',
     icon: Workflow,
     tag: 'CONNECT EVERYTHING',
     title: 'AI Workflows & Automation',
@@ -58,6 +61,7 @@ const services = [
     result: 'Result: Fewer manual steps. Less falling through the cracks. Smoother operations.',
   },
   {
+    id: 'group-workshops',
     icon: Users,
     tag: 'TEAM TRAINING',
     title: 'Group Workshops',
@@ -84,6 +88,13 @@ const reasons = [
   { title: 'Real Outcomes', description: 'We measure success by time saved, leads captured, and revenue grown.' },
 ]
 
+const consultationMenu = [
+  { label: 'AI Receptionists', href: '#ai-receptionists' },
+  { label: 'AI Agents', href: '#ai-agents' },
+  { label: 'AI Workflows & Automation', href: '#ai-workflows' },
+  { label: 'Group Workshops', href: '#group-workshops' },
+]
+
 const BOOK_HREF = 'mailto:hello@getstarted.co.nz'
 
 function BookButton({ className = '' }: { className?: string }) {
@@ -105,7 +116,7 @@ function BookButton({ className = '' }: { className?: string }) {
 export default function ConsultationPage() {
   return (
     <>
-      <Navigation hideMenu />
+      <Navigation menuItems={consultationMenu} consultationActive showCTA={false} />
       <main className="min-h-screen bg-dark overflow-hidden">
         {/* Hero */}
         <section className="pt-36 pb-20 px-6">
@@ -141,11 +152,12 @@ export default function ConsultationPage() {
               return (
                 <motion.div
                   key={service.title}
+                  id={service.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="glass rounded-2xl p-8 sm:p-10"
+                  className="glass rounded-2xl p-8 sm:p-10 scroll-mt-28"
                 >
                   <div className="flex items-start gap-4 mb-6">
                     <div
