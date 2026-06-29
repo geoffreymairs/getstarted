@@ -59,24 +59,39 @@ export default function AITrainingWeDeliver() {
   return (
     <section className="relative py-20 sm:py-28 px-6 overflow-hidden">
       <div className="max-w-5xl mx-auto">
-        {/* Section Header */}
+        {/* Section Header - text alongside a real workshop photo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-16"
         >
-          <div className="inline-block px-3 py-1 rounded-full bg-accent/10 border border-accent/30 mb-6">
-            <p className="text-xs text-accent font-semibold uppercase tracking-wide">What We Cover</p>
+          {/* Text */}
+          <div className="text-center lg:text-left">
+            <div className="inline-block px-3 py-1 rounded-full bg-accent/10 border border-accent/30 mb-6">
+              <p className="text-xs text-accent font-semibold uppercase tracking-wide">What We Cover</p>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight text-balance">
+              AI Training <span className="text-accent-light">We Deliver</span>
+            </h2>
+            <p className="text-xl text-gray-300 leading-relaxed text-pretty">
+              Every session is tailored to your business, but these are the core areas we
+              help teams understand and put to use straight away.
+            </p>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight tracking-tight text-balance">
-            AI Training <span className="text-accent-light">We Deliver</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed text-pretty">
-            Every session is tailored to your business, but these are the core areas we
-            help teams understand and put to use straight away.
-          </p>
+
+          {/* Photo */}
+          <figure className="lg:justify-self-end w-full">
+            <img
+              src="/workshop-assist.jpg"
+              alt="A GetStarted trainer helping business owners use AI tools on their laptops during a hands-on session"
+              className="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-2xl ring-1 ring-white/10"
+            />
+            <figcaption className="mt-3 text-sm text-gray-400 text-center lg:text-left">
+              Real AI training delivered for New Zealand businesses.
+            </figcaption>
+          </figure>
         </motion.div>
 
         {/* Topics Grid */}

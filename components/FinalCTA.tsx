@@ -33,6 +33,8 @@ const packages = [
     icon: User,
     tagline: 'Perfect for business owners or professionals who want personalised training.',
     cta: 'Book a 1-on-1 Session',
+    images: ['/workshop-coaching.jpg'],
+    imageAlt: ['A GetStarted trainer giving one-on-one AI coaching on a laptop'],
     features: [
       'Training delivered at your workplace',
       'Approximately 2 hours',
@@ -51,6 +53,11 @@ const packages = [
     icon: Users,
     tagline: 'For businesses with up to 20 participants.',
     cta: 'Book a Team Workshop',
+    images: ['/workshop-room.jpg', '/workshop-team.jpg'],
+    imageAlt: [
+      'Attendees seated around the table during a GetStarted team AI workshop',
+      'A GetStarted trainer leading a team through an AI workshop',
+    ],
     features: [
       'Delivered at your workplace',
       'Up to 20 attendees',
@@ -183,6 +190,18 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                   boxShadow: isActive ? '0 0 40px rgba(0, 153, 255, 0.25)' : 'none',
                 }}
               >
+                {/* Workshop photo(s) */}
+                <div className={`mb-6 grid gap-3 ${pkg.images.length === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+                  {pkg.images.map((src, i) => (
+                    <img
+                      key={src}
+                      src={src || "/placeholder.svg"}
+                      alt={pkg.imageAlt[i]}
+                      className="w-full h-40 object-cover rounded-xl shadow-lg ring-1 ring-white/10"
+                    />
+                  ))}
+                </div>
+
                 {/* Icon */}
                 <div className="mb-6 p-3 rounded-lg bg-accent/20 w-fit">
                   <Icon className="w-6 h-6 text-accent" />

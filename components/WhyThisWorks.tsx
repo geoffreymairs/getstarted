@@ -50,21 +50,33 @@ export default function WhyThisWorks({ onCTAClick }: WhyThisWorksProps) {
   return (
     <section className="relative py-20 sm:py-32 px-6 overflow-hidden">
       <div className="max-w-5xl mx-auto">
-        {/* Section Headline */}
+        {/* Section Headline - text beside a real presenting photo */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-balance">
-            Why Choose <span className="text-accent">Us</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
-            We focus on practical business outcomes, not AI hype. Our goal is simple: help
-            your team use AI to work smarter and get real results.
-          </p>
+          {/* Photo */}
+          <figure className="order-last lg:order-first w-full">
+            <img
+              src="/workshop-presenter.jpg"
+              alt="A GetStarted trainer presenting an AI training session to attendees"
+              className="w-full h-72 sm:h-96 object-cover rounded-2xl shadow-2xl ring-1 ring-white/10"
+            />
+          </figure>
+
+          {/* Text */}
+          <div className="text-center lg:text-left">
+            <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-balance">
+              Why Choose <span className="text-accent">Us</span>
+            </h2>
+            <p className="text-xl text-gray-300 text-pretty">
+              We focus on practical business outcomes, not AI hype. Our goal is simple: help
+              your team use AI to work smarter and get real results.
+            </p>
+          </div>
         </motion.div>
 
         {/* Reasons Grid */}
