@@ -53,11 +53,8 @@ const packages = [
     icon: Users,
     tagline: 'For businesses with up to 20 participants.',
     cta: 'Book a Team Workshop',
-    images: ['/workshop-room.jpg', '/workshop-team.jpg'],
-    imageAlt: [
-      'Attendees seated around the table during a GetStarted team AI workshop',
-      'A GetStarted trainer leading a team through an AI workshop',
-    ],
+    images: ['/workshop-room.jpg'],
+    imageAlt: ['Attendees seated around the table during a GetStarted team AI workshop'],
     features: [
       'Delivered at your workplace',
       'Up to 20 attendees',
