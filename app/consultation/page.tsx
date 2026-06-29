@@ -116,7 +116,14 @@ function BookButton({ className = '' }: { className?: string }) {
 export default function ConsultationPage() {
   return (
     <>
-      <Navigation menuItems={consultationMenu} consultationActive showCTA={false} />
+      <Navigation
+        menuItems={consultationMenu}
+        consultationActive
+        ctaLabel="Contact Us"
+        onCTAClick={() => {
+          window.location.href = BOOK_HREF
+        }}
+      />
       <main className="min-h-screen bg-dark overflow-hidden">
         {/* Hero */}
         <section className="pt-36 pb-20 px-6">

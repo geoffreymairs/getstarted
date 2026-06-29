@@ -17,6 +17,7 @@ interface NavigationProps {
   hideMenu?: boolean
   menuItems?: NavItem[]
   consultationActive?: boolean
+  ctaLabel?: string
 }
 
 const defaultNavItems: NavItem[] = [
@@ -34,6 +35,7 @@ export default function Navigation({
   hideMenu = false,
   menuItems,
   consultationActive = false,
+  ctaLabel = 'Book Now',
 }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -113,7 +115,7 @@ export default function Navigation({
                 boxShadow: '0 0 30px rgba(59, 130, 246, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.2)',
               }}
             >
-              Book Now
+              {ctaLabel}
               <span className="group-hover:translate-x-1 inline-block transition-transform ml-2">→</span>
             </button>
           </div>
@@ -131,7 +133,7 @@ export default function Navigation({
                 boxShadow: '0 0 20px rgba(59, 130, 246, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.15)',
               }}
             >
-              Book Now
+              {ctaLabel}
             </button>
           )}
           {!hideMenu && (
