@@ -18,10 +18,10 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto flex items-center justify-center gap-8 relative z-10">
         <Link
-          href="#pricing"
+          href="/workshop"
           className="text-sm font-semibold text-accent hover:text-accent-light transition-colors"
         >
-          Training Packages
+          Workshop
         </Link>
         <motion.button
           onClick={scrollToTop}
