@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Image from 'next/image'
 import HeroRebuilt from '@/components/HeroRebuilt'
 import AITrainingWeDeliver from '@/components/AITrainingWeDeliver'
 import WhyThisWorks from '@/components/WhyThisWorks'
@@ -34,15 +35,17 @@ export default function Home() {
         id="home"
         className="relative min-h-screen overflow-hidden pt-16"
       >
-        {/* Background image - professionals learning AI in an office */}
-        <div
-          className="absolute inset-0 w-full h-full"
-          style={{
-            backgroundImage: 'url(/hero-training.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-          }}
+        {/* Background image - professionals learning AI in an office.
+            LCP element: rendered via next/image with priority so it is
+            preloaded and served as optimized AVIF/WebP. */}
+        <Image
+          src="/hero-training.jpg"
+          alt="Business professionals learning to use AI tools during an on-site GetStarted training session"
+          fill
+          priority
+          quality={70}
+          sizes="100vw"
+          className="object-cover object-center"
         />
         {/* Top fade overlay - subtle fade from top */}
         <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-dark/70 via-dark/40 to-transparent pointer-events-none z-5" />

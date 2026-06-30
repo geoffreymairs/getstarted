@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Hand, MapPin, Building2, Clock, ShieldCheck, Sparkles } from 'lucide-react'
 
 interface WhyThisWorksProps {
@@ -60,11 +61,17 @@ export default function WhyThisWorks({ onCTAClick }: WhyThisWorksProps) {
         >
           {/* Photo */}
           <figure className="order-last lg:order-first w-full">
-            <img
-              src="/workshop-presenter.jpg"
-              alt="A GetStarted trainer presenting an AI training session to attendees"
-              className="w-full h-72 sm:h-96 object-cover rounded-2xl shadow-2xl ring-1 ring-white/10"
-            />
+            <div className="relative w-full h-72 sm:h-96 overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
+              <Image
+                src="/workshop-presenter.jpg"
+                alt="A GetStarted trainer presenting an AI training session to attendees"
+                fill
+                loading="lazy"
+                quality={70}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
           </figure>
 
           {/* Text */}

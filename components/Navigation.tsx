@@ -73,6 +73,7 @@ export default function Navigation({
               alt="Get Started"
               width={200}
               height={60}
+              sizes="200px"
               className="h-10 sm:h-12 w-auto"
               priority
             />

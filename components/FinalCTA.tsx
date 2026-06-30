@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { useState, RefObject, useRef } from 'react'
 import { CheckCircle2, User, Users, Tv } from 'lucide-react'
@@ -190,12 +191,17 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                 {/* Workshop photo(s) */}
                 <div className={`mb-6 grid gap-3 ${pkg.images.length === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
                   {pkg.images.map((src, i) => (
-                    <img
-                      key={src}
-                      src={src || "/placeholder.svg"}
-                      alt={pkg.imageAlt[i]}
-                      className="w-full h-40 object-cover rounded-xl shadow-lg ring-1 ring-white/10"
-                    />
+                    <div key={src} className="relative w-full h-40 overflow-hidden rounded-xl shadow-lg ring-1 ring-white/10">
+                      <Image
+                        src={src || "/placeholder.svg"}
+                        alt={pkg.imageAlt[i]}
+                        fill
+                        loading="lazy"
+                        quality={70}
+                        sizes="(max-width: 1024px) 90vw, 360px"
+                        className="object-cover"
+                      />
+                    </div>
                   ))}
                 </div>
 

@@ -126,6 +126,9 @@ export default function FounderAuthority() {
                     alt={founder.name}
                     width={120}
                     height={120}
+                    loading="lazy"
+                    quality={75}
+                    sizes="120px"
                     className="rounded-full mb-4 object-cover object-center"
                   />
                   <h3 className="text-2xl font-black text-white">{founder.name}</h3>
