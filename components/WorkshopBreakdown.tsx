@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CheckCircle2, Search, GraduationCap, Wrench } from 'lucide-react'
+import { CheckCircle2, Search, GraduationCap, Wrench, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 
 const phases = [
@@ -142,74 +142,75 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
           })}
         </div>
 
-        {/* Bottom Section */}
+        {/* Bottom Section - balanced card with text + prominent image */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center pt-12 border-t border-accent/20"
+          className="mt-16 overflow-hidden rounded-3xl border border-accent/20 bg-gradient-to-br from-accent/10 via-dark/40 to-purple-glow/10 shadow-glow"
         >
-          {/* Left: Key Benefits */}
-          <div>
-            <h3 className="text-2xl font-black text-white mb-6">What Makes It Work</h3>
-            <div className="space-y-4">
-              <div className="flex gap-4">
-                <div className="w-1 h-1 bg-accent rounded-full flex-shrink-0 mt-2" />
-                <p className="text-gray-300"><span className="text-accent font-bold">Practical.</span> Learning by doing, not watching.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+            {/* Left: Heading, benefits and CTA */}
+            <div className="flex flex-col justify-center gap-8 p-8 sm:p-10 lg:p-14">
+              <div>
+                <div className="inline-flex items-center gap-2 mb-5 p-3 rounded-xl bg-accent/15 border border-accent/30">
+                  <Sparkles className="w-5 h-5 text-accent" />
+                </div>
+                <h3 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                  What Makes It Work
+                </h3>
+                <div className="mt-3 h-1 w-16 rounded-full bg-gradient-to-r from-accent to-purple-glow" />
               </div>
-              <div className="flex gap-4">
-                <div className="w-1 h-1 bg-accent rounded-full flex-shrink-0 mt-2" />
-                <p className="text-gray-300"><span className="text-accent font-bold">Relevant.</span> Every example uses your real work.</p>
-              </div>
-              <div className="flex gap-4">
-                <div className="w-1 h-1 bg-accent rounded-full flex-shrink-0 mt-2" />
-                <p className="text-gray-300"><span className="text-accent font-bold">Useful.</span> Your team can apply it the very next day.</p>
-              </div>
-            </div>
-          </div>
 
-          {/* Right: Image Showcase */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="relative rounded-2xl overflow-hidden shadow-glow hover:shadow-glow-lg transition-all">
+              <div className="space-y-5">
+                {[
+                  { label: 'Practical.', text: 'Learning by doing, not watching.' },
+                  { label: 'Relevant.', text: 'Every example uses your real work.' },
+                  { label: 'Useful.', text: 'Your team can apply it the very next day.' },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+                    <p className="text-lg text-gray-300 leading-relaxed">
+                      <span className="text-accent font-bold">{item.label}</span> {item.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {onCTAClick && (
+                <button
+                  onClick={onCTAClick}
+                  className="group button-premium inline-flex w-fit items-center gap-3 px-8 py-4 bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-base uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 transition-all"
+                >
+                  View Training Packages
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </button>
+              )}
+            </div>
+
+            {/* Right: Prominent image that fills the card height */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative min-h-[300px] lg:min-h-full"
+            >
               <Image
                 src="/workshop-session.jpg"
                 alt="A GetStarted on-site AI training session with attendees seated around the table while the presenter shows AI tools on a large screen"
-                width={600}
-                height={400}
+                fill
                 loading="lazy"
                 quality={70}
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="w-full h-64 sm:h-72 object-cover rounded-2xl"
+                className="object-cover"
               />
-            </div>
-          </motion.div>
+              {/* Subtle gradient to blend the image into the card on the left edge */}
+              <div className="absolute inset-0 bg-gradient-to-r from-dark/40 via-transparent to-transparent lg:block hidden" />
+            </motion.div>
+          </div>
         </motion.div>
-
-        {/* CTA */}
-        {onCTAClick && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-center mt-12"
-          >
-            <button
-              onClick={onCTAClick}
-              className="group button-premium inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-lg uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 transition-all"
-            >
-              View Training Packages
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </button>
-          </motion.div>
-        )}
       </div>
     </section>
   )
