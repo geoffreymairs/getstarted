@@ -56,8 +56,7 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
           <p className="text-xl sm:text-2xl text-gray-200 font-semibold max-w-3xl mx-auto text-pretty">
             We come to your workplace and deliver practical, hands-on AI training
             tailored to your business. Help your team save time, automate repetitive
-            work and confidently use modern AI tools such as ChatGPT, Claude, Gemini and
-            Microsoft Copilot.
+            work and confidently use the latest AI tools.
           </p>
         </motion.div>
 
