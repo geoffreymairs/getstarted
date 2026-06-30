@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import {
   MessageSquare,
   Rocket,
@@ -83,11 +84,17 @@ export default function AITrainingWeDeliver() {
 
           {/* Photo */}
           <figure className="lg:justify-self-end w-full">
-            <img
-              src="/workshop-assist.jpg"
-              alt="A GetStarted trainer helping business owners use AI tools on their laptops during a hands-on session"
-              className="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-2xl ring-1 ring-white/10"
-            />
+            <div className="relative w-full h-64 sm:h-80 overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
+              <Image
+                src="/workshop-assist.jpg"
+                alt="A GetStarted trainer helping business owners use AI tools on their laptops during a hands-on session"
+                fill
+                loading="lazy"
+                quality={70}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
             <figcaption className="mt-3 text-sm text-gray-400 text-center lg:text-left">
               Real AI training delivered for New Zealand businesses.
             </figcaption>

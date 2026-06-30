@@ -183,6 +183,9 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
                 alt="A GetStarted on-site AI training session with attendees seated around the table while the presenter shows AI tools on a large screen"
                 width={600}
                 height={400}
+                loading="lazy"
+                quality={70}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-64 sm:h-72 object-cover rounded-2xl"
               />
             </div>
