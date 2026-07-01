@@ -198,7 +198,7 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
               className="relative min-h-[300px] lg:min-h-full"
             >
               <Image
-                src="/workshop-session.jpg"
+                src="/workshop-room.png"
                 alt="A GetStarted on-site AI training session with attendees seated around the table while the presenter shows AI tools on a large screen"
                 fill
                 loading="lazy"
