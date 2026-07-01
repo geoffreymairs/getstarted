@@ -86,7 +86,7 @@ export default function AITrainingWeDeliver() {
           <figure className="lg:justify-self-end w-full">
             <div className="relative w-full h-64 sm:h-80 overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
               <Image
-                src="/workshop-assist.jpg"
+                src="/workshop-assist.png"
                 alt="A GetStarted trainer helping business owners use AI tools on their laptops during a hands-on session"
                 fill
                 loading="lazy"
