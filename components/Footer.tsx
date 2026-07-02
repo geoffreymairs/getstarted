@@ -47,6 +47,12 @@ export default function Footer() {
           >
             Workshop
           </Link>
+          <Link
+            href="/privacy"
+            className="text-sm font-semibold text-accent hover:text-accent-light transition-colors"
+          >
+            Privacy Policy
+          </Link>
           <motion.button
             onClick={scrollToTop}
             whileHover={{ scale: 1.05 }}
