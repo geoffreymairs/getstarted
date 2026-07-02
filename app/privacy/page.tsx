@@ -2,17 +2,15 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowLeft, Mail, Phone, MapPin, ShieldCheck } from 'lucide-react'
+import { ArrowLeft, Mail, MapPin } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
 const LAST_UPDATED = '2 July 2026'
 
 const CONTACT = {
-  privacyOfficer: '[Privacy Officer Name]',
-  email: '[privacy@getstarted.co.nz]',
-  phone: '[Your phone number]',
-  address: '[Your postal address]',
+  email: 'hello@getstarted.co.nz',
+  address: '10 Aranui Road, Mt Wellington, Auckland',
 }
 
 const sections = [
@@ -273,28 +271,15 @@ export default function PrivacyPolicyPage() {
                 {section.id === 'contact' && (
                   <div className="mt-4 flex flex-col gap-3">
                     <div className="flex items-center gap-3 text-gray-200">
-                      <ShieldCheck className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span className="text-sm sm:text-base">
-                        <span className="font-semibold text-white">Privacy Officer:</span>{' '}
-                        {CONTACT.privacyOfficer}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3 text-gray-200">
                       <Mail className="w-5 h-5 text-accent flex-shrink-0" />
                       <span className="text-sm sm:text-base">
                         <span className="font-semibold text-white">Email:</span> {CONTACT.email}
                       </span>
                     </div>
-                    <div className="flex items-center gap-3 text-gray-200">
-                      <Phone className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span className="text-sm sm:text-base">
-                        <span className="font-semibold text-white">Phone:</span> {CONTACT.phone}
-                      </span>
-                    </div>
                     <div className="flex items-start gap-3 text-gray-200">
                       <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                       <span className="text-sm sm:text-base">
-                        <span className="font-semibold text-white">Postal address:</span>{' '}
+                        <span className="font-semibold text-white">Address:</span>{' '}
                         {CONTACT.address}
                       </span>
                     </div>
