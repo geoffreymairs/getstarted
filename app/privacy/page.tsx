@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowLeft, Mail, Phone, MapPin, ShieldCheck, AlertTriangle } from 'lucide-react'
+import { ArrowLeft, Mail, Phone, MapPin, ShieldCheck } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -202,28 +202,6 @@ export default function PrivacyPolicyPage() {
               <p className="text-lg text-gray-300 max-w-2xl text-pretty leading-relaxed">
                 This policy explains how GetStarted NZ collects, uses, and protects your personal
                 information in accordance with the New Zealand Privacy Act 2020.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Legal disclaimer */}
-        <section className="px-6 pb-8">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="glass rounded-xl p-5 border border-accent/20 flex items-start gap-3"
-            >
-              <AlertTriangle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-gray-300 leading-relaxed text-pretty">
-                <span className="font-bold text-white">Disclaimer:</span> This Privacy Policy is
-                provided as a general template and does not constitute legal advice. We strongly
-                recommend having it reviewed by a qualified legal professional before publication to
-                ensure it accurately reflects your business practices and complies with the New
-                Zealand Privacy Act 2020.
               </p>
             </motion.div>
           </div>
