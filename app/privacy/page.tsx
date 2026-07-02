@@ -188,10 +188,6 @@ export default function PrivacyPolicyPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest text-accent bg-accent/10 border border-accent/20 mb-8">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                PRIVACY
-              </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-4 text-balance">
                 Privacy{' '}
                 <span className="bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent">
