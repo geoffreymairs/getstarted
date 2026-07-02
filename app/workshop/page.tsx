@@ -131,7 +131,7 @@ export default function WorkshopPage() {
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (password === 'getstarted') {
+    if (password === 'getstarted!') {
       setIsUnlocked(true)
       setError('')
     } else {
