@@ -56,8 +56,18 @@ const sections = [
     ],
   },
   {
+    id: 'event-photography',
+    title: '5. Event photography and videography',
+    body: [
+      'We may take photographs and video recordings at our workshops, seminars and other events for promotional, educational and marketing purposes.',
+      'By voluntarily participating in an event where photography or videography is taking place, you acknowledge that you may be photographed or recorded and consent to us using those images or recordings in our marketing materials, including on our website, social media channels, printed promotional material and other online or offline advertising.',
+      'If you do not wish to appear in photographs or video recordings, please let a member of our team know before or during the event and we will make reasonable efforts to avoid capturing or using images in which you are identifiable.',
+      'Where practicable, we will honour any reasonable request to remove identifiable images from future marketing materials.',
+    ],
+  },
+  {
     id: 'why-we-collect',
-    title: '5. Why we collect it',
+    title: '6. Why we collect it',
     body: [
       'We collect and use personal information for purposes including:',
     ],
@@ -73,7 +83,7 @@ const sections = [
   },
   {
     id: 'cookies-analytics',
-    title: '6. Cookies and analytics',
+    title: '7. Cookies and analytics',
     body: [
       'Our website may use cookies and similar technologies to help the site function, understand how visitors use it, and measure the effectiveness of our marketing. You can control or disable cookies through your browser settings, although some parts of the site may not function as intended if you do.',
       'We may use the following tools, which may collect information about your device and browsing activity:',
@@ -88,7 +98,7 @@ const sections = [
   },
   {
     id: 'third-party-services',
-    title: '7. Third-party services',
+    title: '8. Third-party services',
     body: [
       'We use trusted third-party providers to help us operate our business — for example, payment processors, email and marketing platforms, analytics providers, and cloud hosting services. These providers may process personal information on our behalf and are expected to handle it securely and only for the purposes we specify.',
       'We do not sell your personal information.',
@@ -96,14 +106,14 @@ const sections = [
   },
   {
     id: 'email-marketing',
-    title: '8. Email marketing',
+    title: '9. Email marketing',
     body: [
       'We will only send you marketing emails if you have opted in to receive them. Every marketing email we send includes an option to unsubscribe. If you unsubscribe, we will stop sending you marketing communications, although we may still contact you about services you have requested or engaged us for.',
     ],
   },
   {
     id: 'storage-protection',
-    title: '9. How information is stored and protected',
+    title: '10. How information is stored and protected',
     body: [
       'We take reasonable steps to protect the personal information we hold from loss, misuse, unauthorised access, disclosure, alteration, or destruction. These steps may include secure hosting, access controls, and the use of reputable service providers.',
       'While we take reasonable care to safeguard your information, no method of transmission or storage is completely secure, and we cannot guarantee absolute security.',
@@ -111,7 +121,7 @@ const sections = [
   },
   {
     id: 'sharing',
-    title: '10. When information may be shared',
+    title: '11. When information may be shared',
     body: [
       'We may share personal information in limited circumstances, including:',
     ],
@@ -124,49 +134,49 @@ const sections = [
   },
   {
     id: 'overseas',
-    title: '11. Overseas storage or processing',
+    title: '12. Overseas storage or processing',
     body: [
       'Some of the third-party providers we use may store or process personal information on servers located outside New Zealand. Where this occurs, we take reasonable steps to ensure your information is handled in a manner consistent with the New Zealand Privacy Act 2020. By providing your information, you acknowledge that it may be stored or processed overseas.',
     ],
   },
   {
     id: 'access-correction',
-    title: '12. Accessing or correcting personal information',
+    title: '13. Accessing or correcting personal information',
     body: [
       'Under the Privacy Act 2020, you have the right to request access to the personal information we hold about you, and to request that we correct it if it is inaccurate. To make a request, please contact our Privacy Officer using the details below. We may need to verify your identity before responding, and we will respond within the timeframes required by law.',
     ],
   },
   {
     id: 'retention',
-    title: '13. Retention of information',
+    title: '14. Retention of information',
     body: [
       'We keep personal information only for as long as it is needed for the purposes for which it was collected, or as required by law. When information is no longer needed, we take reasonable steps to securely delete or de-identify it.',
     ],
   },
   {
     id: 'third-party-links',
-    title: '14. Links to third-party websites',
+    title: '15. Links to third-party websites',
     body: [
       'Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of those websites. We encourage you to review the privacy policies of any third-party sites you visit.',
     ],
   },
   {
     id: 'childrens-privacy',
-    title: "15. Children's privacy",
+    title: "16. Children's privacy",
     body: [
       'Our services are intended for businesses and adults. We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a child, please contact us so we can take appropriate steps to remove it.',
     ],
   },
   {
     id: 'changes',
-    title: '16. Changes to this policy',
+    title: '17. Changes to this policy',
     body: [
       'We may update this Privacy Policy from time to time to reflect changes in our practices, technology, or legal requirements. Any updates will be posted on this page with a revised "Last updated" date. We encourage you to review this policy periodically.',
     ],
   },
   {
     id: 'contact',
-    title: '17. Contact us',
+    title: '18. Contact us',
     body: [
       'If you have any questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact our Privacy Officer:',
     ],
