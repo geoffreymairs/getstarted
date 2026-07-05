@@ -154,26 +154,6 @@ export default function Navigation({
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden flex items-center gap-2">
-          {showCTA && (
-            onCTAClick ? (
-              <button
-                onClick={handleCTAClick}
-                className={`${ctaButtonClasses} px-2.5 py-1 whitespace-nowrap`}
-                style={{ ...ctaButtonStyle, fontSize: '0.75rem' }}
-              >
-                {ctaLabel}
-              </button>
-            ) : (
-              <Link
-                href={CTA_HREF}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`${ctaButtonClasses} px-2.5 py-1 whitespace-nowrap inline-flex items-center`}
-                style={{ ...ctaButtonStyle, fontSize: '0.75rem' }}
-              >
-                {ctaLabel}
-              </Link>
-            )
-          )}
           {!hideMenu && (
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -228,6 +208,26 @@ export default function Navigation({
                 </Link>
               )
             })}
+            {showCTA && (
+              onCTAClick ? (
+                <button
+                  onClick={handleCTAClick}
+                  className={`${ctaButtonClasses} w-full px-4 py-3 text-sm`}
+                  style={ctaButtonStyle}
+                >
+                  {ctaLabel}
+                </button>
+              ) : (
+                <Link
+                  href={CTA_HREF}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`${ctaButtonClasses} block w-full px-4 py-3 text-sm text-center`}
+                  style={ctaButtonStyle}
+                >
+                  {ctaLabel}
+                </Link>
+              )
+            )}
           </div>
         </motion.div>
       )}
