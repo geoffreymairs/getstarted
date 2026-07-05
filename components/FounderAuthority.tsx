@@ -8,7 +8,7 @@ export default function FounderAuthority() {
   const credentials = [
     {
       icon: Briefcase,
-      title: '25+ Years Building Digital Solutions',
+      title: '30+ Years Building Digital Solutions',
       description: 'Real experience scaling startups from $0 to profitability. We\'ve been in the trenches.'
     },
     {
@@ -33,7 +33,7 @@ export default function FounderAuthority() {
     {
       name: 'Geoffrey',
       role: 'Co-Founder',
-      bio: 'Geoffrey has been building websites and digital solutions for over 25 years. Originally launching GetStarted in 2002 as an internet services business, he has recently rebranded to GetStarted AI to focus on helping businesses use AI to work smarter, market better, and grow faster. He is passionate about making technology simple, practical, and accessible for everyday business owners.',
+      bio: 'Geoffrey has been building websites and digital solutions for over 30 years. Originally launching GetStarted in 2002 as an internet services business, he has recently rebranded to GetStarted AI to focus on helping businesses use AI to work smarter, market better, and grow faster. He is passionate about making technology simple, practical, and accessible for everyday business owners.',
       image: '/geoffrey.jpg'
     },
     {

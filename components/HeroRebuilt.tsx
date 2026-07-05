@@ -24,7 +24,7 @@ export default function HeroRebuilt({ onHowItWorksClick }: HeroRebuiltProps) {
           transition={{ duration: 0.6, delay: 0.05 }}
           className="flex items-center justify-center gap-2 mb-8 px-4 py-3 rounded-full bg-accent/15 border border-accent/40 w-fit mx-auto backdrop-blur-sm"
         >
-          <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
+          <MapPin className="hidden sm:block w-4 h-4 text-accent flex-shrink-0" />
           <p className="text-sm font-bold text-accent-light uppercase tracking-wider text-center">
             Independent AI Advisors &amp; Consultants
           </p>

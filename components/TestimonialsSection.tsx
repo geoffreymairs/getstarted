@@ -112,7 +112,7 @@ export default function TestimonialsSection() {
         >
           <div className="text-center">
             <p className="text-5xl font-black bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent mb-3">
-              25+
+              30+
             </p>
             <p className="text-gray-300">Years in digital &amp; business</p>
           </div>
