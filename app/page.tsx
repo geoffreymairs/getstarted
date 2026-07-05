@@ -1,46 +1,41 @@
 'use client'
 
-import { useRef } from 'react'
 import Image from 'next/image'
 import HeroRebuilt from '@/components/HeroRebuilt'
-import AITrainingWeDeliver from '@/components/AITrainingWeDeliver'
-import WhyThisWorks from '@/components/WhyThisWorks'
-import FounderAuthority from '@/components/FounderAuthority'
 import WhoThisIsFor from '@/components/WhoThisIsFor'
-import WorkshopBreakdown from '@/components/WorkshopBreakdown'
+import ServicesOverview from '@/components/ServicesOverview'
+import BenefitsSection from '@/components/BenefitsSection'
+import WhyThisWorks from '@/components/WhyThisWorks'
+import ConsultationCTA from '@/components/ConsultationCTA'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import FAQ from '@/components/FAQ'
-import WhoThisIsNotFor from '@/components/WhoThisIsNotFor'
-import FinalCTA from '@/components/FinalCTA'
 import Navigation from '@/components/Navigation'
 import AnimatedBackground from '@/components/AnimatedBackground'
 import Footer from '@/components/Footer'
 
 export default function Home() {
-  const ctaRef = useRef<HTMLDivElement>(null)
-
-  const scrollToCTA = () => {
-    ctaRef.current?.scrollIntoView({ behavior: 'smooth' })
+  const scrollToServices = () => {
+    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
     <main className="overflow-hidden bg-dark">
       {/* Navigation - Fixed at top */}
-      <Navigation onCTAClick={scrollToCTA} showCTA={true} />
+      <Navigation />
 
       {/* ==================== SEAMLESS CINEMATIC EXPERIENCE ==================== */}
 
-      {/* PART 1: HERO - Modern workplace AI training */}
+      {/* PART 1: HERO */}
       <div
         id="home"
         className="relative min-h-screen overflow-hidden pt-16"
       >
-        {/* Background image - professionals learning AI in an office.
+        {/* Background image.
             LCP element: rendered via next/image with priority so it is
             preloaded and served as optimized AVIF/WebP. */}
         <Image
           src="/hero-training.jpg"
-          alt="Business professionals learning to use AI tools during an on-site GetStarted training session"
+          alt="Business professionals discussing AI strategy with a GetStarted advisor"
           fill
           priority
           quality={70}
@@ -65,9 +60,7 @@ export default function Home() {
 
         {/* Hero content */}
         <div className="relative z-10">
-          <HeroRebuilt onCTAClick={scrollToCTA} onHowItWorksClick={() => {
-            document.getElementById('training')?.scrollIntoView({ behavior: 'smooth' });
-          }} />
+          <HeroRebuilt onHowItWorksClick={scrollToServices} />
         </div>
 
         {/* BOTTOM SOFT TRANSITION FADE - Seamless blend to next section */}
@@ -124,23 +117,21 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10">
-          <WhyThisWorks onCTAClick={scrollToCTA} />
-          <div id="training">
-            <AITrainingWeDeliver />
-          </div>
-          <WorkshopBreakdown onCTAClick={scrollToCTA} />
-          <div id="about">
-            <FounderAuthority />
-          </div>
           <div id="who-for">
-            <WhoThisIsFor onCTAClick={scrollToCTA} />
+            <WhoThisIsFor />
           </div>
-          <WhoThisIsNotFor />
+          <div id="services">
+            <ServicesOverview />
+          </div>
+          <BenefitsSection />
+          <div id="about">
+            <WhyThisWorks />
+          </div>
           <div id="testimonials">
-            <TestimonialsSection onCTAClick={scrollToCTA} />
+            <TestimonialsSection />
           </div>
           <div id="faq">
-            <FAQ onCTAClick={scrollToCTA} />
+            <FAQ />
           </div>
         </div>
 
@@ -154,10 +145,8 @@ export default function Home() {
         />
       </div>
 
-      {/* PART 3: PRICING & BOOKING - Powerful dramatic finale */}
+      {/* PART 3: CONSULTATION CTA - Powerful dramatic finale */}
       <div
-        id="pricing"
-        ref={ctaRef}
         className="relative overflow-hidden flex items-center"
         style={{
           backgroundImage: 'url(/bottom.jpg)',
@@ -195,9 +184,9 @@ export default function Home() {
           <AnimatedBackground />
         </div>
 
-        {/* Pricing & booking */}
+        {/* Consultation CTA */}
         <div className="relative z-10 w-full py-24">
-          <FinalCTA ctaRef={ctaRef} />
+          <ConsultationCTA />
         </div>
       </div>
 

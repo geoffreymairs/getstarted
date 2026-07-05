@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { Star } from 'lucide-react'
 
 interface TestimonialCardProps {
@@ -49,11 +50,7 @@ function TestimonialCard({ quote, author, role, index }: TestimonialCardProps) {
   )
 }
 
-interface TestimonialsSectionProps {
-  onCTAClick: () => void
-}
-
-export default function TestimonialsSection({ onCTAClick }: TestimonialsSectionProps) {
+export default function TestimonialsSection() {
   const testimonials = [
     {
       quote: "Professional, easy to deal with, highly recommend.",
@@ -122,16 +119,16 @@ export default function TestimonialsSection({ onCTAClick }: TestimonialsSectionP
 
           <div className="text-center">
             <p className="text-5xl font-black bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent mb-3">
-              On-Site
+              Independent
             </p>
-            <p className="text-gray-300">Delivered at your workplace</p>
+            <p className="text-gray-300">No vendor lock-in, ever</p>
           </div>
 
           <div className="text-center">
             <p className="text-5xl font-black bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent mb-3">
               NZ-Wide
             </p>
-            <p className="text-gray-300">Training across New Zealand</p>
+            <p className="text-gray-300">Advising businesses across New Zealand</p>
           </div>
         </motion.div>
 
@@ -143,13 +140,13 @@ export default function TestimonialsSection({ onCTAClick }: TestimonialsSectionP
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center"
         >
-          <button
-            onClick={onCTAClick}
+          <Link
+            href="/contact"
             className="group button-premium inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-lg uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 transition-all"
           >
-            Be Next
+            Book Free Consultation
             <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

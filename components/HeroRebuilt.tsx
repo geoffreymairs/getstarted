@@ -1,14 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { ArrowRight, MapPin, Users, ShieldCheck } from 'lucide-react'
 
 interface HeroRebuiltProps {
-  onCTAClick: () => void
   onHowItWorksClick?: () => void
 }
 
-export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebuiltProps) {
+export default function HeroRebuilt({ onHowItWorksClick }: HeroRebuiltProps) {
   return (
     <section className="relative min-h-screen flex flex-col justify-center pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 lg:pb-20 px-6 overflow-hidden font-sans tracking-tight">
       {/* Dark gradient overlay - stops before cards on mobile */}
@@ -26,7 +26,7 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
         >
           <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
           <p className="text-sm font-bold text-accent-light uppercase tracking-wider">
-            On-Site AI Training For Businesses Across New Zealand
+            Independent AI Advisors &amp; Consultants
           </p>
         </motion.div>
 
@@ -38,10 +38,10 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
           className="text-center mb-8"
         >
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight text-white mb-6 tracking-tight text-balance">
-            Practical AI Training
+            Practical AI Solutions
             <br />
             <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent">
-              For Your Business
+              For NZ Businesses
             </span>
           </h1>
         </motion.div>
@@ -54,24 +54,9 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
           className="text-center mb-8"
         >
           <p className="text-xl sm:text-2xl text-gray-200 font-semibold max-w-3xl mx-auto text-pretty">
-            We come to your workplace and deliver practical, hands-on AI training
-            tailored to your business. Help your team save time, automate repetitive
-            work and confidently use the latest AI tools.
+            We help businesses implement AI Agents, Automations and Workflows that deliver
+            measurable results &mdash; saving time, reducing costs and cutting out repetitive work.
           </p>
-        </motion.div>
-
-        {/* Supporting Pill */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center mb-8"
-        >
-          <div className="inline-block px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
-            <p className="text-base text-gray-200 font-medium">
-              No technical knowledge required
-            </p>
-          </div>
         </motion.div>
 
         {/* CTA Buttons */}
@@ -82,24 +67,24 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
           className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12"
         >
           {/* Primary CTA */}
-          <button
-            onClick={onCTAClick}
+          <Link
+            href="/contact"
             className="group button-premium px-8 py-4 sm:py-4 text-white font-black text-base sm:text-lg uppercase tracking-wide flex items-center gap-3 justify-center rounded-xl transition-all duration-300 hover:scale-105 active:scale-98"
             style={{
               background: 'linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(139, 92, 246) 100%)',
               boxShadow: '0 0 30px rgba(59, 130, 246, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.2)',
             }}
           >
-            View Training Packages
+            Book Your Free 30 Minute Consultation
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </Link>
 
           {/* Secondary CTA */}
           <button
             onClick={onHowItWorksClick}
             className="group px-8 py-4 sm:py-4 text-white font-black text-base sm:text-lg uppercase tracking-wide flex items-center gap-3 justify-center rounded-xl border-2 border-white/30 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300 hover:scale-105 active:scale-98"
           >
-            See What We Teach
+            Learn More
           </button>
         </motion.div>
 
@@ -112,8 +97,8 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
                 <MapPin className="w-5 h-5 text-blue-400" />
               </div>
             </div>
-            <h3 className="text-base font-bold text-white mb-1">Delivered on-site</h3>
-            <p className="text-xs text-gray-400">We come to your workplace</p>
+            <h3 className="text-base font-bold text-white mb-1">Independent Advice</h3>
+            <p className="text-xs text-gray-400">No vendor lock-in</p>
           </div>
 
           {/* Card 2 - Tailored */}
@@ -134,8 +119,8 @@ export default function HeroRebuilt({ onCTAClick, onHowItWorksClick }: HeroRebui
                 <ShieldCheck className="w-5 h-5 text-blue-400" />
               </div>
             </div>
-            <h3 className="text-base font-bold text-white mb-1">No tech experience</h3>
-            <p className="text-xs text-gray-400">Beginner friendly</p>
+            <h3 className="text-base font-bold text-white mb-1">Measurable Results</h3>
+            <p className="text-xs text-gray-400">Real business outcomes</p>
           </div>
         </div>
       </div>

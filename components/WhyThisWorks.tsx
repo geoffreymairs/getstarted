@@ -2,49 +2,46 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { Hand, MapPin, Building2, Clock, ShieldCheck, Sparkles } from 'lucide-react'
+import Link from 'next/link'
+import { ShieldCheck, MapPin, Briefcase, Users, Sparkles, Target } from 'lucide-react'
 
-interface WhyThisWorksProps {
-  onCTAClick: () => void
-}
-
-export default function WhyThisWorks({ onCTAClick }: WhyThisWorksProps) {
+export default function WhyThisWorks() {
   const reasons = [
     {
-      icon: Hand,
-      title: 'Practical, Hands-On Learning',
+      icon: ShieldCheck,
+      title: 'Independent Advice',
       description:
-        'No long lectures or slideshows. Your team learns by doing, using real AI tools throughout the session.',
+        'We aren\'t tied to any software vendor. Our recommendations are based on what\'s right for your business, not a sales quota.',
     },
     {
       icon: MapPin,
-      title: 'Designed For New Zealand Businesses',
+      title: 'No Vendor Lock-In',
       description:
-        'Training built around the way Kiwi businesses actually work, with examples that make sense locally.',
+        'We help you choose and connect the right tools for your business, not push you into one platform.',
     },
     {
-      icon: Building2,
-      title: 'We Teach Using Your Own Processes',
+      icon: Briefcase,
+      title: 'Practical Business Experience',
       description:
-        'We tailor every session to your business, so what your team learns applies to their day-to-day work.',
-    },
-    {
-      icon: Clock,
-      title: 'Save Hours Every Week',
-      description:
-        'Focus on automating repetitive tasks and speeding up everyday work so your team gets time back.',
-    },
-    {
-      icon: ShieldCheck,
-      title: 'No Technical Experience Required',
-      description:
-        'Everything is explained in plain language. If your team can use email, they can use AI.',
+        'Real experience running and growing businesses, not just theoretical AI knowledge.',
     },
     {
       icon: Sparkles,
-      title: 'Up-To-Date With The Latest Tools',
+      title: 'AI Experts',
       description:
-        'AI moves fast. We keep our training current so your team learns the tools and techniques that matter right now.',
+        'We live and breathe AI tools every day, so you get advice that reflects what actually works right now.',
+    },
+    {
+      icon: Users,
+      title: 'Local New Zealand Business',
+      description:
+        'Based in Auckland and built for the way Kiwi businesses actually operate.',
+    },
+    {
+      icon: Target,
+      title: 'Tailored Recommendations',
+      description:
+        'Every recommendation is designed around your business, your goals and your budget.',
     },
   ]
 
@@ -64,7 +61,7 @@ export default function WhyThisWorks({ onCTAClick }: WhyThisWorksProps) {
             <div className="relative w-full h-72 sm:h-96 overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
               <Image
                 src="/workshop-presenter.jpg"
-                alt="A GetStarted trainer presenting an AI training session to attendees"
+                alt="A GetStarted AI advisor discussing AI strategy with a business"
                 fill
                 loading="lazy"
                 quality={70}
@@ -77,11 +74,11 @@ export default function WhyThisWorks({ onCTAClick }: WhyThisWorksProps) {
           {/* Text */}
           <div className="text-center lg:text-left">
             <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-balance">
-              Why Choose <span className="text-accent">Us</span>
+              Why Choose <span className="text-accent">GetStarted</span>
             </h2>
             <p className="text-xl text-gray-300 text-pretty">
               We focus on practical business outcomes, not AI hype. Our goal is simple: help
-              your team use AI to work smarter and get real results.
+              your business use AI to work smarter and get real results.
             </p>
           </div>
         </motion.div>
@@ -127,13 +124,13 @@ export default function WhyThisWorks({ onCTAClick }: WhyThisWorksProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-center"
         >
-          <button
-            onClick={onCTAClick}
+          <Link
+            href="/contact"
             className="group inline-flex items-center gap-3 px-8 py-4 button-premium bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 text-lg uppercase tracking-wide"
           >
-            View Training Packages
+            Book Free Consultation
             <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

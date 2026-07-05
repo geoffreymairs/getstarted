@@ -3,35 +3,39 @@
 import { motion } from 'framer-motion'
 import { CheckCircle2 } from 'lucide-react'
 
-interface WhoThisIsForProps {
-  onCTAClick: () => void
-}
-
-export default function WhoThisIsFor({ onCTAClick }: WhoThisIsForProps) {
+export default function WhoThisIsFor() {
   const audiences = [
     {
-      title: 'Small Business Owners',
-      description: 'Want to save time on admin, marketing and everyday tasks using practical AI tools.'
-    },
-    {
-      title: 'Office & Admin Teams',
-      description: 'Spend less time on repetitive work like documents, emails and data entry.'
-    },
-    {
-      title: 'Trades & Service Businesses',
-      description: 'Quote faster, follow up leads and handle paperwork with less effort.'
-    },
-    {
-      title: 'Sales & Marketing Teams',
-      description: 'Create content, proposals and campaigns more quickly and consistently.'
+      title: 'Small & Medium Businesses',
+      description: 'Want practical AI solutions that save time and reduce costs without a big budget.'
     },
     {
       title: 'Professional Services',
       description: 'Accountants, consultants and agencies wanting their team to work smarter with AI.'
     },
     {
-      title: 'Business Owners New To AI',
-      description: 'Want a clear, jargon-free introduction so they know exactly where to start.'
+      title: 'Trades',
+      description: 'Quote faster, follow up leads and handle paperwork with less effort.'
+    },
+    {
+      title: 'Manufacturing',
+      description: 'Streamline operations, scheduling and reporting with intelligent automation.'
+    },
+    {
+      title: 'Retail',
+      description: 'Automate stock, customer service and marketing to compete with less overhead.'
+    },
+    {
+      title: 'Healthcare',
+      description: 'Reduce admin burden so your team can spend more time with patients.'
+    },
+    {
+      title: 'Property',
+      description: 'Automate enquiries, listings and paperwork across your portfolio.'
+    },
+    {
+      title: 'Service Businesses',
+      description: 'Respond to customers faster and automate the admin that slows you down.'
     }
   ]
 
@@ -47,11 +51,11 @@ export default function WhoThisIsFor({ onCTAClick }: WhoThisIsForProps) {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight">
-            Who This Is <span className="text-accent">For</span>
+            Who We <span className="text-accent">Help</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
-            Our training is designed for businesses and teams that want to use AI to save
-            time and work smarter &mdash; no technical background needed.
+            We work with small and medium businesses across every industry who want practical AI
+            solutions &mdash; no technical background needed.
           </p>
         </motion.div>
 

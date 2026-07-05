@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 
@@ -52,39 +53,35 @@ function FAQItemComponent({ item, index }: { item: FAQItem; index: number }) {
   )
 }
 
-interface FAQProps {
-  onCTAClick: () => void
-}
-
-export default function FAQ({ onCTAClick }: FAQProps) {
+export default function FAQ() {
   const faqs: FAQItem[] = [
     {
-      question: "Where does the training take place?",
-      answer: "We come to you. All of our training is delivered on-site at your workplace, anywhere in New Zealand. This means your team learns in their own environment, using examples that relate directly to your business."
+      question: "What happens during the free consultation?",
+      answer: "We'll spend 30 minutes learning about your business and identifying where AI could save you time, cut costs or improve how you operate. You'll leave with practical, no-obligation recommendations — not a sales pitch."
     },
     {
-      question: "Does my team need any technical knowledge?",
-      answer: "No. Our training is designed for everyday business people, not developers. Everything is explained in plain language. If your team can use email and the internet, they can follow along comfortably."
+      question: "Do I need any technical knowledge to work with you?",
+      answer: "No. We explain everything in plain language and design solutions for everyday business owners and teams, not developers. If you can use email and the internet, you can work with us."
     },
     {
-      question: "Can the training be tailored to our business?",
-      answer: "Yes. We take time to understand how your business works and build the session around your real tasks and goals. The examples we use come from your own day-to-day work, so what your team learns applies immediately."
+      question: "Are you tied to any particular AI tools or vendors?",
+      answer: "No. We're an independent consultancy, so our recommendations are based on what's right for your business — not a commission or partnership with a specific vendor."
     },
     {
-      question: "What's the difference between the 1-on-1 and Team Workshop?",
-      answer: "The 1-on-1 session is ideal for an individual business owner or professional who wants personalised training. The Team Workshop is designed for businesses with up to 20 participants who want their whole team trained together."
+      question: "Can you work with our existing software and systems?",
+      answer: "Yes. Most of our work involves connecting AI to the tools you already use, such as your CRM, email, spreadsheets or booking systems, rather than replacing them."
     },
     {
-      question: "What do we need to provide for a Team Workshop?",
-      answer: "Just a suitable space and a large TV or projector so participants can clearly follow the demonstrations. We bring everything else and guide your team through each step."
+      question: "What's the difference between consulting and workshops?",
+      answer: "Consulting is about strategy and implementation — we help you plan and build AI solutions for your business. Workshops are hands-on training sessions to upskill you or your team directly. Many businesses do both."
     },
     {
-      question: "Which AI tools do you cover?",
-      answer: "We focus on the leading, practical tools your team can use right away, including ChatGPT, Claude, Gemini and Microsoft Copilot. We also help you understand which tool is best suited to different tasks in your business."
+      question: "Which AI tools do you work with?",
+      answer: "We work with the leading, practical tools businesses use today, including ChatGPT, Claude, Gemini and Microsoft Copilot, along with the automation platforms that connect them to your systems."
     },
     {
-      question: "Do we need to pay for AI tools to take part?",
-      answer: "No. The free versions of these tools are enough to get real value during the training. If you decide to upgrade to premium versions later, that's optional and based on your own needs."
+      question: "How much does it cost?",
+      answer: "The initial 30 minute AI Strategy Consultation is completely free. From there, we'll recommend an approach and provide clear, upfront pricing based on the scope of work — no surprises."
     }
   ]
 
@@ -123,13 +120,13 @@ export default function FAQ({ onCTAClick }: FAQProps) {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-center"
         >
-          <button
-            onClick={onCTAClick}
+          <Link
+            href="/contact"
             className="group button-premium inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-lg uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 transition-all"
           >
-            View Training Packages
+            Book Free Consultation
             <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

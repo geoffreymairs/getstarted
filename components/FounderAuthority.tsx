@@ -19,7 +19,7 @@ export default function FounderAuthority() {
     {
       icon: Zap,
       title: 'AI-First In Our Own Work',
-      description: 'We use these tools every day. Our training teaches exactly what saves us hours every week.'
+      description: 'We use these tools every day. Our advice reflects exactly what saves us hours every week.'
     }
   ]
 
@@ -35,6 +35,12 @@ export default function FounderAuthority() {
       role: 'Co-Founder',
       bio: 'Geoffrey has been building websites and digital solutions for over 25 years. Originally launching GetStarted in 2002 as an internet services business, he has recently rebranded to GetStarted AI to focus on helping businesses use AI to work smarter, market better, and grow faster. He is passionate about making technology simple, practical, and accessible for everyday business owners.',
       image: '/geoffrey.jpg'
+    },
+    {
+      name: 'Erick',
+      role: 'Lead AI Consultant',
+      bio: 'Erick has spent more than 8 years helping businesses across New Zealand and Australia improve operations through technology and AI. As a Senior IT Business Analyst, he specialises in AI integration, automation, and business process improvement. He is passionate about transforming complex challenges into practical AI solutions that help organisations work smarter, improve efficiency, and achieve better business outcomes.',
+      image: '/erick.jpg'
     }
   ]
 
@@ -50,11 +56,12 @@ export default function FounderAuthority() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-balance">
-            Who You&apos;re Learning From <br />
+            Meet The Team <br />
             <span className="text-accent">(And Why You Can Trust Us)</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
-            You&apos;re learning from people who use these tools every day to run real businesses. We don&apos;t just teach AI &mdash; we use it, and we share exactly what works.
+            We&apos;re people who use AI every day to run real businesses. We don&apos;t just talk AI
+            &mdash; we use it, and we share exactly what works.
           </p>
         </motion.div>
 
@@ -105,7 +112,7 @@ export default function FounderAuthority() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mb-16"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {founders.map((founder, index) => (
               <motion.div
                 key={index}

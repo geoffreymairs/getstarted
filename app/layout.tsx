@@ -10,8 +10,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'GetStarted AI | Practical AI Training For Your Business',
-  description: 'On-site, hands-on AI training for New Zealand businesses. We come to your workplace and teach your team to save time and confidently use tools like ChatGPT, Claude, Gemini and Microsoft Copilot. No technical knowledge required.',
+  title: 'GetStarted AI | Independent AI Consultancy For NZ Businesses',
+  description: 'GetStarted is New Zealand\'s independent AI consultancy, helping small and medium businesses implement AI agents, automation and workflows that save time, cut costs and deliver measurable results. Book a free 30 minute AI Strategy Consultation.',
   icons: {
     icon: '/favicon.png',
   },
