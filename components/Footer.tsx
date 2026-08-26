@@ -40,12 +40,18 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="flex items-center justify-center gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
           <Link
             href="/workshop"
             className="text-sm font-semibold text-accent hover:text-accent-light transition-colors"
           >
             Workshop
+          </Link>
+          <Link
+            href="/workshop-marketing"
+            className="text-sm font-semibold text-accent hover:text-accent-light transition-colors"
+          >
+            Marketing Professionals Workshop
           </Link>
           <Link
             href="/privacy"
