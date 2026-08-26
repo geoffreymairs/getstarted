@@ -17,8 +17,10 @@ import {
   Shapes,
   ClipboardList,
   Wand2,
+  Mail,
   Github,
   Rocket,
+  Globe,
   Bot,
 } from 'lucide-react'
 import Link from 'next/link'
@@ -161,9 +163,11 @@ const STEPS = [
   { n: 5, short: 'Logo' },
   { n: 6, short: 'Website Brief' },
   { n: 7, short: 'Build in v0' },
-  { n: 8, short: 'GitHub' },
-  { n: 9, short: 'Vercel' },
-  { n: 10, short: 'Keep Building' },
+  { n: 8, short: 'Contact Form' },
+  { n: 9, short: 'GitHub' },
+  { n: 10, short: 'Vercel' },
+  { n: 11, short: 'Domain' },
+  { n: 12, short: 'Keep Building' },
 ]
 
 /* ------------------------------------------------------------------ */
@@ -913,10 +917,53 @@ Here is my complete Website Creative Brief:
             <Outcome>The first working version of your personal brand website.</Outcome>
           </Step>
 
-          {/* STEP 8 — GitHub */}
+          {/* STEP 8 — Contact Form (Web3Forms) */}
           <Step
             number={8}
-            time="11:35 – 11:45"
+            time="11:20 – 11:30"
+            title="Connect Your Contact Form"
+            doing="Make your contact form actually send emails — using Web3Forms, with no backend or code server needed."
+            icon={Mail}
+          >
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Your new website has a contact form, but right now it doesn&apos;t send anywhere. Web3Forms is a free
+              service that connects a form straight to your inbox in a couple of minutes — no server required.
+            </p>
+
+            <ActionList
+              items={[
+                ['Get your Web3Forms access key', 'Go to web3forms.com, enter the email address where you want to receive messages, and copy the access key they send you.'],
+                ['Add the key to your form', 'In v0, add Web3Forms to your contact form using the access key (use the prompt below) so submissions are emailed to you.'],
+                ['Test it', 'Submit your own form and confirm the email arrives — check your spam folder the first time.'],
+              ]}
+            />
+
+            <PromptCard
+              label="Paste this into Vercel v0 (add your access key)"
+              prompt={`My website has a contact form, but it doesn't send emails yet. I want to connect it to Web3Forms (web3forms.com) so form submissions are emailed to me.
+
+My Web3Forms access key is:
+[PASTE YOUR WEB3FORMS ACCESS KEY]
+
+Please update my contact form to submit to Web3Forms using this access key, so that when someone completes the form, the message is emailed to me. Keep the existing design. Include name, email and message fields, and show a clear success message after the form is submitted.`}
+            />
+
+            <a
+              href="https://web3forms.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-2.5 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition-colors"
+            >
+              → Get your Web3Forms key
+            </a>
+
+            <Outcome>Your contact form sends real enquiries straight to your inbox.</Outcome>
+          </Step>
+
+          {/* STEP 9 — GitHub */}
+          <Step
+            number={9}
+            time="11:30 – 11:40"
             title="Back It Up on GitHub"
             doing="Save your project to GitHub so everything is stored safely and ready to deploy."
             icon={Github}
@@ -946,10 +993,10 @@ Here is my complete Website Creative Brief:
             <Outcome>Your website is safely backed up and ready to deploy.</Outcome>
           </Step>
 
-          {/* STEP 9 — Vercel */}
+          {/* STEP 10 — Vercel */}
           <Step
-            number={9}
-            time="11:45 – 11:55"
+            number={10}
+            time="11:40 – 11:50"
             title="Deploy Live in Vercel"
             doing="Publish your website to a real web address — the moment your personal brand becomes a live website."
             icon={Rocket}
@@ -962,7 +1009,7 @@ Here is my complete Website Creative Brief:
               items={[
                 ['Deploy the website', 'Use "Deploy" in v0, or connect your GitHub repository to Vercel to publish to a live URL.'],
                 ['Test the live website', 'Check it end to end: desktop, mobile, navigation, links, contact form, images and social links.'],
-                ['Connect a custom domain', 'If appropriate, add your own domain in Vercel so your site lives at your web address.'],
+                ['Note your live URL', 'Your site is now live at a vercel.app address — next you’ll point your own domain at it.'],
               ]}
             />
 
@@ -973,10 +1020,43 @@ Here is my complete Website Creative Brief:
             <Outcome>Your website is live online.</Outcome>
           </Step>
 
-          {/* STEP 10 — Keep Building */}
+          {/* STEP 11 — Domain */}
           <Step
-            number={10}
-            time="11:55 – 12:00"
+            number={11}
+            time="11:50 – 11:57"
+            title="Connect Your Domain Name"
+            doing="Point your own domain at your live site so your brand lives at your own web address."
+            icon={Globe}
+          >
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Your site is live on a <span className="text-white">vercel.app</span> URL. Connecting your own domain makes
+              it live at your own web address — <span className="text-white">yourname.com</span> or{' '}
+              <span className="text-white">yourname.co.nz</span>.
+            </p>
+
+            <ActionList
+              items={[
+                ['Add your domain in Vercel', 'In your Vercel project, go to Settings → Domains and add your domain (e.g. yourname.com).'],
+                ['Update your DNS records', 'At your domain registrar (where you bought the domain), add the DNS records Vercel gives you — it shows the exact values to copy.'],
+                ['Wait for it to verify', 'DNS can take a few minutes to a few hours. Vercel confirms when your domain is live and secured with HTTPS.'],
+              ]}
+            />
+
+            <div className="rounded-lg bg-white/5 border border-white/10 p-4">
+              <p className="text-gray-300 text-sm leading-relaxed">
+                <span className="font-black text-accent">No domain yet?</span> You can buy one from a registrar (a NZ
+                registrar for a <span className="text-white">.co.nz</span> address), or simply keep using your free
+                vercel.app address for now and connect a domain later.
+              </p>
+            </div>
+
+            <Outcome>Your website is live at your own custom domain.</Outcome>
+          </Step>
+
+          {/* STEP 12 — Keep Building */}
+          <Step
+            number={12}
+            time="11:57 – 12:00"
             title="Keep Building With Claude"
             doing="Today is the beginning of your website, not the end. Keep evolving it with Claude."
             icon={Bot}
