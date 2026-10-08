@@ -169,7 +169,7 @@ export default function Home() {
             <h2 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-[1.05]">
               Ready to go further
               <br />
-              <span className="bg-gradient-to-r from-sky-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">
                 with AI?
               </span>
             </h2>
