@@ -3,31 +3,31 @@
 import { motion } from 'framer-motion'
 import { AlertCircle } from 'lucide-react'
 import Link from 'next/link'
-import Footer from '@/components/Footer'
+import WebFooter from '@/components/site/WebFooter'
 
 export default function CancelPage() {
   return (
     <>
-    <div className="min-h-screen bg-dark flex items-center justify-center px-6">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="text-center max-w-2xl"
-      >
-        <AlertCircle className="w-20 h-20 text-orange-500 mx-auto mb-8" />
-        <h1 className="text-5xl font-black mb-4 text-white">Payment Cancelled</h1>
-        <p className="text-xl text-gray-300 mb-8">
-          Your payment was cancelled. Feel free to try again whenever you're ready.
-        </p>
-        <Link
-          href="/"
-          className="inline-block px-8 py-4 bg-gradient-to-r from-accent to-accent-light text-dark font-bold rounded-xl hover:shadow-glow transition-all"
+      <div className="min-h-screen bg-white flex items-center justify-center px-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="text-center max-w-2xl"
         >
-          Back to Home
-        </Link>
-      </motion.div>
-    </div>
-    <Footer />
+          <AlertCircle className="w-20 h-20 text-amber-500 mx-auto mb-8" />
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-slate-900">Payment cancelled</h1>
+          <p className="text-lg text-slate-600 mb-8">
+            Your payment was cancelled. Feel free to try again whenever you&apos;re ready.
+          </p>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-full bg-gs-600 px-7 py-3.5 text-base font-semibold text-white hover:bg-gs-700 transition-colors"
+          >
+            Back to home
+          </Link>
+        </motion.div>
+      </div>
+      <WebFooter />
     </>
   )
 }

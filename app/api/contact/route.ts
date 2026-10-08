@@ -25,9 +25,9 @@ export async function POST(req: Request) {
           <p style="margin: 0 0 16px 0; font-size: 16px;"><strong>${name}</strong> submitted a new enquiry via the website.</p>
           <div style="background: #f9f9f9; padding: 16px; border-radius: 6px; margin: 16px 0;">
             <p style="margin: 0 0 8px 0;"><strong>Name:</strong> ${name}</p>
-            <p style="margin: 0 0 8px 0;"><strong>Company:</strong> ${company || '—'}</p>
+            <p style="margin: 0 0 8px 0;"><strong>Company:</strong> ${company || ', '}</p>
             <p style="margin: 0 0 8px 0;"><strong>Email:</strong> ${email}</p>
-            <p style="margin: 0 0 8px 0;"><strong>Phone:</strong> ${phone || '—'}</p>
+            <p style="margin: 0 0 8px 0;"><strong>Phone:</strong> ${phone || ', '}</p>
             <p style="margin: 0;"><strong>Message:</strong><br />${(message || '').replace(/\n/g, '<br />')}</p>
           </div>
         </div>

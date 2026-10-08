@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Compass, Bot, Workflow, GitBranch, Plug, GraduationCap, Check, ArrowRight, ArrowLeft } from 'lucide-react'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import WebNav from '@/components/site/WebNav'
+import WebFooter from '@/components/site/WebFooter'
 
 const services = [
   {
@@ -30,7 +30,7 @@ const services = [
     tag: 'DIGITAL WORKERS',
     title: 'AI Agents',
     description:
-      'Custom AI agents that answer questions, automate tasks and support your staff — like a team member that works around the clock.',
+      'Custom AI agents that answer questions, automate tasks and support your staff, like a team member that works around the clock.',
     points: [
       'Answer customer questions and qualify leads',
       'Automate follow-ups and routine communication',
@@ -101,7 +101,7 @@ const services = [
       "Upskill your team to confidently use AI every day, so the systems we build are actually adopted and used well.",
     points: [
       'Practical, hands-on training tailored to your business',
-      'Beginner-friendly — no technical background required',
+      'Beginner-friendly, no technical background required',
       'Covers ChatGPT, Claude, Gemini and Microsoft Copilot',
       'Delivered on-site at your workplace',
       'Available as 1-on-1 coaching or team workshops',
@@ -113,7 +113,7 @@ const services = [
 ]
 
 const reasons = [
-  { title: 'Independent Advice', description: 'We aren’t tied to any vendor — our recommendations are based on what’s right for you.' },
+  { title: 'Independent Advice', description: 'We aren’t tied to any vendor, our recommendations are based on what’s right for you.' },
   { title: 'Practical First', description: 'We focus on solutions that actually work in the real world, not just demos.' },
   { title: 'Built For SMEs', description: 'Our solutions are designed for small and medium businesses, not enterprise.' },
   { title: 'Local NZ Business', description: 'We understand the New Zealand market and work with local businesses every day.' },
@@ -124,39 +124,33 @@ const reasons = [
 export default function AIConsultancyPage() {
   return (
     <>
-      <Navigation />
-      <main className="min-h-screen bg-dark overflow-hidden">
+      <WebNav />
+      <main className="min-h-screen bg-white pt-20">
         {/* Hero */}
-        <section className="pt-36 pb-20 px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-widest text-accent bg-accent/10 border border-accent/20 mb-8">
-                NZ AI CONSULTANCY
+        <section className="relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-gs-50/70 via-white to-white" />
+          <div className="max-w-4xl mx-auto px-6 pt-20 pb-16 sm:pt-24 text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold text-slate-600 shadow-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-gs-500" />
+                NZ AI consultancy
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 text-balance">
-                AI Consultancy Built For{' '}
-                <span className="bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent">
-                  NZ Businesses
+              <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 text-balance leading-[1.05]">
+                AI consultancy built for{' '}
+                <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">
+                  NZ businesses
                 </span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 text-pretty leading-relaxed">
-                We help small and medium businesses implement practical AI solutions that save
-                time, reduce costs, and automate repetitive work.
+              <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600 leading-relaxed">
+                We help small and medium businesses implement practical AI solutions that save time, reduce costs, and
+                automate repetitive work.
               </p>
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 px-8 py-4 rounded-lg text-white font-black text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105 active:scale-95"
-                style={{
-                  background: 'linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(139, 92, 246) 100%)',
-                  boxShadow: '0 0 30px rgba(59, 130, 246, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.2)',
-                }}
+                className="group mt-8 inline-flex items-center gap-2 rounded-full bg-gs-600 px-7 py-3.5 text-base font-semibold text-white hover:bg-gs-700 transition-colors"
               >
-                Book Free Consultation
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                Book a free consultation
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </motion.div>
           </div>
@@ -164,7 +158,7 @@ export default function AIConsultancyPage() {
 
         {/* Services */}
         <section className="px-6 pb-8">
-          <div className="max-w-5xl mx-auto flex flex-col gap-8">
+          <div className="max-w-5xl mx-auto flex flex-col gap-6">
             {services.map((service, index) => {
               const Icon = service.icon
               return (
@@ -175,40 +169,37 @@ export default function AIConsultancyPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="glass rounded-2xl p-8 sm:p-10 scroll-mt-28"
+                  className="rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 shadow-sm scroll-mt-28"
                 >
                   <div className="flex items-start gap-4 mb-6">
-                    <div
-                      className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
-                      style={{
-                        background: 'linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(139, 92, 246) 100%)',
-                      }}
-                    >
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-gs-500 to-indigo-500">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold tracking-widest text-accent mb-1">{service.tag}</p>
-                      <h2 className="text-2xl sm:text-3xl font-black tracking-tight">{service.title}</h2>
+                      <p className="text-xs font-bold tracking-widest text-gs-600 mb-1">{service.tag}</p>
+                      <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
+                        {service.title}
+                      </h2>
                     </div>
                   </div>
 
-                  <p className="text-gray-300 leading-relaxed mb-6 text-pretty">{service.description}</p>
+                  <p className="text-slate-600 leading-relaxed mb-6 text-pretty">{service.description}</p>
 
                   <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-6">
                     {service.points.map((point) => (
-                      <li key={point} className="flex items-start gap-3 text-gray-200">
-                        <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                      <li key={point} className="flex items-start gap-3 text-slate-700">
+                        <Check className="w-5 h-5 text-gs-600 flex-shrink-0 mt-0.5" />
                         <span className="text-sm leading-relaxed">{point}</span>
                       </li>
                     ))}
                   </ul>
 
                   <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-                    <p className="text-sm font-bold text-accent">{service.result}</p>
+                    <p className="text-sm font-bold text-gs-600">{service.result}</p>
                     {service.link && (
                       <Link
                         href={service.link.href}
-                        className="text-sm font-bold text-gray-300 hover:text-white underline underline-offset-4 transition-colors"
+                        className="text-sm font-bold text-slate-600 hover:text-slate-900 underline underline-offset-4 transition-colors"
                       >
                         {service.link.label}
                       </Link>
@@ -228,11 +219,11 @@ export default function AIConsultancyPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-3xl sm:text-4xl font-black tracking-tight text-center mb-12 text-balance"
+              className="text-3xl sm:text-4xl font-extrabold tracking-tight text-center mb-10 text-balance text-slate-900"
             >
-              Why Work With Us
+              Why work with us
             </motion.h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {reasons.map((reason, index) => (
                 <motion.div
                   key={reason.title}
@@ -240,10 +231,10 @@ export default function AIConsultancyPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="glass rounded-xl p-6"
+                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
-                  <h3 className="text-lg font-bold mb-2 text-white">{reason.title}</h3>
-                  <p className="text-sm text-gray-300 leading-relaxed">{reason.description}</p>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900">{reason.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{reason.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -258,44 +249,46 @@ export default function AIConsultancyPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="glass rounded-2xl p-10 sm:p-16 text-center border border-accent/20"
+              className="relative overflow-hidden rounded-3xl p-10 sm:p-16 text-center bg-gradient-to-br from-gs-600 to-indigo-600"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-6 text-balance">
-                Let&apos;s Explore What AI Could Do{' '}
-                <span className="bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent">
-                  For Your Business
-                </span>
-              </h2>
-              <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10 text-pretty leading-relaxed">
-                Book a free 30 minute AI Strategy Consultation and find out where AI can save you
-                time, cut costs, and help you grow.
-              </p>
-              <Link
-                href="/contact"
-                className="group inline-flex items-center gap-2 px-8 py-4 rounded-lg text-white font-black text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105 active:scale-95"
+              <div
+                className="pointer-events-none absolute inset-0 opacity-60"
                 style={{
-                  background: 'linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(139, 92, 246) 100%)',
-                  boxShadow: '0 0 30px rgba(59, 130, 246, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.2)',
+                  background:
+                    'radial-gradient(ellipse at 15% 15%, rgba(255,255,255,0.18), transparent 55%), radial-gradient(ellipse at 85% 85%, rgba(168,85,247,0.25), transparent 55%)',
                 }}
-              >
-                Book Free Consultation
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              />
+              <div className="relative">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-balance text-white">
+                  Let&apos;s explore what AI could do for your business
+                </h2>
+                <p className="text-lg text-gs-50 max-w-2xl mx-auto mb-10 text-pretty leading-relaxed">
+                  Book a free 30-minute AI Strategy Consultation and find out where AI can save you time, cut costs, and
+                  help you grow.
+                </p>
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-base font-semibold text-gs-700 hover:bg-gs-50 transition-colors"
+                >
+                  Book a free consultation
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+              </div>
             </motion.div>
 
             <div className="text-center mt-12">
               <Link
-                href="/"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-gray-400 hover:text-white transition-colors"
+                href="/ai"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
-                Back to home
+                Back to AI overview
               </Link>
             </div>
           </div>
         </section>
       </main>
-      <Footer />
+      <WebFooter />
     </>
   )
 }

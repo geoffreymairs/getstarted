@@ -73,7 +73,7 @@ export default function RiskReversal({ onCTAClick }: RiskReversalProps) {
               <h4 className="text-lg font-bold text-white">We Don't Stop at Noon</h4>
             </div>
             <p className="text-gray-300">
-              If something isn't working by the end of the workshop, we don't leave you hanging. Email support, troubleshooting sessions—whatever it takes.
+              If something isn't working by the end of the workshop, we don't leave you hanging. Email support, troubleshooting sessions, whatever it takes.
             </p>
           </div>
 

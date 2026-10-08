@@ -27,7 +27,7 @@ const benefits = [
 
 export default function BenefitsSection() {
   return (
-    <section className="relative py-20 sm:py-32 px-6 overflow-hidden">
+    <section className="relative py-20 sm:py-28 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Headline */}
         <motion.div
@@ -35,19 +35,20 @@ export default function BenefitsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-balance">
-            Real Business <span className="text-accent">Outcomes</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 tracking-tight text-slate-900 text-balance">
+            Real business{' '}
+            <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">outcomes</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
-            We focus on results, not technology for its own sake. Here&apos;s what businesses gain
-            when they work with us.
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto text-pretty">
+            We focus on results, not technology for its own sake. Here&apos;s what businesses gain when they work with
+            us.
           </p>
         </motion.div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon
             return (
@@ -57,17 +58,13 @@ export default function BenefitsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="relative p-6 rounded-xl"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(0, 153, 255, 0.06) 0%, rgba(168, 85, 247, 0.05) 100%)',
-                  border: '1px solid rgba(0, 153, 255, 0.15)',
-                }}
+                className="rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-slate-300 hover:shadow-md hover:shadow-slate-200/60"
               >
-                <div className="mb-4 p-3 rounded-lg bg-accent/20 w-fit">
-                  <Icon className="w-5 h-5 text-accent" />
+                <div className="mb-4 flex items-center justify-center w-11 h-11 rounded-xl bg-gs-50">
+                  <Icon className="w-5 h-5 text-gs-600" strokeWidth={2} />
                 </div>
-                <h3 className="text-base font-bold text-white mb-2">{benefit.title}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{benefit.description}</p>
+                <h3 className="text-base font-bold text-slate-900 mb-2">{benefit.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{benefit.description}</p>
               </motion.div>
             )
           })}

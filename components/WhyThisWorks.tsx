@@ -46,7 +46,7 @@ export default function WhyThisWorks() {
   ]
 
   return (
-    <section className="relative py-20 sm:py-32 px-6 overflow-hidden">
+    <section className="relative py-20 sm:py-28 px-6">
       <div className="max-w-5xl mx-auto">
         {/* Section Headline - text beside a real presenting photo */}
         <motion.div
@@ -54,11 +54,11 @@ export default function WhyThisWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-16"
+          className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-14"
         >
           {/* Photo */}
           <figure className="order-last lg:order-first w-full">
-            <div className="relative w-full h-72 sm:h-96 overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10">
+            <div className="relative w-full h-72 sm:h-96 overflow-hidden rounded-2xl shadow-xl ring-1 ring-slate-200">
               <Image
                 src="/workshop-presenter.jpg"
                 alt="A GetStarted AI advisor discussing AI strategy with a business"
@@ -73,12 +73,15 @@ export default function WhyThisWorks() {
 
           {/* Text */}
           <div className="text-center lg:text-left">
-            <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-balance">
-              Why Choose <span className="text-accent">GetStarted</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 tracking-tight text-slate-900 text-balance">
+              Why choose{' '}
+              <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">
+                GetStarted
+              </span>
             </h2>
-            <p className="text-xl text-gray-300 text-pretty">
-              We focus on practical business outcomes, not AI hype. Our goal is simple: help
-              your business use AI to work smarter and get real results.
+            <p className="text-lg text-slate-600 text-pretty leading-relaxed">
+              We focus on practical business outcomes, not AI hype. Our goal is simple: help your business use AI to
+              work smarter and get real results.
             </p>
           </div>
         </motion.div>
@@ -89,7 +92,7 @@ export default function WhyThisWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10"
         >
           {reasons.map((reason, index) => {
             const Icon = reason.icon
@@ -100,17 +103,13 @@ export default function WhyThisWorks() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.08 }}
-                className="relative p-8 rounded-xl"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(0, 153, 255, 0.06) 0%, rgba(168, 85, 247, 0.05) 100%)',
-                  border: '1px solid rgba(0, 153, 255, 0.15)',
-                }}
+                className="rounded-2xl border border-slate-200 bg-white p-7 transition-all hover:border-slate-300 hover:shadow-md hover:shadow-slate-200/60"
               >
-                <div className="mb-5 p-3 rounded-lg bg-accent/20 w-fit">
-                  <Icon className="w-6 h-6 text-accent" />
+                <div className="mb-5 flex items-center justify-center w-11 h-11 rounded-xl bg-gs-50">
+                  <Icon className="w-5 h-5 text-gs-600" strokeWidth={2} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3">{reason.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{reason.description}</p>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{reason.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{reason.description}</p>
               </motion.div>
             )
           })}
@@ -126,10 +125,10 @@ export default function WhyThisWorks() {
         >
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-3 px-8 py-4 button-premium bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 text-lg uppercase tracking-wide"
+            className="group inline-flex items-center gap-2 rounded-full bg-gs-600 px-7 py-3.5 text-base font-semibold text-white hover:bg-gs-700 transition-colors"
           >
-            Book Free Consultation
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
+            Book a free consultation
+            <span className="group-hover:translate-x-0.5 transition-transform">→</span>
           </Link>
         </motion.div>
       </div>

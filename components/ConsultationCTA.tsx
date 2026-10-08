@@ -14,56 +14,51 @@ const points = [
 
 export default function ConsultationCTA() {
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
-      {/* Dramatic background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-accent/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-purple-glow/8 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="relative max-w-4xl mx-auto">
+    <section className="relative py-20 sm:py-24 px-6">
+      <div className="relative max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="rounded-2xl p-10 sm:p-16 text-center"
-          style={{
-            background: 'rgba(0, 0, 0, 0.6)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(0, 153, 255, 0.25)',
-          }}
+          className="relative overflow-hidden rounded-3xl p-10 sm:p-16 text-center bg-gradient-to-br from-gs-600 to-indigo-600"
         >
-          <div className="inline-block mb-6 px-4 py-2 rounded-full bg-accent/15 border border-accent/40">
-            <p className="text-sm font-bold text-accent-light uppercase tracking-wider">Free Consultation</p>
-          </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 tracking-tight text-balance">
-            Let&apos;s Find Where AI Can{' '}
-            <span className="bg-gradient-to-r from-accent via-accent-light to-purple-glow bg-clip-text text-transparent">
-              Help Your Business
-            </span>
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 text-pretty leading-relaxed">
-            Book a free 30 minute AI Strategy Consultation. No sales pitch &mdash; just practical,
-            independent advice tailored to your business.
-          </p>
+          <div
+            className="pointer-events-none absolute inset-0 opacity-60"
+            style={{
+              background:
+                'radial-gradient(ellipse at 15% 15%, rgba(255,255,255,0.18), transparent 55%), radial-gradient(ellipse at 85% 85%, rgba(168,85,247,0.25), transparent 55%)',
+            }}
+          />
+          <div className="relative">
+            <div className="inline-block mb-6 px-4 py-1.5 rounded-full bg-white/15 border border-white/25">
+              <p className="text-xs font-bold text-white uppercase tracking-wider">Free consultation</p>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold mb-5 tracking-tight text-balance text-white">
+              Let&apos;s find where AI can help your business
+            </h2>
+            <p className="text-lg text-gs-50 max-w-2xl mx-auto mb-10 text-pretty leading-relaxed">
+              Book a free 30-minute AI Strategy Consultation. No sales pitch, just practical, independent advice
+              tailored to your business.
+            </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-10 text-left">
-            {points.map((point) => (
-              <div key={point} className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
-                <span className="text-gray-200 font-medium">{point}</span>
-              </div>
-            ))}
-          </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto mb-10 text-left">
+              {points.map((point) => (
+                <div key={point} className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-white flex-shrink-0" />
+                  <span className="text-gs-50 font-medium">{point}</span>
+                </div>
+              ))}
+            </div>
 
-          <Link
-            href="/contact"
-            className="group inline-flex items-center gap-3 px-8 py-4 button-premium bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-lg uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 transition-all"
-          >
-            Book Your Free 30 Minute Consultation
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </Link>
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-base font-semibold text-gs-700 hover:bg-gs-50 transition-colors"
+            >
+              Book your free 30-minute consultation
+              <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

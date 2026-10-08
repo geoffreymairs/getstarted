@@ -3,9 +3,8 @@
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { User, Users, CheckCircle2 } from 'lucide-react'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
-import AnimatedBackground from '@/components/AnimatedBackground'
+import WebNav from '@/components/site/WebNav'
+import WebFooter from '@/components/site/WebFooter'
 import AITrainingWeDeliver from '@/components/AITrainingWeDeliver'
 import WorkshopBreakdown from '@/components/WorkshopBreakdown'
 import FinalCTA from '@/components/FinalCTA'
@@ -34,31 +33,26 @@ export default function AIWorkshopsPage() {
 
   return (
     <>
-      <Navigation onCTAClick={scrollToBooking} ctaLabel="Book Workshop" />
-      <main className="min-h-screen bg-dark overflow-hidden">
+      <WebNav />
+      <main className="min-h-screen bg-white pt-20">
         {/* Hero */}
-        <section className="relative pt-36 pb-20 px-6 overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none">
-            <AnimatedBackground />
-          </div>
-          <div className="relative max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-widest text-accent bg-accent/10 border border-accent/20 mb-8">
-                ON-SITE AI TRAINING
+        <section className="relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-gs-50/70 via-white to-white" />
+          <div className="max-w-4xl mx-auto px-6 pt-20 pb-16 sm:pt-24 text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold text-slate-600 shadow-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-gs-500" />
+                On-site AI training
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 text-balance">
-                AI Workshops For{' '}
-                <span className="bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent">
-                  NZ Teams
+              <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 text-balance leading-[1.05]">
+                AI workshops for{' '}
+                <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">
+                  NZ teams
                 </span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto text-pretty leading-relaxed">
-                Practical, hands-on AI training delivered at your workplace &mdash; choose personalised
-                1-on-1 coaching or a workshop for your whole team.
+              <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600 leading-relaxed">
+                Practical, hands-on AI training delivered at your workplace, choose personalised 1-on-1 coaching
+                or a workshop for your whole team.
               </p>
             </motion.div>
           </div>
@@ -76,21 +70,18 @@ export default function AIWorkshopsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="glass rounded-2xl p-8"
+                  className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm"
                 >
-                  <div
-                    className="mb-5 w-12 h-12 rounded-xl flex items-center justify-center"
-                    style={{ background: 'linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(139, 92, 246) 100%)' }}
-                  >
+                  <div className="mb-5 w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-gs-500 to-indigo-500">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-2xl font-black text-white mb-3">{offering.title}</h2>
-                  <p className="text-gray-300 mb-6">{offering.description}</p>
-                  <p className="text-xs font-bold tracking-widest text-accent mb-3">SUITABLE FOR</p>
+                  <h2 className="text-2xl font-extrabold text-slate-900 mb-3">{offering.title}</h2>
+                  <p className="text-slate-600 mb-6">{offering.description}</p>
+                  <p className="text-xs font-bold tracking-widest text-gs-600 mb-3">SUITABLE FOR</p>
                   <ul className="space-y-2">
                     {offering.audiences.map((audience) => (
-                      <li key={audience} className="flex items-center gap-3 text-gray-200">
-                        <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
+                      <li key={audience} className="flex items-center gap-3 text-slate-700">
+                        <CheckCircle2 className="w-5 h-5 text-gs-600 flex-shrink-0" />
                         <span className="text-sm">{audience}</span>
                       </li>
                     ))}
@@ -108,14 +99,9 @@ export default function AIWorkshopsPage() {
         <WorkshopBreakdown onCTAClick={scrollToBooking} />
 
         {/* Pricing & Booking */}
-        <div className="relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none">
-            <AnimatedBackground />
-          </div>
-          <FinalCTA ctaRef={ctaRef} />
-        </div>
+        <FinalCTA ctaRef={ctaRef} />
       </main>
-      <Footer />
+      <WebFooter />
     </>
   )
 }

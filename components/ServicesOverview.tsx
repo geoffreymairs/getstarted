@@ -45,7 +45,7 @@ const services = [
 
 export default function ServicesOverview() {
   return (
-    <section className="relative py-20 sm:py-32 px-6 overflow-hidden">
+    <section className="relative py-20 sm:py-28 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Headline */}
         <motion.div
@@ -53,22 +53,23 @@ export default function ServicesOverview() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <div className="inline-block px-3 py-1 rounded-full bg-accent/10 border border-accent/30 mb-6">
-            <p className="text-xs text-accent font-semibold uppercase tracking-wide">What We Do</p>
+          <div className="inline-block px-3 py-1 rounded-full bg-gs-50 border border-gs-100 mb-5">
+            <p className="text-xs text-gs-600 font-semibold uppercase tracking-wide">What we do</p>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-balance">
-            AI Consultancy <span className="text-accent">Services</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 tracking-tight text-slate-900 text-balance">
+            AI consultancy{' '}
+            <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">services</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
-            Practical, end-to-end AI services designed to help your business save time, cut costs
-            and work smarter &mdash; without the jargon.
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto text-pretty">
+            Practical, end-to-end AI services designed to help your business save time, cut costs and work smarter
+, without the jargon.
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
@@ -78,22 +79,19 @@ export default function ServicesOverview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.06 }}
-                whileHover={{ translateY: -4, boxShadow: '0 0 32px rgba(0, 153, 255, 0.3)' }}
               >
                 <Link
                   href={`/ai-consultancy#${service.slug}`}
-                  className="group block h-full p-6 rounded-xl border border-accent/30 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-accent/60 hover:bg-accent/10"
+                  className="group block h-full p-6 rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/60 hover:-translate-y-0.5"
                 >
-                  <div className="mb-4 p-3 rounded-lg bg-accent/20 w-fit group-hover:bg-accent/30 transition-colors">
-                    <Icon className="w-5 h-5 text-accent group-hover:text-accent-light transition-colors" />
+                  <div className="mb-4 flex items-center justify-center w-11 h-11 rounded-xl bg-gs-50">
+                    <Icon className="w-5 h-5 text-gs-600" strokeWidth={2} />
                   </div>
-                  <h3 className="text-base font-bold text-white mb-2 group-hover:text-white transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-3">{service.description}</p>
-                  <span className="inline-flex items-center gap-1 text-xs font-bold text-accent uppercase tracking-wide">
+                  <h3 className="text-base font-bold text-slate-900 mb-2">{service.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-3">{service.description}</p>
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-gs-600">
                     Learn more
-                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </span>
                 </Link>
               </motion.div>
@@ -111,10 +109,10 @@ export default function ServicesOverview() {
         >
           <Link
             href="/ai-consultancy"
-            className="group inline-flex items-center gap-2 text-accent hover:text-accent-light font-bold transition-colors"
+            className="group inline-flex items-center gap-2 text-gs-600 hover:text-gs-700 font-semibold transition-colors"
           >
             See all consultancy services
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </motion.div>
       </div>

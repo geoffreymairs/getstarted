@@ -77,7 +77,7 @@ export default function UrgencySection({ onCTAClick }: UrgencySectionProps) {
             <div>
               <p className="text-sm text-gray-400 uppercase tracking-wide mb-2">Next Workshop Date</p>
               <p className="text-2xl font-black text-white">Tuesday 2 June</p>
-              <p className="text-sm text-gray-400 mt-2">9:00 AM — 12:00 PM</p>
+              <p className="text-sm text-gray-400 mt-2">9:00 AM, 12:00 PM</p>
             </div>
 
             <div>
@@ -147,7 +147,7 @@ export default function UrgencySection({ onCTAClick }: UrgencySectionProps) {
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </button>
           <p className="text-sm text-gray-400 mt-4">
-            Don't wait—spots are going fast
+            Don't wait, spots are going fast
           </p>
         </motion.div>
       </div>

@@ -67,14 +67,14 @@ export async function POST(req: Request) {
       from: 'GetStarted AI <noreply@getstarted.co.nz>',
       to: 'hello@catchie.nz',
       cc: ['info@balloonz.co.nz'],
-      subject: `New Booking: ${packageName} — ${name}`,
+      subject: `New Booking: ${packageName}, ${name}`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <p style="margin: 0 0 16px 0; font-size: 16px;"><strong>${name}</strong> just booked <strong>${packageName}</strong>.</p>
           <div style="background: #f9f9f9; padding: 16px; border-radius: 6px; margin: 16px 0;">
             <p style="margin: 0 0 8px 0;"><strong>Email:</strong> ${email}</p>
             <p style="margin: 0 0 8px 0;"><strong>Phone:</strong> ${phone}</p>
-            <p style="margin: 0 0 8px 0;"><strong>Business:</strong> ${business || '—'}</p>
+            <p style="margin: 0 0 8px 0;"><strong>Business:</strong> ${business || ', '}</p>
             <p style="margin: 0;"><strong>Package:</strong> ${packageName}</p>
           </div>
         </div>

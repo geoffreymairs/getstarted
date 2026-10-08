@@ -21,10 +21,9 @@ interface NavigationProps {
 }
 
 const defaultNavItems: NavItem[] = [
-  { label: 'Home', href: '/' },
-  { label: 'AI Consultancy', href: '/ai-consultancy' },
-  { label: 'About Us', href: '/about' },
-  { label: 'AI Workshops', href: '/ai-workshops' },
+  { label: 'Web', href: '/' },
+  { label: 'AI', href: '/ai' },
+  { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]
 

@@ -14,7 +14,7 @@ const audiences = ['Entrepreneurs', 'Career Changers', 'Students', 'Creatives', 
 const pathwaySteps = [
   {
     title: 'Get Started With AI',
-    description: 'Live hands-on workshop — build your first AI-powered website in 3 hours'
+    description: 'Live hands-on workshop, build your first AI-powered website in 3 hours'
   },
   {
     title: 'Learn What Actually Works',

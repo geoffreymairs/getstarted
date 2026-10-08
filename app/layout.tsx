@@ -10,8 +10,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'GetStarted AI | Independent AI Consultancy For NZ Businesses',
-  description: 'GetStarted is New Zealand\'s independent AI consultancy, helping small and medium businesses implement AI agents, automation and workflows that save time, cut costs and deliver measurable results. Book a free 30 minute AI Strategy Consultation.',
+  title: 'GetStarted | Domains, Hosting, Websites & Email for NZ Businesses',
+  description:
+    'Everything your New Zealand business needs to get online, domain names, web hosting, websites and business email, plus expert AI help. Find your perfect domain and get started today.',
   icons: {
     icon: '/favicon.png',
   },
@@ -29,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="bg-dark text-gray-100 font-sans">
+      <body className="bg-white text-slate-900 font-sans">
         {children}
       </body>
     </html>

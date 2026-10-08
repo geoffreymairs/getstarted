@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowLeft, Mail, MapPin } from 'lucide-react'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import WebNav from '@/components/site/WebNav'
+import WebFooter from '@/components/site/WebFooter'
 
 const LAST_UPDATED = '2 July 2026'
 
@@ -43,7 +43,7 @@ const sections = [
       'Your business name',
       'Information you provide through our enquiry or contact forms',
       'Workshop registration details',
-      'Payment information (processed securely by third-party payment providers — we do not store full payment card details)',
+      'Payment information (processed securely by third-party payment providers, we do not store full payment card details)',
       'Website usage and analytics data (see the Cookies and analytics section below)',
     ],
   },
@@ -51,7 +51,7 @@ const sections = [
     id: 'how-we-collect',
     title: '4. How we collect information',
     body: [
-      'We generally collect personal information directly from you — for example, when you complete a form on our website, register for a workshop, email or call us, or engage us for a project.',
+      'We generally collect personal information directly from you, for example, when you complete a form on our website, register for a workshop, email or call us, or engage us for a project.',
       'We may also collect information automatically when you use our website, such as through cookies and analytics tools. In some cases, we may receive information from third-party services you interact with, such as payment or analytics providers.',
     ],
   },
@@ -89,9 +89,9 @@ const sections = [
       'We may use the following tools, which may collect information about your device and browsing activity:',
     ],
     list: [
-      'Google Analytics — to understand website traffic and usage patterns',
-      'Google Ads conversion tracking — to measure the performance of our advertising',
-      'Meta/Facebook Pixel — where used, to measure and improve advertising on Meta platforms',
+      'Google Analytics, to understand website traffic and usage patterns',
+      'Google Ads conversion tracking, to measure the performance of our advertising',
+      'Meta/Facebook Pixel, where used, to measure and improve advertising on Meta platforms',
     ],
     footer:
       'These third-party tools have their own privacy policies governing how they handle information. We encourage you to review their policies for more detail.',
@@ -100,7 +100,7 @@ const sections = [
     id: 'third-party-services',
     title: '8. Third-party services',
     body: [
-      'We use trusted third-party providers to help us operate our business — for example, payment processors, email and marketing platforms, analytics providers, and cloud hosting services. These providers may process personal information on our behalf and are expected to handle it securely and only for the purposes we specify.',
+      'We use trusted third-party providers to help us operate our business, for example, payment processors, email and marketing platforms, analytics providers, and cloud hosting services. These providers may process personal information on our behalf and are expected to handle it securely and only for the purposes we specify.',
       'We do not sell your personal information.',
     ],
   },
@@ -186,10 +186,10 @@ const sections = [
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <Navigation hideMenu showCTA={false} />
-      <main className="min-h-screen bg-dark overflow-hidden">
+      <WebNav />
+      <main className="min-h-screen bg-white pt-20">
         {/* Hero */}
-        <section className="pt-36 pb-12 px-6">
+        <section className="pt-20 pb-12 px-6">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -198,12 +198,12 @@ export default function PrivacyPolicyPage() {
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-4 text-balance">
                 Privacy{' '}
-                <span className="bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">
                   Policy
                 </span>
               </h1>
-              <p className="text-sm text-gray-400 mb-6">Last updated: {LAST_UPDATED}</p>
-              <p className="text-lg text-gray-300 max-w-2xl text-pretty leading-relaxed">
+              <p className="text-sm text-slate-500 mb-6">Last updated: {LAST_UPDATED}</p>
+              <p className="text-lg text-slate-600 max-w-2xl text-pretty leading-relaxed">
                 This policy explains how GetStarted NZ collects, uses, and protects your personal
                 information in accordance with the New Zealand Privacy Act 2020.
               </p>
@@ -220,15 +220,15 @@ export default function PrivacyPolicyPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="glass rounded-2xl p-6 sm:p-8"
+              className="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 sm:p-8"
             >
-              <h2 className="text-lg font-bold text-white mb-4">Contents</h2>
+              <h2 className="text-lg font-bold text-slate-900 mb-4">Contents</h2>
               <ol className="grid sm:grid-cols-2 gap-x-8 gap-y-2">
                 {sections.map((section) => (
                   <li key={section.id}>
                     <a
                       href={`#${section.id}`}
-                      className="text-sm text-gray-300 hover:text-accent transition-colors leading-relaxed"
+                      className="text-sm text-slate-600 hover:text-gs-600 transition-colors leading-relaxed"
                     >
                       {section.title}
                     </a>
@@ -250,13 +250,13 @@ export default function PrivacyPolicyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.4, delay: Math.min(index * 0.03, 0.2) }}
-                className="glass rounded-2xl p-7 sm:p-9 scroll-mt-28"
+                className="bg-white border border-slate-200 shadow-sm rounded-2xl p-7 sm:p-9 scroll-mt-28"
               >
-                <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white mb-4 text-balance">
+                <h2 className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 mb-4 text-balance">
                   {section.title}
                 </h2>
                 {section.body.map((paragraph) => (
-                  <p key={paragraph} className="text-gray-300 leading-relaxed mb-4 text-pretty">
+                  <p key={paragraph} className="text-slate-600 leading-relaxed mb-4 text-pretty">
                     {paragraph}
                   </p>
                 ))}
@@ -264,8 +264,8 @@ export default function PrivacyPolicyPage() {
                 {section.list && (
                   <ul className="flex flex-col gap-2.5 mb-4">
                     {section.list.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-gray-200">
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                      <li key={item} className="flex items-start gap-3 text-slate-700">
+                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gs-500 flex-shrink-0" />
                         <span className="text-sm sm:text-base leading-relaxed text-pretty">
                           {item}
                         </span>
@@ -275,21 +275,21 @@ export default function PrivacyPolicyPage() {
                 )}
 
                 {section.footer && (
-                  <p className="text-gray-300 leading-relaxed text-pretty">{section.footer}</p>
+                  <p className="text-slate-600 leading-relaxed text-pretty">{section.footer}</p>
                 )}
 
                 {section.id === 'contact' && (
                   <div className="mt-4 flex flex-col gap-3">
-                    <div className="flex items-center gap-3 text-gray-200">
-                      <Mail className="w-5 h-5 text-accent flex-shrink-0" />
+                    <div className="flex items-center gap-3 text-slate-700">
+                      <Mail className="w-5 h-5 text-gs-600 flex-shrink-0" />
                       <span className="text-sm sm:text-base">
-                        <span className="font-semibold text-white">Email:</span> {CONTACT.email}
+                        <span className="font-semibold text-slate-900">Email:</span> {CONTACT.email}
                       </span>
                     </div>
-                    <div className="flex items-start gap-3 text-gray-200">
-                      <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-3 text-slate-700">
+                      <MapPin className="w-5 h-5 text-gs-600 flex-shrink-0 mt-0.5" />
                       <span className="text-sm sm:text-base">
-                        <span className="font-semibold text-white">Address:</span>{' '}
+                        <span className="font-semibold text-slate-900">Address:</span>{' '}
                         {CONTACT.address}
                       </span>
                     </div>
@@ -305,7 +305,7 @@ export default function PrivacyPolicyPage() {
           <div className="max-w-4xl mx-auto text-center">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-gray-400 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Back to home
@@ -313,7 +313,7 @@ export default function PrivacyPolicyPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <WebFooter />
     </>
   )
 }

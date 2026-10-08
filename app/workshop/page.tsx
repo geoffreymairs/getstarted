@@ -345,7 +345,7 @@ export default function WorkshopPage() {
                 </li>
               </ul>
               <p className="text-gray-400 text-xs mt-4 pt-4 border-t border-accent/20">
-                If you can't check all these boxes, ask the instructor before we start. Don't worry — setup usually only takes 5–10 minutes!
+                If you can't check all these boxes, ask the instructor before we start. Don't worry, setup usually only takes 5–10 minutes!
               </p>
             </div>
           </div>
@@ -398,7 +398,7 @@ Your job is to help me create a premium, professional business that looks trustw
 
 All recommendations should be practical, realistic, and designed to help generate leads and sales in New Zealand.
 
-Please keep your answers clear, high-quality, and written like a real successful business—not generic or basic.
+Please keep your answers clear, high-quality, and written like a real successful business, not generic or basic.
 
 I want strong branding, strong positioning, and a website that feels premium and converts visitors into paying customers.
 
@@ -445,7 +445,7 @@ Make it feel like a real, trustworthy business that could launch today.`}
             toolColor="bg-gradient-to-r from-green-500/20 to-green-600/20 text-green-300 border border-green-500/30"
             prompt={`Using the business you created, write an actual build prompt for Vercel v0 that I can copy and paste directly into Vercel.
 
-Your response should be written as DIRECT INSTRUCTIONS for Vercel v0 to build the website — not as business advice or strategy notes.
+Your response should be written as DIRECT INSTRUCTIONS for Vercel v0 to build the website, not as business advice or strategy notes.
 
 It should start by clearly telling Vercel v0 what to build, for example:
 "Build a premium, high-converting website for [Business Name]…"
@@ -516,7 +516,7 @@ Focus only on practical business-building advice for New Zealand service busines
           number={5}
           time="10:15–10:30"
           title="Build the Website in Vercel v0"
-          intro="Use Vercel v0 to design your website. This is the AI website builder—no coding required."
+          intro="Use Vercel v0 to design your website. This is the AI website builder, no coding required."
           icon={Code}
         >
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-6 mb-6 space-y-4">
@@ -641,7 +641,7 @@ When someone lands on the website, the buttons should instantly feel expensive, 
               toolColor="bg-gradient-to-r from-green-500/20 to-green-600/20 text-green-300 border border-green-500/30"
               prompt={`Based on the business we created in this workshop, create a premium website hero image that looks like a real local Auckland business.
 
-The image style should feel similar to a professional team photo for a high-end service business — clean, modern, trustworthy, and realistic.
+The image style should feel similar to a professional team photo for a high-end service business, clean, modern, trustworthy, and realistic.
 
 Show:
 • a professional business owner and team standing confidently outside a modern commercial building
@@ -686,7 +686,7 @@ The final image should feel premium enough for the homepage hero section of a hi
               toolColor="bg-gradient-to-r from-blue-500/20 to-blue-600/20 text-blue-300 border border-blue-500/30"
               prompt={`Replace the image in the About Us section only using the attached image provided.
 
-This is the secondary content section below the main hero section — usually the section that introduces the business story, trust, credibility, or "About Us" content.
+This is the secondary content section below the main hero section, usually the section that introduces the business story, trust, credibility, or "About Us" content.
 
 It is typically the large image beside text explaining who the business is, why customers should trust them, and what makes them different.
 
@@ -781,7 +781,7 @@ Only swap the image.`}
               <div className="text-center">
                 <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">✨ Extra Improvements (Optional)</h2>
                 <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto">Your website is already live.</p>
-                <p className="text-gray-300 mb-8 max-w-2xl mx-auto">At this stage, the goal is launch — not perfection.</p>
+                <p className="text-gray-300 mb-8 max-w-2xl mx-auto">At this stage, the goal is launch, not perfection.</p>
                 <p className="text-accent-light font-semibold mb-8">If you would like to keep improving your website, here are some optional things you can try inside Vercel v0:</p>
               </div>
 

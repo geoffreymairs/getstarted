@@ -31,7 +31,7 @@ export async function POST(req: Request) {
           price_data: {
             currency: 'nzd',
             product_data: {
-              name: `GetStarted AI — ${selected.name}`,
+              name: `GetStarted AI, ${selected.name}`,
               description: selected.description,
             },
             unit_amount: selected.unit_amount,

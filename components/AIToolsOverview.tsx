@@ -146,7 +146,7 @@ export default function AIToolsOverview({ onCTAClick }: AIToolsOverviewProps) {
           }}
         >
           <p className="text-lg text-gray-300 font-semibold">
-            The goal is not to master every AI tool — it's to know which tool to use for the right job.
+            The goal is not to master every AI tool, it's to know which tool to use for the right job.
           </p>
         </motion.div>
       </div>

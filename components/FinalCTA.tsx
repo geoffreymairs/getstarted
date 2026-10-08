@@ -138,13 +138,7 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
   }
 
   return (
-    <section ref={ctaRef} className="relative py-24 px-6 overflow-hidden">
-      {/* Dramatic background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-accent/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-purple-glow/8 rounded-full blur-3xl"></div>
-      </div>
-
+    <section ref={ctaRef} className="relative py-20 sm:py-28 px-6 bg-slate-50 border-t border-slate-200">
       <div className="relative max-w-5xl mx-auto">
         {/* Headline */}
         <motion.div
@@ -152,18 +146,18 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <div className="inline-block mb-6 px-4 py-2 rounded-full bg-accent/15 border border-accent/40">
-            <p className="text-sm font-bold text-accent-light uppercase tracking-wider">Training Packages</p>
+          <div className="inline-block mb-5 px-3 py-1 rounded-full bg-gs-50 border border-gs-100">
+            <p className="text-xs font-bold text-gs-600 uppercase tracking-wider">Training packages</p>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 tracking-tight text-balance">
-            Choose The Right <br />
-            <span className="bg-gradient-to-r from-accent via-accent-light to-purple-glow bg-clip-text text-transparent animate-glow">
-              Training For You
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 tracking-tight text-balance text-slate-900">
+            Choose the right{' '}
+            <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">
+              training for you
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto text-pretty">
             Two clear options, both delivered on-site at your workplace and tailored to your business.
           </p>
         </motion.div>
@@ -180,18 +174,16 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="relative flex flex-col rounded-2xl p-8 sm:p-10 transition-all"
-                style={{
-                  background: 'rgba(0, 0, 0, 0.6)',
-                  backdropFilter: 'blur(10px)',
-                  border: isActive ? '2px solid rgba(0, 153, 255, 0.6)' : '1px solid rgba(0, 153, 255, 0.18)',
-                  boxShadow: isActive ? '0 0 40px rgba(0, 153, 255, 0.25)' : 'none',
-                }}
+                className={`relative flex flex-col rounded-2xl p-8 sm:p-10 bg-white transition-all ${
+                  isActive
+                    ? 'border-2 border-gs-500 shadow-xl shadow-gs-500/10'
+                    : 'border border-slate-200 shadow-sm'
+                }`}
               >
                 {/* Workshop photo(s) */}
                 <div className={`mb-6 grid gap-3 ${pkg.images.length === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
                   {pkg.images.map((src, i) => (
-                    <div key={src} className="relative w-full h-40 overflow-hidden rounded-xl shadow-lg ring-1 ring-white/10">
+                    <div key={src} className="relative w-full h-40 overflow-hidden rounded-xl shadow-sm ring-1 ring-slate-200">
                       <Image
                         src={src || "/placeholder.svg"}
                         alt={pkg.imageAlt[i]}
@@ -206,47 +198,47 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                 </div>
 
                 {/* Icon */}
-                <div className="mb-6 p-3 rounded-lg bg-accent/20 w-fit">
-                  <Icon className="w-6 h-6 text-accent" />
+                <div className="mb-6 flex items-center justify-center w-11 h-11 rounded-xl bg-gs-50">
+                  <Icon className="w-6 h-6 text-gs-600" />
                 </div>
 
                 {/* Name */}
-                <h3 className="text-2xl font-black text-white mb-2">{pkg.name}</h3>
+                <h3 className="text-2xl font-extrabold text-slate-900 mb-2">{pkg.name}</h3>
 
                 {/* Price */}
                 <div className="flex items-end gap-2 mb-4">
-                  <span className="text-4xl sm:text-5xl font-black text-white">{pkg.price}</span>
-                  <span className="text-gray-400 font-semibold mb-1">{pkg.gst}</span>
+                  <span className="text-4xl sm:text-5xl font-extrabold text-slate-900">{pkg.price}</span>
+                  <span className="text-slate-500 font-semibold mb-1">{pkg.gst}</span>
                 </div>
 
                 {/* Tagline */}
-                <p className="text-gray-300 mb-6">{pkg.tagline}</p>
+                <p className="text-slate-600 mb-6">{pkg.tagline}</p>
 
                 {/* Features */}
                 <ul className="space-y-3 mb-6 flex-1">
                   {pkg.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-300">{feature}</span>
+                      <CheckCircle2 className="w-5 h-5 text-gs-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-600 text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Requirement note */}
                 {pkg.note && (
-                  <div className="flex items-start gap-3 mb-6 p-4 rounded-lg bg-accent/5 border border-accent/20">
-                    <Tv className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                    <p className="text-sm text-gray-400">{pkg.note}</p>
+                  <div className="flex items-start gap-3 mb-6 p-4 rounded-lg bg-gs-50 border border-gs-100">
+                    <Tv className="w-5 h-5 text-gs-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-slate-600">{pkg.note}</p>
                   </div>
                 )}
 
                 {/* CTA */}
                 <button
                   onClick={() => handleSelectPackage(pkg.id)}
-                  className="group w-full button-premium px-6 py-4 bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-base uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-[1.02] transition-all"
+                  className="group w-full rounded-full px-6 py-3.5 bg-gs-600 text-white font-semibold text-base hover:bg-gs-700 transition-colors"
                 >
                   {pkg.cta}
-                  <span className="group-hover:translate-x-1 inline-block transition-transform ml-2">→</span>
+                  <span className="group-hover:translate-x-0.5 inline-block transition-transform ml-2">→</span>
                 </button>
               </motion.div>
             )
@@ -260,16 +252,15 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="max-w-2xl mx-auto rounded-2xl p-8 sm:p-12 shadow-glow-lg"
-          style={{ background: 'rgba(0, 0, 0, 0.6)', backdropFilter: 'blur(10px)', border: '1px solid rgba(0, 153, 255, 0.15)' }}
+          className="max-w-2xl mx-auto rounded-2xl p-8 sm:p-12 bg-white border border-slate-200 shadow-xl shadow-slate-200/60"
         >
           {!isSubmitted ? (
             <>
               <div className="mb-8 text-center">
-                <h3 className="text-2xl font-black text-white mb-2">Book Your Training</h3>
-                <p className="text-gray-300">
+                <h3 className="text-2xl font-extrabold text-slate-900 mb-2">Book your training</h3>
+                <p className="text-slate-600">
                   You&apos;re booking the{' '}
-                  <span className="text-accent font-bold">{activePackage.name}</span>{' '}
+                  <span className="text-gs-600 font-bold">{activePackage.name}</span>{' '}
                   ({activePackage.price} {activePackage.gst}).
                 </p>
               </div>
@@ -283,8 +274,8 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                     onClick={() => setSelectedPackage(pkg.id)}
                     className={`px-4 py-3 rounded-lg text-sm font-bold transition-all border ${
                       pkg.id === selectedPackage
-                        ? 'bg-accent/20 border-accent text-white'
-                        : 'bg-white/5 border-white/10 text-gray-400 hover:text-white hover:border-white/20'
+                        ? 'bg-gs-50 border-gs-500 text-gs-700'
+                        : 'bg-white border-slate-200 text-slate-500 hover:text-slate-900 hover:border-slate-300'
                     }`}
                   >
                     {pkg.name}
@@ -295,35 +286,35 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 {/* Name */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-300 mb-3">Full Name</label>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
                   <input
                     type="text"
                     placeholder="Your name"
-                    className="w-full px-4 py-3 rounded-lg bg-white/5 backdrop-blur-md border border-white/10 text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent/50 transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-gs-500 focus:ring-2 focus:ring-gs-500/30 focus:bg-white transition-all"
                     {...register('name', { required: 'Name is required' })}
                   />
-                  {errors.name && <p className="text-red-400 text-sm mt-2">{errors.name.message}</p>}
+                  {errors.name && <p className="text-red-600 text-sm mt-2">{errors.name.message}</p>}
                 </div>
 
                 {/* Business */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-300 mb-3">Business Name</label>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">Business Name</label>
                   <input
                     type="text"
                     placeholder="Your business"
-                    className="w-full px-4 py-3 rounded-lg bg-white/5 backdrop-blur-md border border-white/10 text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent/50 transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-gs-500 focus:ring-2 focus:ring-gs-500/30 focus:bg-white transition-all"
                     {...register('business', { required: 'Business name is required' })}
                   />
-                  {errors.business && <p className="text-red-400 text-sm mt-2">{errors.business.message}</p>}
+                  {errors.business && <p className="text-red-600 text-sm mt-2">{errors.business.message}</p>}
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-300 mb-3">Email Address</label>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
                   <input
                     type="email"
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 rounded-lg bg-white/5 backdrop-blur-md border border-white/10 text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent/50 transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-gs-500 focus:ring-2 focus:ring-gs-500/30 focus:bg-white transition-all"
                     {...register('email', {
                       required: 'Email is required',
                       pattern: {
@@ -332,40 +323,40 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                       },
                     })}
                   />
-                  {errors.email && <p className="text-red-400 text-sm mt-2">{errors.email.message}</p>}
+                  {errors.email && <p className="text-red-600 text-sm mt-2">{errors.email.message}</p>}
                 </div>
 
                 {/* Phone */}
                 <div>
-                  <label className="block text-sm font-semibold text-gray-300 mb-3">Phone Number</label>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">Phone Number</label>
                   <input
                     type="tel"
                     placeholder="+64 (0)21 123 4567"
-                    className="w-full px-4 py-3 rounded-lg bg-white/5 backdrop-blur-md border border-white/10 text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent/50 transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-gs-500 focus:ring-2 focus:ring-gs-500/30 focus:bg-white transition-all"
                     {...register('phone', { required: 'Phone number is required' })}
                   />
-                  {errors.phone && <p className="text-red-400 text-sm mt-2">{errors.phone.message}</p>}
+                  {errors.phone && <p className="text-red-600 text-sm mt-2">{errors.phone.message}</p>}
                 </div>
 
                 {/* Order Summary */}
-                <div className="bg-black/40 rounded-lg p-6 space-y-3 backdrop-blur">
-                  <div className="flex justify-between items-center text-gray-300">
+                <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 space-y-3">
+                  <div className="flex justify-between items-center text-slate-700">
                     <span>{activePackage.name}</span>
-                    <span className="font-semibold text-accent">{activePackage.price} {activePackage.gst}</span>
+                    <span className="font-semibold text-gs-600">{activePackage.price} {activePackage.gst}</span>
                   </div>
-                  <p className="text-xs text-gray-500">GST (15%) is added at checkout.</p>
+                  <p className="text-xs text-slate-500">GST (15%) is added at checkout.</p>
                 </div>
 
                 {/* Submit */}
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full button-premium bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-lg uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100 py-4"
+                  className="w-full rounded-xl bg-gs-600 text-white font-semibold text-base hover:bg-gs-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed py-3.5"
                 >
-                  {isLoading ? 'Processing...' : 'Continue To Booking'}
+                  {isLoading ? 'Processing...' : 'Continue to booking'}
                 </button>
 
-                <p className="text-center text-sm text-gray-400">
+                <p className="text-center text-sm text-slate-500">
                   We&apos;ll be in touch to confirm a date and time that suits your business.
                 </p>
               </form>
@@ -376,9 +367,9 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-8"
             >
-              <CheckCircle2 className="w-16 h-16 text-accent mx-auto mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-3">Booking Received</h3>
-              <p className="text-gray-300">
+              <CheckCircle2 className="w-16 h-16 text-gs-600 mx-auto mb-6" />
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">Booking Received</h3>
+              <p className="text-slate-600">
                 Thanks for booking. We&apos;ll be in touch shortly to confirm your training.
               </p>
             </motion.div>

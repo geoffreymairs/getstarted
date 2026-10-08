@@ -76,7 +76,7 @@ export default function Hero({ onCTAClick }: HeroProps) {
           className="text-sm sm:text-lg lg:text-xl text-gray-300 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed"
           style={{ textShadow: '0 0 20px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.6)' }}
         >
-          In just <span className="text-accent font-semibold">3 hours</span>, learn how to use AI to build and launch a real website for your business — <span className="text-accent font-semibold">no technical skills needed</span>.
+          In just <span className="text-accent font-semibold">3 hours</span>, learn how to use AI to build and launch a real website for your business, <span className="text-accent font-semibold">no technical skills needed</span>.
         </motion.p>
 
         {/* Trust messaging */}

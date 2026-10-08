@@ -60,12 +60,7 @@ interface WorkshopBreakdownProps {
 
 export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps) {
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
-      {/* Background element */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/3 rounded-full blur-3xl"></div>
-      </div>
-
+    <section className="relative py-20 sm:py-28 px-6">
       <div className="relative max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -73,25 +68,24 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <div className="inline-block px-3 py-1 rounded-full bg-accent/10 border border-accent/30 mb-6">
-            <p className="text-xs text-accent font-semibold uppercase tracking-wide">How It Works</p>
+          <div className="inline-block px-3 py-1 rounded-full bg-gs-50 border border-gs-100 mb-5">
+            <p className="text-xs text-gs-600 font-semibold uppercase tracking-wide">How it works</p>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black mb-4 tracking-tight text-balance">
-            On-Site Training, <br />
-            <span className="bg-gradient-to-r from-accent via-accent-light to-accent-dark bg-clip-text text-transparent">
-              Built Around Your Business
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 tracking-tight text-balance text-slate-900">
+            On-site training,{' '}
+            <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">
+              built around your business
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
-            We come to your workplace and keep it practical from start to finish. Here is how
-            a typical session runs.
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto text-pretty">
+            We come to your workplace and keep it practical from start to finish. Here is how a typical session runs.
           </p>
         </motion.div>
 
         {/* Three Phases Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-12">
           {phases.map((phase, index) => {
             const Icon = phase.icon
             return (
@@ -101,21 +95,13 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="relative p-8 rounded-2xl"
-                style={{
-                  background: 'rgba(0, 0, 0, 0.4)',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(0, 153, 255, 0.2)',
-                }}
-                whileHover={{
-                  boxShadow: '0 0 32px rgba(0, 153, 255, 0.3)',
-                  y: -4,
-                }}
+                className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm"
+                whileHover={{ y: -4, boxShadow: '0 10px 30px rgba(15,23,42,0.08)' }}
               >
                 {/* Phase Badge */}
-                <div className="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full bg-accent/10 border border-accent/30">
-                  <Icon className="w-4 h-4 text-accent" />
-                  <p className="text-xs text-accent font-bold uppercase tracking-wider">{phase.title}</p>
+                <div className="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full bg-gs-50 border border-gs-100">
+                  <Icon className="w-4 h-4 text-gs-600" />
+                  <p className="text-xs text-gs-600 font-bold uppercase tracking-wider">{phase.title}</p>
                 </div>
 
                 {/* Outcomes */}
@@ -127,13 +113,9 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
                   className="space-y-3"
                 >
                   {phase.outcomes.map((outcome, idx) => (
-                    <motion.div
-                      key={idx}
-                      variants={itemVariants}
-                      className="flex items-start gap-3"
-                    >
-                      <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                      <span className="text-gray-300 text-sm">{outcome}</span>
+                    <motion.div key={idx} variants={itemVariants} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-gs-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-600 text-sm">{outcome}</span>
                     </motion.div>
                   ))}
                 </motion.div>
@@ -148,19 +130,17 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-16 overflow-hidden rounded-3xl border border-accent/20 bg-gradient-to-br from-accent/10 via-dark/40 to-purple-glow/10 shadow-glow"
+          className="mt-14 overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-gs-50 to-indigo-50 shadow-sm"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
             {/* Left: Heading, benefits and CTA */}
-            <div className="flex flex-col justify-center gap-8 p-8 sm:p-10 lg:p-14">
+            <div className="flex flex-col justify-center gap-7 p-8 sm:p-10 lg:p-14">
               <div>
-                <div className="inline-flex items-center gap-2 mb-5 p-3 rounded-xl bg-accent/15 border border-accent/30">
-                  <Sparkles className="w-5 h-5 text-accent" />
+                <div className="inline-flex items-center gap-2 mb-5 p-3 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <Sparkles className="w-5 h-5 text-gs-600" />
                 </div>
-                <h3 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-                  What Makes It Work
-                </h3>
-                <div className="mt-3 h-1 w-16 rounded-full bg-gradient-to-r from-accent to-purple-glow" />
+                <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">What makes it work</h3>
+                <div className="mt-3 h-1 w-16 rounded-full bg-gradient-to-r from-gs-500 to-indigo-500" />
               </div>
 
               <div className="space-y-5">
@@ -170,9 +150,9 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
                   { label: 'Useful.', text: 'Your team can apply it the very next day.' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
-                    <p className="text-lg text-gray-300 leading-relaxed">
-                      <span className="text-accent font-bold">{item.label}</span> {item.text}
+                    <CheckCircle2 className="w-6 h-6 text-gs-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-lg text-slate-600 leading-relaxed">
+                      <span className="text-slate-900 font-bold">{item.label}</span> {item.text}
                     </p>
                   </div>
                 ))}
@@ -181,10 +161,10 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
               {onCTAClick && (
                 <button
                   onClick={onCTAClick}
-                  className="group button-premium inline-flex w-fit items-center gap-3 px-8 py-4 bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-base uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 transition-all"
+                  className="group inline-flex w-fit items-center gap-2 rounded-full bg-gs-600 px-7 py-3.5 text-base font-semibold text-white hover:bg-gs-700 transition-colors"
                 >
-                  View Training Packages
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  View training packages
+                  <span className="group-hover:translate-x-0.5 transition-transform">→</span>
                 </button>
               )}
             </div>
@@ -206,8 +186,6 @@ export default function WorkshopBreakdown({ onCTAClick }: WorkshopBreakdownProps
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-              {/* Subtle gradient to blend the image into the card on the left edge */}
-              <div className="absolute inset-0 bg-gradient-to-r from-dark/40 via-transparent to-transparent lg:block hidden" />
             </motion.div>
           </div>
         </motion.div>

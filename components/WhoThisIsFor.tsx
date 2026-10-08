@@ -40,27 +40,28 @@ export default function WhoThisIsFor() {
   ]
 
   return (
-    <section className="relative py-20 sm:py-32 px-6 overflow-hidden">
-      <div className="max-w-4xl mx-auto">
+    <section className="relative py-20 sm:py-28 px-6">
+      <div className="max-w-5xl mx-auto">
         {/* Section Headline */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight">
-            Who We <span className="text-accent">Help</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 tracking-tight text-slate-900">
+            Who we{' '}
+            <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">help</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
-            We work with small and medium businesses across every industry who want practical AI
-            solutions &mdash; no technical background needed.
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto text-pretty">
+            We work with small and medium businesses across every industry who want practical AI solutions, no
+            technical background needed.
           </p>
         </motion.div>
 
         {/* Audiences Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {audiences.map((audience, index) => (
             <motion.div
               key={index}
@@ -68,21 +69,16 @@ export default function WhoThisIsFor() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.05 }}
-              className="relative p-6 rounded-lg flex gap-4"
-              style={{
-                background: 'rgba(0, 153, 255, 0.08)',
-                border: '1px solid rgba(0, 153, 255, 0.2)'
-              }}
+              className="rounded-2xl border border-slate-200 bg-white p-6 flex gap-4 transition-all hover:border-slate-300 hover:shadow-md hover:shadow-slate-200/60"
             >
-              <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-6 h-6 text-gs-600 flex-shrink-0 mt-0.5" />
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">{audience.title}</h3>
-                <p className="text-gray-400">{audience.description}</p>
+                <h3 className="text-lg font-bold text-slate-900 mb-1.5">{audience.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{audience.description}</p>
               </div>
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   )

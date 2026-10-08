@@ -3,95 +3,69 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
-import AnimatedBackground from '@/components/AnimatedBackground'
+import WebNav from '@/components/site/WebNav'
+import WebFooter from '@/components/site/WebFooter'
 import FounderAuthority from '@/components/FounderAuthority'
 
 export default function AboutPage() {
+  const story = [
+    {
+      title: 'Our Mission',
+      body: 'To help New Zealand businesses use AI in practical, measurable ways, saving time, reducing costs, and freeing people up to focus on the work that actually grows their business.',
+    },
+    {
+      title: 'Why We Started GetStarted',
+      body: "GetStarted began as a digital services business, helping small and medium businesses get online and grow. As AI tools became genuinely useful for everyday business problems, we saw the same gap we'd always worked to close: business owners who knew they needed to act, but didn't know where to start or who to trust. We focus on closing that gap.",
+    },
+    {
+      title: 'Our Approach',
+      body: "We start with your business, not the technology. Every engagement begins with a free consultation to understand how you operate, then a tailored recommendation, whether that's a strategy session, a custom AI agent, an automated workflow, or training for your team. We stay independent so our advice is always about what's right for you.",
+    },
+  ]
+
   return (
     <>
-      <Navigation />
-      <main className="min-h-screen bg-dark overflow-hidden">
+      <WebNav />
+      <main className="min-h-screen bg-white pt-20">
         {/* Hero */}
-        <section className="relative pt-36 pb-12 px-6 overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none">
-            <AnimatedBackground />
-          </div>
-          <div className="relative max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-bold tracking-widest text-accent bg-accent/10 border border-accent/20 mb-8">
-                ABOUT GETSTARTED
+        <section className="relative overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-gs-50/70 via-white to-white" />
+          <div className="max-w-4xl mx-auto px-6 pt-20 pb-12 sm:pt-24 text-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold text-slate-600 shadow-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-gs-500" />
+                About GetStarted
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 text-balance">
-                New Zealand&apos;s Independent{' '}
-                <span className="bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent">
-                  AI Consultancy
+              <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 text-balance leading-[1.05]">
+                New Zealand&apos;s independent{' '}
+                <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">
+                  AI consultancy
                 </span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto text-pretty leading-relaxed">
-                We help small and medium New Zealand businesses implement practical AI &mdash;
-                without the hype, and without being tied to any single vendor.
+              <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600 leading-relaxed">
+                We help small and medium New Zealand businesses implement practical AI, without the hype, and without
+                being tied to any single vendor.
               </p>
             </motion.div>
           </div>
         </section>
 
         {/* Our Story */}
-        <section className="px-6 py-12">
-          <div className="max-w-4xl mx-auto grid gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="glass rounded-2xl p-8 sm:p-10"
-            >
-              <h2 className="text-2xl font-black text-white mb-4">Our Mission</h2>
-              <p className="text-gray-300 leading-relaxed">
-                To help New Zealand businesses use AI in practical, measurable ways &mdash; saving
-                time, reducing costs, and freeing people up to focus on the work that actually
-                grows their business.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="glass rounded-2xl p-8 sm:p-10"
-            >
-              <h2 className="text-2xl font-black text-white mb-4">Why We Started GetStarted</h2>
-              <p className="text-gray-300 leading-relaxed">
-                GetStarted began as a digital services business, helping small and medium
-                businesses get online and grow. As AI tools became genuinely useful for everyday
-                business problems, we saw the same gap we&apos;d always worked to close: business
-                owners who knew they needed to act, but didn&apos;t know where to start or who to
-                trust. We rebranded to GetStarted AI to focus entirely on closing that gap.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="glass rounded-2xl p-8 sm:p-10"
-            >
-              <h2 className="text-2xl font-black text-white mb-4">Our Approach</h2>
-              <p className="text-gray-300 leading-relaxed">
-                We start with your business, not the technology. Every engagement begins with a
-                free consultation to understand how you operate, then a tailored recommendation
-                &mdash; whether that&apos;s a strategy session, a custom AI agent, an automated
-                workflow, or training for your team. We stay independent so our advice is always
-                about what&apos;s right for you.
-              </p>
-            </motion.div>
+        <section className="px-6 py-8">
+          <div className="max-w-4xl mx-auto grid gap-5">
+            {story.map((s, i) => (
+              <motion.div
+                key={s.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="rounded-2xl border border-slate-200 bg-white p-8 sm:p-10 shadow-sm"
+              >
+                <h2 className="text-2xl font-extrabold text-slate-900 mb-3">{s.title}</h2>
+                <p className="text-slate-600 leading-relaxed">{s.body}</p>
+              </motion.div>
+            ))}
           </div>
         </section>
 
@@ -109,16 +83,16 @@ export default function AboutPage() {
             >
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-3 px-8 py-4 button-premium bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-lg uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 transition-all"
+                className="group inline-flex items-center gap-2 rounded-full bg-gs-600 px-7 py-3.5 text-base font-semibold text-white hover:bg-gs-700 transition-colors"
               >
-                Book Free Consultation
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                Book a free consultation
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </motion.div>
           </div>
         </section>
       </main>
-      <Footer />
+      <WebFooter />
     </>
   )
 }

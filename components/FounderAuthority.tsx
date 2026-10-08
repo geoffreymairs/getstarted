@@ -8,7 +8,7 @@ export default function FounderAuthority() {
   const credentials = [
     {
       icon: Briefcase,
-      title: '30+ Years Building Digital Solutions',
+      title: 'Almost 30 Years Building Digital Solutions',
       description: 'Real experience scaling startups from $0 to profitability. We\'ve been in the trenches.'
     },
     {
@@ -33,7 +33,7 @@ export default function FounderAuthority() {
     {
       name: 'Geoffrey',
       role: 'Co-Founder',
-      bio: 'Geoffrey has been building websites and digital solutions for over 30 years. Originally launching GetStarted in 2002 as an internet services business, he has recently rebranded to GetStarted AI to focus on helping businesses use AI to work smarter, market better, and grow faster. He is passionate about making technology simple, practical, and accessible for everyday business owners.',
+      bio: 'Geoffrey has been building websites and digital solutions for almost 30 years. Originally launching GetStarted in 2002 as an internet services business, he has recently rebranded to GetStarted AI to focus on helping businesses use AI to work smarter, market better, and grow faster. He is passionate about making technology simple, practical, and accessible for everyday business owners.',
       image: '/geoffrey.jpg'
     },
     {
@@ -45,8 +45,8 @@ export default function FounderAuthority() {
   ]
 
   return (
-    <section className="relative py-20 sm:py-32 px-6 overflow-hidden">
-      <div className="max-w-4xl mx-auto">
+    <section className="relative py-20 sm:py-28 px-6">
+      <div className="max-w-5xl mx-auto">
         {/* Section Headline */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -55,18 +55,20 @@ export default function FounderAuthority() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight text-balance">
-            Meet The Team <br />
-            <span className="text-accent">(And Why You Can Trust Us)</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 tracking-tight text-slate-900 text-balance">
+            Meet the team{' '}
+            <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">
+              (and why you can trust us)
+            </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto text-pretty">
             We&apos;re people who use AI every day to run real businesses. We don&apos;t just talk AI
-            &mdash; we use it, and we share exactly what works.
+, we use it, and we share exactly what works.
           </p>
         </motion.div>
 
         {/* Credentials Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10">
           {credentials.map((cred, index) => {
             const Icon = cred.icon
             return (
@@ -76,29 +78,13 @@ export default function FounderAuthority() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="relative p-8 rounded-2xl group"
-                style={{
-                  background: 'rgba(0, 0, 0, 0.4)',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(0, 153, 255, 0.2)'
-                }}
-                whileHover={{
-                  boxShadow: '0 0 32px rgba(0, 153, 255, 0.3)',
-                  border: '1px solid rgba(0, 153, 255, 0.4)'
-                }}
+                className="rounded-2xl border border-slate-200 bg-white p-7 transition-all hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/60"
               >
-                {/* Icon */}
-                <div className="mb-6 p-3 rounded-lg bg-accent/20 w-fit group-hover:bg-accent/30 transition-colors">
-                  <Icon className="w-6 h-6 text-accent" />
+                <div className="mb-5 flex items-center justify-center w-11 h-11 rounded-xl bg-gs-50">
+                  <Icon className="w-5 h-5 text-gs-600" strokeWidth={2} />
                 </div>
-
-                {/* Content */}
-                <h3 className="text-lg font-black text-white mb-3">
-                  {cred.title}
-                </h3>
-                <p className="text-gray-400">
-                  {cred.description}
-                </p>
+                <h3 className="text-base font-bold text-slate-900 mb-2">{cred.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{cred.description}</p>
               </motion.div>
             )
           })}
@@ -110,9 +96,9 @@ export default function FounderAuthority() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-16"
+          className="mb-10"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {founders.map((founder, index) => (
               <motion.div
                 key={index}
@@ -120,14 +106,9 @@ export default function FounderAuthority() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
-                className="relative p-8 rounded-2xl"
-                style={{
-                  background: 'rgba(0, 0, 0, 0.4)',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(0, 153, 255, 0.2)'
-                }}
+                className="rounded-2xl border border-slate-200 bg-white p-7"
               >
-                <div className="flex flex-col items-center mb-6">
+                <div className="flex flex-col items-center mb-5">
                   <Image
                     src={founder.image}
                     alt={founder.name}
@@ -136,12 +117,12 @@ export default function FounderAuthority() {
                     loading="lazy"
                     quality={75}
                     sizes="120px"
-                    className="rounded-full mb-4 object-cover object-center"
+                    className="rounded-full mb-4 object-cover object-center ring-4 ring-slate-100"
                   />
-                  <h3 className="text-2xl font-black text-white">{founder.name}</h3>
-                  <p className="text-accent font-bold text-sm">{founder.role}</p>
+                  <h3 className="text-xl font-bold text-slate-900">{founder.name}</h3>
+                  <p className="text-gs-600 font-semibold text-sm">{founder.role}</p>
                 </div>
-                <p className="text-gray-300 text-center">{founder.bio}</p>
+                <p className="text-slate-600 text-sm text-center leading-relaxed">{founder.bio}</p>
               </motion.div>
             ))}
           </div>
@@ -153,34 +134,25 @@ export default function FounderAuthority() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative p-8 sm:p-10 rounded-2xl"
-          style={{
-            background: 'linear-gradient(135deg, rgba(0, 153, 255, 0.12) 0%, rgba(168, 85, 247, 0.08) 100%)',
-            border: '1px solid rgba(0, 153, 255, 0.3)'
-          }}
+          className="rounded-2xl border border-slate-200 bg-gradient-to-br from-gs-50 to-indigo-50 p-8 sm:p-10"
         >
-          <h3 className="text-2xl sm:text-3xl font-black text-white mb-6">
-            Our Philosophy
-          </h3>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6">Our philosophy</h3>
 
-          <div className="space-y-4 text-lg text-gray-300">
+          <div className="space-y-4 text-base sm:text-lg text-slate-700">
             <p>
-              <span className="text-accent font-bold">Practical over theoretical.</span> {' '}
-              You don't need to understand how AI works to use it effectively. You need to understand how to USE it.
+              <span className="text-gs-600 font-bold">Practical over theoretical.</span>{' '}
+              You don&apos;t need to understand how AI works to use it effectively. You need to understand how to USE it.
             </p>
-
             <p>
-              <span className="text-accent font-bold">Results over process.</span> {' '}
+              <span className="text-gs-600 font-bold">Results over process.</span>{' '}
               We care that your team can use AI to save real time, not memorise theory.
             </p>
-
             <p>
-              <span className="text-accent font-bold">Real tools over tutorials.</span> {' '}
+              <span className="text-gs-600 font-bold">Real tools over tutorials.</span>{' '}
               You&apos;ll use the same AI tools we use every day. Not sandbox environments or demo platforms.
             </p>
-
             <p>
-              <span className="text-accent font-bold">Your business, not ours.</span> {' '}
+              <span className="text-gs-600 font-bold">Your business, not ours.</span>{' '}
               Every session is tailored to your team, your industry and the way you actually work.
             </p>
           </div>

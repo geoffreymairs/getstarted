@@ -18,33 +18,23 @@ function TestimonialCard({ quote, author, role, index }: TestimonialCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
-      className="relative p-8 rounded-2xl"
-      style={{
-        background: 'rgba(0, 0, 0, 0.4)',
-        backdropFilter: 'blur(10px)',
-        border: '1px solid rgba(0, 153, 255, 0.2)'
-      }}
-      whileHover={{
-        boxShadow: '0 0 32px rgba(0, 153, 255, 0.2)',
-        y: -4
-      }}
+      className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm"
+      whileHover={{ y: -4, boxShadow: '0 10px 30px rgba(15,23,42,0.08)' }}
     >
       {/* Stars */}
       <div className="flex gap-1 mb-4">
         {[...Array(5)].map((_, i) => (
-          <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+          <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
         ))}
       </div>
 
       {/* Quote */}
-      <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-        "{quote}"
-      </p>
+      <p className="text-lg text-slate-700 mb-6 leading-relaxed">&ldquo;{quote}&rdquo;</p>
 
       {/* Author */}
-      <div className="border-t border-accent/20 pt-4">
-        <p className="text-white font-semibold">{author}</p>
-        <p className="text-sm text-gray-400">{role}</p>
+      <div className="border-t border-slate-100 pt-4">
+        <p className="text-slate-900 font-semibold">{author}</p>
+        <p className="text-sm text-slate-500">{role}</p>
       </div>
     </motion.div>
   )
@@ -70,7 +60,7 @@ export default function TestimonialsSection() {
   ]
 
   return (
-    <section className="relative py-20 sm:py-32 px-6 overflow-hidden">
+    <section className="relative py-20 sm:py-28 px-6">
       <div className="max-w-5xl mx-auto">
         {/* Section Headline */}
         <motion.div
@@ -78,14 +68,17 @@ export default function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <h2 className="text-4xl sm:text-5xl font-black mb-6 tracking-tight">
-            Real Business Owners <br />
-            <span className="text-accent">Real Results</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-5 tracking-tight text-slate-900">
+            Real business owners.{' '}
+            <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">
+              Real results.
+            </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            These aren't actors or paid testimonials. These are real people we've worked with through our businesses, sharing real feedback about our service, communication, and results.
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            These aren&apos;t actors or paid testimonials. These are real people we&apos;ve worked with through our
+            businesses, sharing real feedback about our service, communication, and results.
           </p>
         </motion.div>
 
@@ -108,27 +101,27 @@ export default function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16 py-12 border-t border-accent/20"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-14 py-12 border-t border-slate-200"
         >
           <div className="text-center">
-            <p className="text-5xl font-black bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent mb-3">
-              30+
+            <p className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent mb-3 whitespace-nowrap">
+              Almost 30
             </p>
-            <p className="text-gray-300">Years in digital &amp; business</p>
+            <p className="text-slate-600">Years in digital &amp; business</p>
           </div>
 
           <div className="text-center">
-            <p className="text-5xl font-black bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent mb-3">
+            <p className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent mb-3">
               Independent
             </p>
-            <p className="text-gray-300">No vendor lock-in, ever</p>
+            <p className="text-slate-600">No vendor lock-in, ever</p>
           </div>
 
           <div className="text-center">
-            <p className="text-5xl font-black bg-gradient-to-r from-accent to-purple-glow bg-clip-text text-transparent mb-3">
+            <p className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent mb-3">
               NZ-Wide
             </p>
-            <p className="text-gray-300">Advising businesses across New Zealand</p>
+            <p className="text-slate-600">Advising businesses across New Zealand</p>
           </div>
         </motion.div>
 
@@ -142,10 +135,10 @@ export default function TestimonialsSection() {
         >
           <Link
             href="/contact"
-            className="group button-premium inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-accent via-accent-light to-purple-glow text-dark font-black text-lg uppercase tracking-wide rounded-xl inner-glow-white-lg soft-shadow-lg hover:shadow-glow-lg hover:scale-105 transition-all"
+            className="group inline-flex items-center gap-2 rounded-full bg-gs-600 px-7 py-3.5 text-base font-semibold text-white hover:bg-gs-700 transition-colors"
           >
-            Book Free Consultation
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
+            Book a free consultation
+            <span className="group-hover:translate-x-0.5 transition-transform">→</span>
           </Link>
         </motion.div>
       </div>

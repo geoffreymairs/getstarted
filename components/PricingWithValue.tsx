@@ -34,7 +34,7 @@ export default function PricingWithValue({ onCTAClick }: PricingWithValueProps) 
           </h2>
           <p className="text-sm font-bold text-purple-glow uppercase tracking-widest mb-4">📍 Live Workshop in Auckland</p>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            This isn't just a 3-hour workshop. You're getting everything you need to build, deploy, and own your first AI-powered website — plus real support and networking in person.
+            This isn't just a 3-hour workshop. You're getting everything you need to build, deploy, and own your first AI-powered website, plus real support and networking in person.
           </p>
         </motion.div>
 

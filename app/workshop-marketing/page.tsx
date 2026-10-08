@@ -377,7 +377,7 @@ export default function WorkshopMarketingPage() {
               </span>
             </h1>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-6">
-              A guided process that takes you from professional experience to a live personal brand website — through
+              A guided process that takes you from professional experience to a live personal brand website, through
               real brand strategy and creative direction, not just a website builder.
             </p>
             <div className="inline-block px-6 py-4 bg-gradient-to-r from-accent/10 to-purple-glow/10 border border-accent/30 rounded-2xl">
@@ -452,7 +452,7 @@ export default function WorkshopMarketingPage() {
 
           {/* ============================ STEPS ============================ */}
 
-          {/* STEP 1 — Your Info */}
+          {/* STEP 1, Your Info */}
           <Step
             number={1}
             time="9:00 – 9:15"
@@ -461,7 +461,7 @@ export default function WorkshopMarketingPage() {
             icon={MessageSquare}
           >
             <p className="text-gray-300 text-sm leading-relaxed">
-              You&apos;re not starting from scratch — you already have years of experience. Gather everything relevant
+              You&apos;re not starting from scratch, you already have years of experience. Gather everything relevant
               and give it to ChatGPT so it truly understands your background before you build anything.
             </p>
 
@@ -489,7 +489,7 @@ export default function WorkshopMarketingPage() {
             <InputArea
               storageKey="wm_background"
               label="Paste your LinkedIn profile, CV and anything else here"
-              placeholder="Paste everything you can — don't worry about tidying it up. You'll copy this into ChatGPT with the prompt below."
+              placeholder="Paste everything you can, don't worry about tidying it up. You'll copy this into ChatGPT with the prompt below."
               rows={8}
             />
 
@@ -497,16 +497,16 @@ export default function WorkshopMarketingPage() {
               label="Copy this into ChatGPT (paste your info where shown)"
               prompt={`I'm going to build a personal brand website. First, I want you to understand my professional background properly.
 
-Below is my career information — my LinkedIn profile, CV and anything else relevant. Read it carefully and summarise back to me:
+Below is my career information, my LinkedIn profile, CV and anything else relevant. Read it carefully and summarise back to me:
 - My career background and experience
 - My core areas of expertise
 - The industries and types of businesses I understand
 - My key achievements and skills
 - Anything distinctive that stands out
 
-Ask me clarifying questions if anything is unclear. Do not invent anything — only use what I provide.
+Ask me clarifying questions if anything is unclear. Do not invent anything, only use what I provide.
 
-Keep this conversation going — we'll build my whole personal brand and website from here.
+Keep this conversation going, we'll build my whole personal brand and website from here.
 
 Here is my professional information:
 [PASTE YOUR LINKEDIN, CV AND ANYTHING ELSE HERE]`}
@@ -515,7 +515,7 @@ Here is my professional information:
             <Outcome>A detailed, accurate understanding of your professional background.</Outcome>
           </Step>
 
-          {/* STEP 2 — Personal Brand */}
+          {/* STEP 2, Personal Brand */}
           <Step
             number={2}
             time="9:15 – 9:40"
@@ -525,7 +525,7 @@ Here is my professional information:
           >
             <p className="text-gray-300 text-sm leading-relaxed">
               &ldquo;Experienced marketing professional&rdquo; says nothing. In this step ChatGPT helps you define a
-              sharp personal brand built only on your real experience — your positioning, your niche, and what genuinely
+              sharp personal brand built only on your real experience, your positioning, your niche, and what genuinely
               makes you different.
             </p>
 
@@ -534,7 +534,7 @@ Here is my professional information:
               prompt={`Now that you understand my background, help me define a clear, credible and distinctive personal brand.
 
 Based only on my real experience, help me establish:
-- My positioning (one clear, memorable sentence — no generic "experienced marketing professional" language)
+- My positioning (one clear, memorable sentence, no generic "experienced marketing professional" language)
 - My strongest areas of expertise
 - My niche or professional focus
 - Who I help
@@ -572,7 +572,7 @@ Push me beyond generic statements. Where I could be sharper, more specific or mo
             <Outcome>A clear personal brand strategy.</Outcome>
           </Step>
 
-          {/* STEP 3 — Inspiration */}
+          {/* STEP 3, Inspiration */}
           <Step
             number={3}
             time="9:40 – 9:55"
@@ -589,14 +589,14 @@ Push me beyond generic statements. Where I could be sharper, more specific or mo
             <div className="rounded-lg bg-accent/5 border border-accent/20 p-4">
               <p className="text-gray-300 text-sm leading-relaxed">
                 <span className="font-black text-accent">The point is not to copy.</span> It&apos;s to identify the
-                underlying creative principles — and decide which ones fit your brand.
+                underlying creative principles, and decide which ones fit your brand.
               </p>
             </div>
 
             <InputArea
               storageKey="wm_inspiration"
               label="List 2–3 brands or websites you admire (links or names)"
-              placeholder="e.g. a consultant's site, a design studio, a brand whose tone you love — with a note on what draws you to each."
+              placeholder="e.g. a consultant's site, a design studio, a brand whose tone you love, with a note on what draws you to each."
               rows={4}
             />
 
@@ -617,18 +617,18 @@ Analyse them and help me understand the underlying creative principles:
 I don't want to copy them. Help me identify the principles I could draw on to inform my own creative direction, given the personal brand we've defined.
 
 Here are my references:
-[PASTE 2–3 WEBSITES OR BRANDS YOU ADMIRE — LINKS OR DESCRIPTIONS]`}
+[PASTE 2–3 WEBSITES OR BRANDS YOU ADMIRE, LINKS OR DESCRIPTIONS]`}
             />
 
             <Outcome>A clearer understanding of the creative direction you want for your own brand.</Outcome>
           </Step>
 
-          {/* STEP 4 — Brand Guidelines */}
+          {/* STEP 4, Brand Guidelines */}
           <Step
             number={4}
             time="9:55 – 10:30"
             title="Create Your Brand Guidelines"
-            doing="Define how your personal brand should actually look and feel — before any website exists."
+            doing="Define how your personal brand should actually look and feel, before any website exists."
             icon={Palette}
           >
             <p className="text-gray-300 text-sm leading-relaxed">
@@ -639,7 +639,7 @@ Here are my references:
 
             {/* Brand personality spectrums */}
             <div>
-              <p className="text-white font-bold text-sm mb-3">Brand personality — where does yours sit?</p>
+              <p className="text-white font-bold text-sm mb-3">Brand personality, where does yours sit?</p>
               <div className="grid sm:grid-cols-2 gap-2">
                 {[
                   ['Bold', 'Understated'],
@@ -665,7 +665,7 @@ Here are my references:
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 ['Visual direction', 'The feeling on arrival, the style that fits your positioning, and what it must NOT look like.'],
-                ['Colour palette', 'Primary, secondary, accent, background and text colours — with the reasoning behind them.'],
+                ['Colour palette', 'Primary, secondary, accent, background and text colours, with the reasoning behind them.'],
                 ['Typography', 'Heading and body styles, and whether the type feels editorial, modern, technical, premium or corporate.'],
                 ['Imagery direction', 'Photography, AI imagery, abstract visuals, illustration, icons, or minimal with limited imagery.'],
                 ['Logo direction', 'Wordmark, monogram, symbol, combination mark, or minimal typographic logo.'],
@@ -682,7 +682,7 @@ Here are my references:
               label="Copy this into the same ChatGPT conversation"
               prompt={`Using my personal brand strategy and the creative direction I've explored, help me create a complete set of brand guidelines.
 
-1. BRAND PERSONALITY — decide where my brand should sit on each spectrum, and explain why:
+1. BRAND PERSONALITY, decide where my brand should sit on each spectrum, and explain why:
 - Bold vs Understated
 - Corporate vs Personal
 - Premium vs Approachable
@@ -696,7 +696,7 @@ Here are my references:
 - What should my brand definitely NOT look like?
 - What level of personality vs professionalism suits my audience?
 
-3. COLOUR PALETTE — propose a considered colour system and explain why it supports my positioning:
+3. COLOUR PALETTE, propose a considered colour system and explain why it supports my positioning:
 - Primary colour
 - Secondary colours
 - Accent colours
@@ -708,11 +708,11 @@ Here are my references:
 - Body text style
 - Overall typographic personality (editorial, modern, technical, premium, creative or corporate)
 
-5. IMAGERY DIRECTION — recommend the primary approach: personal photography, AI-generated imagery, abstract visuals, illustrations, icons, or minimal design with limited imagery.
+5. IMAGERY DIRECTION, recommend the primary approach: personal photography, AI-generated imagery, abstract visuals, illustrations, icons, or minimal design with limited imagery.
 
-6. LOGO DIRECTION — recommend the logo type that fits: wordmark, monogram, symbol, combination mark, or minimal typographic logo.
+6. LOGO DIRECTION, recommend the logo type that fits: wordmark, monogram, symbol, combination mark, or minimal typographic logo.
 
-Present this as a clear Brand Guidelines document I can reuse throughout building my website. Base every decision on my brand — don't default to generic choices.`}
+Present this as a clear Brand Guidelines document I can reuse throughout building my website. Base every decision on my brand, don't default to generic choices.`}
             />
 
             <InputArea
@@ -725,12 +725,12 @@ Present this as a clear Brand Guidelines document I can reuse throughout buildin
             <Outcome>A complete brand and visual direction.</Outcome>
           </Step>
 
-          {/* STEP 5 — Logo */}
+          {/* STEP 5, Logo */}
           <Step
             number={5}
             time="10:30 – 10:50"
             title="Create Your Logo With AI"
-            doing="Use your brand strategy and guidelines to design a logo with intent — not a random generation."
+            doing="Use your brand strategy and guidelines to design a logo with intent, not a random generation."
             icon={Shapes}
           >
             <p className="text-gray-300 text-sm leading-relaxed">
@@ -765,30 +765,30 @@ Present this as a clear Brand Guidelines document I can reuse throughout buildin
               label="Copy this into the same ChatGPT conversation"
               prompt={`Using my brand strategy and brand guidelines, help me create a logo for my personal brand.
 
-First, explore several creative directions that fit my brand — for example: clean and professional, bold and modern, premium and minimal. For each, describe the concept and why it fits my brand.
+First, explore several creative directions that fit my brand, for example: clean and professional, bold and modern, premium and minimal. For each, describe the concept and why it fits my brand.
 
 Once I choose a direction, help me:
 1. Refine the concept
 2. Adjust the colours and styling to match my palette
 3. Produce a final logo I can use on my website
 
-The logo must reflect the brand strategy and visual direction we've already established — not a random generic logo. If you can generate the logo image directly, do so; otherwise give me a precise description I can use in an image tool.`}
+The logo must reflect the brand strategy and visual direction we've already established, not a random generic logo. If you can generate the logo image directly, do so; otherwise give me a precise description I can use in an image tool.`}
             />
 
             <Outcome>A logo and visual identity that align with your brand strategy.</Outcome>
           </Step>
 
-          {/* STEP 6 — Website Brief */}
+          {/* STEP 6, Website Brief */}
           <Step
             number={6}
             time="10:50 – 11:10"
             title="Build Your Website Creative Brief"
-            doing="Bring everything into one complete brief — the foundation you'll build the website from."
+            doing="Bring everything into one complete brief, the foundation you'll build the website from."
             icon={ClipboardList}
           >
             <p className="text-gray-300 text-sm leading-relaxed">
               This is the bridge between branding and building. ChatGPT compiles your strategy, identity and content into
-              a single <span className="text-white font-semibold">Website Creative Brief</span> — one document that
+              a single <span className="text-white font-semibold">Website Creative Brief</span>, one document that
               drives everything that follows.
             </p>
 
@@ -840,7 +840,7 @@ WEBSITE CONTENT
 - About section
 - Services / expertise
 - Experience and credentials
-- Case studies / testimonials / proof (where relevant — never invented)
+- Case studies / testimonials / proof (where relevant, never invented)
 - Calls to action
 
 DESIGN DIRECTION
@@ -870,12 +870,12 @@ Use everything from my brand strategy and brand guidelines. Produce one comprehe
             <Outcome>A complete website strategy, content plan and creative brief.</Outcome>
           </Step>
 
-          {/* STEP 7 — Build in v0 */}
+          {/* STEP 7, Build in v0 */}
           <Step
             number={7}
             time="11:10 – 11:35"
             title="Build Your Website in v0"
-            doing="Feed your complete creative brief into Vercel v0 — and watch better direction produce a better website."
+            doing="Feed your complete creative brief into Vercel v0, and watch better direction produce a better website."
             icon={Wand2}
           >
             <div className="rounded-lg bg-gradient-to-r from-accent/10 to-purple-glow/10 border border-accent/30 p-5">
@@ -888,9 +888,9 @@ Use everything from my brand strategy and brand guidelines. Produce one comprehe
 
             <ActionList
               items={[
-                ['Open Vercel v0', 'Go to v0.app and sign in (use your GitHub account — it makes the next steps easier).'],
+                ['Open Vercel v0', 'Go to v0.app and sign in (use your GitHub account, it makes the next steps easier).'],
                 ['Paste the build prompt', 'Use the prompt below with your complete creative brief pasted in.'],
-                ['Refine by chatting', 'Ask v0 to adjust anything — colours, layout, tone, wording — against your brief.'],
+                ['Refine by chatting', 'Ask v0 to adjust anything, colours, layout, tone, wording, against your brief.'],
                 ['Add your logo, photo & details', 'Drop in your logo, real photo, LinkedIn link and contact email.'],
               ]}
             />
@@ -917,24 +917,24 @@ Here is my complete Website Creative Brief:
             <Outcome>The first working version of your personal brand website.</Outcome>
           </Step>
 
-          {/* STEP 8 — Contact Form (Web3Forms) */}
+          {/* STEP 8, Contact Form (Web3Forms) */}
           <Step
             number={8}
             time="11:20 – 11:30"
             title="Connect Your Contact Form"
-            doing="Make your contact form actually send emails — using Web3Forms, with no backend or code server needed."
+            doing="Make your contact form actually send emails, using Web3Forms, with no backend or code server needed."
             icon={Mail}
           >
             <p className="text-gray-300 text-sm leading-relaxed">
               Your new website has a contact form, but right now it doesn&apos;t send anywhere. Web3Forms is a free
-              service that connects a form straight to your inbox in a couple of minutes — no server required.
+              service that connects a form straight to your inbox in a couple of minutes, no server required.
             </p>
 
             <ActionList
               items={[
                 ['Get your Web3Forms access key', 'Go to web3forms.com, enter the email address where you want to receive messages, and copy the access key they send you.'],
                 ['Add the key to your form', 'In v0, add Web3Forms to your contact form using the access key (use the prompt below) so submissions are emailed to you.'],
-                ['Test it', 'Submit your own form and confirm the email arrives — check your spam folder the first time.'],
+                ['Test it', 'Submit your own form and confirm the email arrives, check your spam folder the first time.'],
               ]}
             />
 
@@ -960,7 +960,7 @@ Please update my contact form to submit to Web3Forms using this access key, so t
             <Outcome>Your contact form sends real enquiries straight to your inbox.</Outcome>
           </Step>
 
-          {/* STEP 9 — GitHub */}
+          {/* STEP 9, GitHub */}
           <Step
             number={9}
             time="11:30 – 11:40"
@@ -969,15 +969,15 @@ Please update my contact form to submit to Web3Forms using this access key, so t
             icon={Github}
           >
             <p className="text-gray-300 text-sm leading-relaxed">
-              GitHub is like Google Drive for code — it keeps a safe, backed-up copy of your website project. v0 can push
+              GitHub is like Google Drive for code, it keeps a safe, backed-up copy of your website project. v0 can push
               your project straight to it.
             </p>
 
             <ActionList
               items={[
-                ['Create a GitHub account or repository', 'If you don’t have one yet, sign up at github.com — it’s free and takes a minute.'],
+                ['Create a GitHub account or repository', 'If you don’t have one yet, sign up at github.com, it’s free and takes a minute.'],
                 ['Push your project to GitHub', 'In v0, use "Push to GitHub" (or Export → GitHub) to save your website project.'],
-                ['Understand where your code lives', 'Your project now sits in a repository you own — the single source of truth for your site.'],
+                ['Understand where your code lives', 'Your project now sits in a repository you own, the single source of truth for your site.'],
               ]}
             />
 
@@ -993,12 +993,12 @@ Please update my contact form to submit to Web3Forms using this access key, so t
             <Outcome>Your website is safely backed up and ready to deploy.</Outcome>
           </Step>
 
-          {/* STEP 10 — Vercel */}
+          {/* STEP 10, Vercel */}
           <Step
             number={10}
             time="11:40 – 11:50"
             title="Deploy Live in Vercel"
-            doing="Publish your website to a real web address — the moment your personal brand becomes a live website."
+            doing="Publish your website to a real web address, the moment your personal brand becomes a live website."
             icon={Rocket}
           >
             <p className="text-gray-300 text-sm leading-relaxed">
@@ -1009,7 +1009,7 @@ Please update my contact form to submit to Web3Forms using this access key, so t
               items={[
                 ['Deploy the website', 'Use "Deploy" in v0, or connect your GitHub repository to Vercel to publish to a live URL.'],
                 ['Test the live website', 'Check it end to end: desktop, mobile, navigation, links, contact form, images and social links.'],
-                ['Note your live URL', 'Your site is now live at a vercel.app address — next you’ll point your own domain at it.'],
+                ['Note your live URL', 'Your site is now live at a vercel.app address, next you’ll point your own domain at it.'],
               ]}
             />
 
@@ -1020,7 +1020,7 @@ Please update my contact form to submit to Web3Forms using this access key, so t
             <Outcome>Your website is live online.</Outcome>
           </Step>
 
-          {/* STEP 11 — Domain */}
+          {/* STEP 11, Domain */}
           <Step
             number={11}
             time="11:50 – 11:57"
@@ -1030,14 +1030,14 @@ Please update my contact form to submit to Web3Forms using this access key, so t
           >
             <p className="text-gray-300 text-sm leading-relaxed">
               Your site is live on a <span className="text-white">vercel.app</span> URL. Connecting your own domain makes
-              it live at your own web address — <span className="text-white">yourname.com</span> or{' '}
+              it live at your own web address, <span className="text-white">yourname.com</span> or{' '}
               <span className="text-white">yourname.co.nz</span>.
             </p>
 
             <ActionList
               items={[
                 ['Add your domain in Vercel', 'In your Vercel project, go to Settings → Domains and add your domain (e.g. yourname.com).'],
-                ['Update your DNS records', 'At your domain registrar (where you bought the domain), add the DNS records Vercel gives you — it shows the exact values to copy.'],
+                ['Update your DNS records', 'At your domain registrar (where you bought the domain), add the DNS records Vercel gives you, it shows the exact values to copy.'],
                 ['Wait for it to verify', 'DNS can take a few minutes to a few hours. Vercel confirms when your domain is live and secured with HTTPS.'],
               ]}
             />
@@ -1053,7 +1053,7 @@ Please update my contact form to submit to Web3Forms using this access key, so t
             <Outcome>Your website is live at your own custom domain.</Outcome>
           </Step>
 
-          {/* STEP 12 — Keep Building */}
+          {/* STEP 12, Keep Building */}
           <Step
             number={12}
             time="11:57 – 12:00"
@@ -1063,14 +1063,14 @@ Please update my contact form to submit to Web3Forms using this access key, so t
           >
             <p className="text-gray-300 text-sm leading-relaxed">
               Once your site is live, you can keep improving it with AI. Claude can connect to your Vercel account and
-              help you evolve your site over time — no need to start from scratch again.
+              help you evolve your site over time, no need to start from scratch again.
             </p>
 
             <ActionList
               accent="muted"
               items={[
                 ['Make design changes', 'Refine layouts, colours and styling as your brand develops.'],
-                ['Add new sections & content', 'Grow the site — new pages, case studies, articles and services.'],
+                ['Add new sections & content', 'Grow the site, new pages, case studies, articles and services.'],
                 ['Add functionality', 'Introduce new features as your needs change.'],
                 ['Keep evolving over time', 'Redeploy through Vercel whenever you’re ready. Your site keeps getting better.'],
               ]}
@@ -1098,7 +1098,7 @@ Please update my contact form to submit to Web3Forms using this access key, so t
 
             <p className="text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
               You didn&apos;t just generate a website. You defined who you are professionally, built a real personal
-              brand strategy, set your creative direction and visual identity, turned it into a brief — and used AI to
+              brand strategy, set your creative direction and visual identity, turned it into a brief, and used AI to
               build and publish a website that genuinely represents you.
             </p>
 

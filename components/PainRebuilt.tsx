@@ -102,7 +102,7 @@ export default function PainRebuilt({ onCTAClick }: PainRebuiltProps) {
             "What if I build a website but nobody knows it exists?"
           </p>
           <p className="text-lg text-gray-400">
-            You could have the perfect website, but if you don't know how to get found, make conversions, or stand out — it changes nothing. You're back to square one.
+            You could have the perfect website, but if you don't know how to get found, make conversions, or stand out, it changes nothing. You're back to square one.
           </p>
         </motion.div>
 
@@ -122,7 +122,7 @@ export default function PainRebuilt({ onCTAClick }: PainRebuiltProps) {
             What if there was a faster way?
           </p>
           <p className="text-lg text-gray-300 mb-8">
-            What if you could build a real, live website <span className="font-bold text-accent">in 3 hours</span> — not weeks — without hiring anyone, without learning to code, and without months of trial and error?
+            What if you could build a real, live website <span className="font-bold text-accent">in 3 hours</span>, not weeks, without hiring anyone, without learning to code, and without months of trial and error?
           </p>
           <button
             onClick={onCTAClick}

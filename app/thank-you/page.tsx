@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { CheckCircle, CalendarCheck, Building2, Sparkles } from 'lucide-react'
 import Link from 'next/link'
-import Footer from '@/components/Footer'
+import WebFooter from '@/components/site/WebFooter'
 
 export default function ThankYouPage() {
   const steps = [
@@ -26,29 +26,22 @@ export default function ThankYouPage() {
 
   return (
     <>
-    <main className="min-h-screen bg-dark py-20 px-6 overflow-hidden">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse at center 30%, rgba(0, 153, 255, 0.08) 0%, rgba(168, 85, 247, 0.04) 40%, transparent 75%)',
-      }} />
-
+    <main className="min-h-screen bg-white py-20 px-6">
       <div className="max-w-3xl mx-auto relative z-10">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <div className="mb-8 flex justify-center">
-            <CheckCircle className="w-24 h-24 text-accent animate-pulse" />
+            <CheckCircle className="w-20 h-20 text-gs-600" />
           </div>
-          <h1 className="text-5xl sm:text-6xl font-black text-white mb-4 text-balance">
-            Booking Received
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-pretty">
-            Thanks for booking your AI training with GetStarted AI. We&apos;re looking forward to
-            working with your business.
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4 text-balance">Booking received</h1>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto text-pretty">
+            Thanks for booking your AI training with GetStarted. We&apos;re looking forward to working with your
+            business.
           </p>
         </motion.div>
 
@@ -57,9 +50,9 @@ export default function ThankYouPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="mb-16"
+          className="mb-14"
         >
-          <h2 className="text-2xl font-black text-white mb-6 text-center">What Happens Next</h2>
+          <h2 className="text-2xl font-extrabold text-slate-900 mb-6 text-center">What happens next</h2>
           <div className="space-y-3">
             {steps.map((item, index) => {
               const Icon = item.icon
@@ -69,12 +62,12 @@ export default function ThankYouPage() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                  className="flex items-start gap-4 p-5 bg-blue-500/10 border border-blue-500/30 rounded-lg"
+                  className="flex items-start gap-4 p-5 bg-white border border-slate-200 rounded-xl shadow-sm"
                 >
-                  <Icon className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+                  <Icon className="w-6 h-6 text-gs-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-white font-semibold" dangerouslySetInnerHTML={{ __html: item.title }} />
-                    <p className="text-sm text-gray-400 mt-1">{item.description}</p>
+                    <p className="text-slate-900 font-semibold" dangerouslySetInnerHTML={{ __html: item.title }} />
+                    <p className="text-sm text-slate-600 mt-1">{item.description}</p>
                   </div>
                 </motion.div>
               )
@@ -91,14 +84,14 @@ export default function ThankYouPage() {
         >
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 text-accent hover:text-accent-light font-semibold transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 text-gs-600 hover:text-gs-700 font-semibold transition-colors"
           >
             ← Back to home
           </Link>
         </motion.div>
       </div>
     </main>
-    <Footer />
+    <WebFooter />
     </>
   )
 }

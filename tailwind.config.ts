@@ -27,7 +27,16 @@ const config: Config = {
           500: '#0ea5e9',
           600: '#0284c7',
           900: '#0c4a6e',
-        }
+        },
+        // GetStarted Web storefront blue — the shared brand colour (#00A1EF)
+        'gs': {
+          50: '#e8f7fe',
+          100: '#c9ecfd',
+          200: '#93dcfb',
+          500: '#19acf2',
+          600: '#00a1ef',
+          700: '#0086c9',
+        },
       },
       fontFamily: {
         'sans': ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
