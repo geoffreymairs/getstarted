@@ -78,7 +78,7 @@ export default function WebNav() {
           </div>
 
           <Link href="/ai" className={linkClass('/ai')}>
-            AI
+            AI Consultancy
           </Link>
           <Link href="/about" className={linkClass('/about')}>
             About
@@ -123,7 +123,7 @@ export default function WebNav() {
               <span className="text-xs font-normal text-slate-400">GetStarted Web →</span>
             </a>
             {[
-              ['AI', '/ai'],
+              ['AI Consultancy', '/ai'],
               ['About', '/about'],
               ['Contact', '/contact'],
             ].map(([label, href]) => (

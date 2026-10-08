@@ -52,7 +52,7 @@ export default function WebFooter() {
             <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">GetStarted</p>
             <ul className="space-y-2.5">
               {[
-                ['AI', '/ai'],
+                ['AI Consultancy', '/ai'],
                 ['AI Workshops', '/ai-workshops'],
                 ['About', '/about'],
                 ['Contact', '/contact'],
@@ -109,7 +109,9 @@ export default function WebFooter() {
         </div>
 
         <div className="mt-14 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-slate-400">© {new Date().getFullYear()} GetStarted. All rights reserved.</p>
+          <p className="text-sm text-slate-400">
+            © {new Date().getFullYear()} GetStarted NZ Limited. All rights reserved.
+          </p>
           <div className="flex items-center gap-6">
             <a
               href={WEB_URL}
