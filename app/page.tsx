@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Check, MapPin, Headphones, ShieldCheck, Sparkles, Search } from 'lucide-react'
 import WebNav from '@/components/site/WebNav'
 import WebFooter from '@/components/site/WebFooter'
@@ -146,39 +147,50 @@ export default function Home() {
 
       {/* ============================ AI (secondary) ============================ */}
       <section className="max-w-7xl mx-auto px-6 py-20 sm:py-24">
-        <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-900 px-8 py-12 sm:px-14 sm:py-16">
-          <div
-            className="pointer-events-none absolute inset-0 opacity-70"
-            style={{
-              background:
-                'radial-gradient(ellipse at 15% 20%, rgba(59,130,246,0.25), transparent 55%), radial-gradient(ellipse at 85% 80%, rgba(168,85,247,0.22), transparent 55%)',
-            }}
+        <div className="relative overflow-hidden rounded-3xl bg-[#0a1024] shadow-2xl shadow-slate-900/20 min-h-[440px] sm:min-h-[420px] flex">
+          {/* Laptop + glow visual */}
+          <Image
+            src="/ai-cta.webp"
+            alt=""
+            fill
+            sizes="(max-width: 1280px) 100vw, 1216px"
+            className="object-cover object-right pointer-events-none select-none"
           />
-          <div className="relative max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-gs-200">
-              <Sparkles className="w-3.5 h-3.5" />
+          {/* Legibility gradient over the text side */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1024] via-[#0a1024]/90 to-[#0a1024]/10 sm:via-[#0a1024]/80 sm:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1024]/80 via-transparent to-transparent sm:hidden" />
+
+          {/* Content */}
+          <div className="relative z-10 flex flex-col justify-center px-8 py-12 sm:px-14 sm:py-16 max-w-xl">
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-bold tracking-wide text-sky-300 backdrop-blur-sm">
+              <Sparkles className="w-4 h-4" />
               GetStarted AI
             </div>
-            <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-              Ready to go further with AI?
+            <h2 className="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-[1.05]">
+              Ready to go further
+              <br />
+              <span className="bg-gradient-to-r from-sky-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                with AI?
+              </span>
             </h2>
-            <p className="mt-4 text-lg text-slate-300 leading-relaxed">
+            <p className="mt-5 max-w-md text-base sm:text-lg text-slate-300 leading-relaxed">
               Beyond getting online, we help New Zealand businesses use AI to save time, cut costs and automate
               repetitive work, through practical consulting and hands-on workshops.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link
                 href="/ai"
-                className="inline-flex items-center justify-center gap-1.5 rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-slate-900 transition-transform hover:scale-[1.03] shadow-[0_0_34px_rgba(56,189,248,0.45)]"
               >
                 Explore GetStarted AI
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/ai-workshops"
-                className="inline-flex items-center justify-center gap-1.5 rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
               >
                 AI Workshops
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
