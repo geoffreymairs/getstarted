@@ -80,6 +80,9 @@ export default function WebNav() {
           <Link href="/ai" className={linkClass('/ai')}>
             AI Consultancy
           </Link>
+          <Link href="/ai-workshops" className={linkClass('/ai-workshops')}>
+            AI Workshops
+          </Link>
           <Link href="/about" className={linkClass('/about')}>
             About
           </Link>
@@ -124,6 +127,7 @@ export default function WebNav() {
             </a>
             {[
               ['AI Consultancy', '/ai'],
+              ['AI Workshops', '/ai-workshops'],
               ['About', '/about'],
               ['Contact', '/contact'],
             ].map(([label, href]) => (
