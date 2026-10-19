@@ -10,7 +10,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative py-8 px-6 bg-dark/50 border-t border-accent/10 overflow-hidden">
+    <footer className="relative py-8 px-6 bg-dark border-t border-accent/10 overflow-hidden">
       {/* Subtle spotlight glow */}
       <div className="absolute inset-0 pointer-events-none" style={{
         background: 'radial-gradient(circle at center, rgba(0, 153, 255, 0.08) 0%, transparent 70%)',

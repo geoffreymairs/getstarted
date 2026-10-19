@@ -76,7 +76,7 @@ export default function AIToolsOverview({ onCTAClick }: AIToolsOverviewProps) {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-black mb-6">
+          <h2 className="text-4xl sm:text-5xl font-black mb-6 text-white">
             AI Tools You Should Know
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">

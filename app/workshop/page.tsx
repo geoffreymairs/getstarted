@@ -183,7 +183,7 @@ export default function WorkshopPage() {
   return (
     <>
       <Navigation showCTA={false} hideMenu={true} />
-      <div className="min-h-screen bg-dark pt-32 pb-12 px-6">
+      <div className="min-h-screen bg-dark text-gray-100 pt-32 pb-12 px-6">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-accent/8 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-purple-glow/8 rounded-full blur-3xl"></div>
