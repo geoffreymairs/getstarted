@@ -42,7 +42,7 @@ export default function Footer() {
 
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
           <Link
-            href="/workshop"
+            href="/workshop-guide"
             className="text-sm font-semibold text-accent hover:text-accent-light transition-colors"
           >
             Workshop
