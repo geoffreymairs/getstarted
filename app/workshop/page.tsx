@@ -182,48 +182,27 @@ const Step = ({
 
 /* The 60-minute plan, shown at the top. Times add up to exactly 60. */
 const programme = [
-  {
-    n: 1,
-    name: 'The challenge',
-    time: '0-5 min',
-    icon: Flag,
-    blurb: 'Meet the challenge and the two AI tools you will use.',
-  },
+  { n: 1, name: 'The challenge', time: '0-5 min', blurb: 'Meet the challenge and the two AI tools you will use.' },
   {
     n: 2,
     name: 'Invent the business',
     time: '5-15 min',
-    icon: Lightbulb,
     blurb: 'Brainstorm and agree a name, brand, packages and prices with ChatGPT.',
   },
-  {
-    n: 3,
-    name: 'Plan the website',
-    time: '15-22 min',
-    icon: ClipboardList,
-    blurb: 'Turn your brand into website words and a brief for v0.',
-  },
+  { n: 3, name: 'Plan the website', time: '15-22 min', blurb: 'Turn your brand into website words and a brief for v0.' },
   {
     n: 4,
     name: 'Create the hero image',
     time: '22-27 min',
-    icon: ImageIcon,
     blurb: 'Generate a striking, text-free photo for the top of the site.',
   },
   {
     n: 5,
     name: 'Build the website',
     time: '27-52 min',
-    icon: LayoutTemplate,
     blurb: 'Paste your brief into v0, build a one-page site and preview it.',
   },
-  {
-    n: 6,
-    name: 'Showcase',
-    time: '52-60 min',
-    icon: Users,
-    blurb: 'Preview, present and talk about how AI helped.',
-  },
+  { n: 6, name: 'Showcase', time: '52-60 min', blurb: 'Preview, present and talk about how AI helped.' },
 ]
 
 export default function WorkshopPage() {
@@ -329,19 +308,14 @@ export default function WorkshopPage() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {programme.map((s) => (
-                <div key={s.n} className="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="mb-4 flex items-center justify-between">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gs-600 text-sm font-black text-white">
+                <div key={s.n} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <div className="flex items-center justify-between">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gs-600 text-base font-black text-white">
                       {s.n}
                     </span>
-                    <span className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-slate-500">
-                      {s.time}
-                    </span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-400">{s.time}</span>
                   </div>
-                  <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gs-50">
-                    <s.icon className="h-5 w-5 text-gs-600" strokeWidth={2} />
-                  </span>
-                  <h3 className="text-lg font-extrabold text-slate-900">{s.name}</h3>
+                  <h3 className="mt-4 text-lg font-extrabold text-slate-900">{s.name}</h3>
                   <p className="mt-1.5 text-sm text-slate-600">{s.blurb}</p>
                 </div>
               ))}
