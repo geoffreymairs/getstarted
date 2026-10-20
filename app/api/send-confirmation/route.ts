@@ -3,6 +3,7 @@ import { Resend } from 'resend'
 const PACKAGE_NAMES: Record<string, string> = {
   'one-on-one': '1-on-1 AI Training',
   team: 'Team AI Workshop',
+  schools: 'AI Workshops for Schools',
 }
 
 export async function POST(req: Request) {
@@ -25,12 +26,12 @@ export async function POST(req: Request) {
       from: 'Geoffrey at GetStarted AI <noreply@getstarted.co.nz>',
       to: email,
       replyTo: 'hello@getstarted.co.nz',
-      subject: `Thanks for booking ${packageName} with GetStarted AI`,
+      subject: `Thanks for your enquiry about ${packageName} with GetStarted AI`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif; max-width: 600px; margin: 0 auto; padding: 0; color: #1a1a1a; background: #ffffff;">
           <!-- Header with gradient -->
           <div style="background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%); padding: 40px 20px; text-align: center;">
-            <p style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255, 255, 255, 0.9);">Booking Received</p>
+            <p style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: rgba(255, 255, 255, 0.9);">Enquiry Received</p>
             <h1 style="margin: 0; font-size: 34px; font-weight: 800; color: #ffffff;">Thank You</h1>
             <p style="margin: 12px 0 0 0; font-size: 16px; color: rgba(255, 255, 255, 0.95);">${packageName}</p>
           </div>
@@ -39,7 +40,7 @@ export async function POST(req: Request) {
           <div style="padding: 40px 20px;">
             <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.8; color: #333;">Hi ${firstName},</p>
 
-            <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.8; color: #555;">Thanks for booking <strong>${packageName}</strong> with GetStarted AI. We deliver our training on-site at your workplace, and we&rsquo;ll be in touch shortly to confirm a date and time that suits your business.</p>
+            <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.8; color: #555;">Thanks for your enquiry about <strong>${packageName}</strong> with GetStarted AI. We deliver our training on-site at your workplace or school, and we&rsquo;ll be in touch shortly to confirm a date and time that suits you, along with a quote.</p>
 
             <!-- What happens next -->
             <div style="margin: 0 0 24px 0; padding: 28px; background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%); border-radius: 12px; border: 1px solid rgba(0, 153, 255, 0.15);">
@@ -67,14 +68,14 @@ export async function POST(req: Request) {
       from: 'GetStarted AI <noreply@getstarted.co.nz>',
       to: 'hello@catchie.nz',
       cc: ['info@balloonz.co.nz'],
-      subject: `New Booking: ${packageName}, ${name}`,
+      subject: `New Enquiry: ${packageName}, ${name}`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <p style="margin: 0 0 16px 0; font-size: 16px;"><strong>${name}</strong> just booked <strong>${packageName}</strong>.</p>
+          <p style="margin: 0 0 16px 0; font-size: 16px;"><strong>${name}</strong> just enquired about <strong>${packageName}</strong>.</p>
           <div style="background: #f9f9f9; padding: 16px; border-radius: 6px; margin: 16px 0;">
             <p style="margin: 0 0 8px 0;"><strong>Email:</strong> ${email}</p>
             <p style="margin: 0 0 8px 0;"><strong>Phone:</strong> ${phone}</p>
-            <p style="margin: 0 0 8px 0;"><strong>Business:</strong> ${business || ', '}</p>
+            <p style="margin: 0 0 8px 0;"><strong>Business or school:</strong> ${business || '-'}</p>
             <p style="margin: 0;"><strong>Package:</strong> ${packageName}</p>
           </div>
         </div>

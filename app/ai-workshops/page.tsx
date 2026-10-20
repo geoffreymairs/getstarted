@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
-import { User, Users, CheckCircle2 } from 'lucide-react'
+import { User, Users, GraduationCap, CheckCircle2 } from 'lucide-react'
 import WebNav from '@/components/site/WebNav'
 import WebFooter from '@/components/site/WebFooter'
 import AITrainingWeDeliver from '@/components/AITrainingWeDeliver'
@@ -21,6 +21,12 @@ const offerings = [
     title: 'Team AI Workshops',
     description: 'On-site training that gets your whole team using AI with confidence.',
     audiences: ['Teams', 'Departments', 'Entire organisations'],
+  },
+  {
+    icon: GraduationCap,
+    title: 'AI Workshops for Schools',
+    description: 'A hands-on session where students use AI to invent a business and build a real website.',
+    audiences: ['Students aged 16 to 18', 'Auckland secondary schools', 'Classes and groups'],
   },
 ]
 
@@ -47,12 +53,12 @@ export default function AIWorkshopsPage() {
               <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 text-balance leading-[1.05]">
                 AI workshops for{' '}
                 <span className="bg-gradient-to-r from-gs-500 to-indigo-500 bg-clip-text text-transparent">
-                  NZ teams
+                  business and schools
                 </span>
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600 leading-relaxed">
-                Practical, hands-on AI training delivered at your workplace, choose personalised 1-on-1 coaching
-                or a workshop for your whole team.
+                Practical, hands-on AI training delivered on-site, choose personalised 1-on-1 coaching, a workshop for
+                your whole team, or a session for your school.
               </p>
             </motion.div>
           </div>
@@ -60,7 +66,7 @@ export default function AIWorkshopsPage() {
 
         {/* Two Offerings */}
         <section className="px-6 pb-8">
-          <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-6">
+          <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {offerings.map((offering, index) => {
               const Icon = offering.icon
               return (

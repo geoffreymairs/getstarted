@@ -4,13 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import { useState, RefObject, useRef } from 'react'
-import { CheckCircle2, User, Users, Tv } from 'lucide-react'
-
-declare global {
-  interface Window {
-    Stripe: any
-  }
-}
+import { CheckCircle2, User, Users, GraduationCap, Tv } from 'lucide-react'
 
 interface FormData {
   name: string
@@ -19,7 +13,7 @@ interface FormData {
   business: string
 }
 
-type PackageId = 'one-on-one' | 'team'
+type PackageId = 'one-on-one' | 'team' | 'schools'
 
 interface FinalCTAProps {
   ctaRef: RefObject<HTMLDivElement>
@@ -29,11 +23,9 @@ const packages = [
   {
     id: 'one-on-one' as PackageId,
     name: '1-on-1 AI Training',
-    price: '$199',
-    gst: '+ GST',
     icon: User,
     tagline: 'Perfect for business owners or professionals who want personalised training.',
-    cta: 'Book a 1-on-1 Session',
+    cta: 'Enquire about 1-on-1',
     images: ['/workshop-one-on-one.png'],
     imageAlt: ['A GetStarted trainer giving one-on-one AI coaching, pointing at a laptop screen'],
     features: [
@@ -49,11 +41,9 @@ const packages = [
   {
     id: 'team' as PackageId,
     name: 'Team AI Workshop',
-    price: '$999',
-    gst: '+ GST',
     icon: Users,
     tagline: 'For businesses with up to 20 participants.',
-    cta: 'Book a Team Workshop',
+    cta: 'Enquire about a team workshop',
     images: ['/workshop-room.png'],
     imageAlt: ['Attendees seated around the table during a GetStarted team AI workshop'],
     features: [
@@ -65,6 +55,24 @@ const packages = [
       'AI tools your staff can begin using immediately',
     ],
     note: 'Your workplace should have a large TV or projector so participants can clearly follow the demonstrations.',
+  },
+  {
+    id: 'schools' as PackageId,
+    name: 'AI Workshops for Schools',
+    icon: GraduationCap,
+    tagline: 'For secondary students who learn best by making something real.',
+    cta: 'Enquire for your school',
+    images: ['/workshop/washmate-example.webp'],
+    imageAlt: ['A finished website built by students during the GetStarted AI workshop'],
+    features: [
+      'For students aged 16 to 18',
+      'Delivered on-site at your school',
+      'Runs in about 60 minutes, and flexes to your class time',
+      'Students invent a business, brand it and build a real website',
+      'Uses ChatGPT and v0, no coding needed',
+      'Every student finishes with their own published website',
+    ],
+    note: 'Works best with a computer or tablet per student or pair, plus a projector or large screen.',
   },
 ]
 
@@ -93,22 +101,7 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
   const onSubmit = async (data: FormData) => {
     setIsLoading(true)
     try {
-      const response = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: data.email,
-          name: data.name,
-          packageType: selectedPackage,
-        }),
-      })
-
-      if (!response.ok) throw new Error('Checkout failed')
-
-      const { sessionId } = await response.json()
-
-      // Send confirmation email (non-blocking for the booking flow)
-      await fetch('/api/send-confirmation', {
+      const response = await fetch('/api/send-confirmation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -120,19 +113,13 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
         }),
       })
 
-      const redirect = (stripe: any) => stripe.redirectToCheckout({ sessionId })
+      if (!response.ok) throw new Error('Enquiry failed')
 
-      if (!window.Stripe) {
-        const script = document.createElement('script')
-        script.src = 'https://js.stripe.com/v3/'
-        script.onload = () => redirect(window.Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY))
-        document.body.appendChild(script)
-      } else {
-        redirect(window.Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY))
-      }
+      setIsSubmitted(true)
     } catch (error) {
-      console.error('Checkout error:', error)
-      alert('Failed to start booking. Please try again.')
+      console.error('Enquiry error:', error)
+      alert('Something went wrong. Please try again, or email hello@getstarted.co.nz.')
+    } finally {
       setIsLoading(false)
     }
   }
@@ -158,12 +145,12 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
             </span>
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto text-pretty">
-            Two clear options, both delivered on-site at your workplace and tailored to your business.
+            Three options, all delivered on-site and tailored to you. Tell us what you need and we will send a quote.
           </p>
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {packages.map((pkg, index) => {
             const Icon = pkg.icon
             const isActive = pkg.id === selectedPackage
@@ -203,13 +190,7 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                 </div>
 
                 {/* Name */}
-                <h3 className="text-2xl font-extrabold text-slate-900 mb-2">{pkg.name}</h3>
-
-                {/* Price */}
-                <div className="flex items-end gap-2 mb-4">
-                  <span className="text-4xl sm:text-5xl font-extrabold text-slate-900">{pkg.price}</span>
-                  <span className="text-slate-500 font-semibold mb-1">{pkg.gst}</span>
-                </div>
+                <h3 className="text-2xl font-extrabold text-slate-900 mb-3">{pkg.name}</h3>
 
                 {/* Tagline */}
                 <p className="text-slate-600 mb-6">{pkg.tagline}</p>
@@ -257,16 +238,15 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
           {!isSubmitted ? (
             <>
               <div className="mb-8 text-center">
-                <h3 className="text-2xl font-extrabold text-slate-900 mb-2">Book your training</h3>
+                <h3 className="text-2xl font-extrabold text-slate-900 mb-2">Enquire about training</h3>
                 <p className="text-slate-600">
-                  You&apos;re booking the{' '}
-                  <span className="text-gs-600 font-bold">{activePackage.name}</span>{' '}
-                  ({activePackage.price} {activePackage.gst}).
+                  You&apos;re enquiring about the{' '}
+                  <span className="text-gs-600 font-bold">{activePackage.name}</span>.
                 </p>
               </div>
 
               {/* Package toggle */}
-              <div className="grid grid-cols-2 gap-3 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
                 {packages.map((pkg) => (
                   <button
                     key={pkg.id}
@@ -296,14 +276,14 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                   {errors.name && <p className="text-red-600 text-sm mt-2">{errors.name.message}</p>}
                 </div>
 
-                {/* Business */}
+                {/* Business or school */}
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">Business Name</label>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">Business or school name</label>
                   <input
                     type="text"
-                    placeholder="Your business"
+                    placeholder="Your business or school"
                     className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:border-gs-500 focus:ring-2 focus:ring-gs-500/30 focus:bg-white transition-all"
-                    {...register('business', { required: 'Business name is required' })}
+                    {...register('business', { required: 'This field is required' })}
                   />
                   {errors.business && <p className="text-red-600 text-sm mt-2">{errors.business.message}</p>}
                 </div>
@@ -338,13 +318,15 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                   {errors.phone && <p className="text-red-600 text-sm mt-2">{errors.phone.message}</p>}
                 </div>
 
-                {/* Order Summary */}
-                <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 space-y-3">
+                {/* Selected option */}
+                <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 space-y-2">
                   <div className="flex justify-between items-center text-slate-700">
-                    <span>{activePackage.name}</span>
-                    <span className="font-semibold text-gs-600">{activePackage.price} {activePackage.gst}</span>
+                    <span>Selected</span>
+                    <span className="font-semibold text-gs-600">{activePackage.name}</span>
                   </div>
-                  <p className="text-xs text-slate-500">GST (15%) is added at checkout.</p>
+                  <p className="text-xs text-slate-500">
+                    No payment now. We&apos;ll confirm the details and send an invoice once your session is booked.
+                  </p>
                 </div>
 
                 {/* Submit */}
@@ -353,11 +335,11 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                   disabled={isLoading}
                   className="w-full rounded-xl bg-gs-600 text-white font-semibold text-base hover:bg-gs-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed py-3.5"
                 >
-                  {isLoading ? 'Processing...' : 'Continue to booking'}
+                  {isLoading ? 'Sending...' : 'Send enquiry'}
                 </button>
 
                 <p className="text-center text-sm text-slate-500">
-                  We&apos;ll be in touch to confirm a date and time that suits your business.
+                  We&apos;ll be in touch to confirm a date and time that suits you.
                 </p>
               </form>
             </>
@@ -368,9 +350,9 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
               className="text-center py-8"
             >
               <CheckCircle2 className="w-16 h-16 text-gs-600 mx-auto mb-6" />
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">Booking Received</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">Enquiry Received</h3>
               <p className="text-slate-600">
-                Thanks for booking. We&apos;ll be in touch shortly to confirm your training.
+                Thanks for your enquiry. We&apos;ll be in touch shortly to confirm the details and send a quote.
               </p>
             </motion.div>
           )}
