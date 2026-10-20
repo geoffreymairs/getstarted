@@ -62,8 +62,8 @@ const packages = [
     icon: GraduationCap,
     tagline: 'For secondary students who learn best by making something real.',
     cta: 'Enquire for your school',
-    images: ['/workshop/washmate-example.webp'],
-    imageAlt: ['A finished website built by students during the GetStarted AI workshop'],
+    images: ['/workshop/schools.jpg'],
+    imageAlt: ['A group of students working together on a laptop in a classroom'],
     features: [
       'For students aged 16 to 18',
       'Delivered on-site at your school',
@@ -149,8 +149,8 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
           </p>
         </motion.div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        {/* Option rows, stacked */}
+        <div className="space-y-6 mb-16">
           {packages.map((pkg, index) => {
             const Icon = pkg.icon
             const isActive = pkg.id === selectedPackage
@@ -160,66 +160,61 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className={`relative flex flex-col rounded-2xl p-8 sm:p-10 bg-white transition-all ${
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className={`grid overflow-hidden rounded-2xl bg-white transition-all md:grid-cols-5 ${
                   isActive
                     ? 'border-2 border-gs-500 shadow-xl shadow-gs-500/10'
                     : 'border border-slate-200 shadow-sm'
                 }`}
               >
-                {/* Workshop photo(s) */}
-                <div className={`mb-6 grid gap-3 ${pkg.images.length === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
-                  {pkg.images.map((src, i) => (
-                    <div key={src} className="relative w-full h-40 overflow-hidden rounded-xl shadow-sm ring-1 ring-slate-200">
-                      <Image
-                        src={src || "/placeholder.svg"}
-                        alt={pkg.imageAlt[i]}
-                        fill
-                        loading="lazy"
-                        quality={70}
-                        sizes="(max-width: 1024px) 90vw, 360px"
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
+                {/* Image */}
+                <div className="relative min-h-[200px] md:col-span-2 md:min-h-[320px]">
+                  <Image
+                    src={pkg.images[0] || '/placeholder.svg'}
+                    alt={pkg.imageAlt[0]}
+                    fill
+                    loading="lazy"
+                    quality={70}
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    className="object-cover"
+                  />
                 </div>
 
-                {/* Icon */}
-                <div className="mb-6 flex items-center justify-center w-11 h-11 rounded-xl bg-gs-50">
-                  <Icon className="w-6 h-6 text-gs-600" />
-                </div>
+                {/* Content */}
+                <div className="flex flex-col p-8 sm:p-10 md:col-span-3">
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-gs-50">
+                      <Icon className="h-6 w-6 text-gs-600" />
+                    </span>
+                    <h3 className="text-2xl font-extrabold text-slate-900">{pkg.name}</h3>
+                  </div>
 
-                {/* Name */}
-                <h3 className="text-2xl font-extrabold text-slate-900 mb-3">{pkg.name}</h3>
+                  <p className="mb-6 text-slate-600">{pkg.tagline}</p>
 
-                {/* Tagline */}
-                <p className="text-slate-600 mb-6">{pkg.tagline}</p>
+                  <ul className="mb-6 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+                    {pkg.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-gs-600" />
+                        <span className="text-sm text-slate-600">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                {/* Features */}
-                <ul className="space-y-3 mb-6">
-                  {pkg.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-gs-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-600 text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Pinned bottom: note + CTA */}
-                <div className="mt-auto space-y-5 pt-2">
-                  {pkg.note && (
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-gs-50 border border-gs-100">
-                      <Tv className="w-5 h-5 text-gs-600 flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-slate-600">{pkg.note}</p>
-                    </div>
-                  )}
-                  <button
-                    onClick={() => handleSelectPackage(pkg.id)}
-                    className="group w-full rounded-full px-6 py-3.5 bg-gs-600 text-white font-semibold text-base hover:bg-gs-700 transition-colors"
-                  >
-                    {pkg.cta}
-                    <span className="group-hover:translate-x-0.5 inline-block transition-transform ml-2">→</span>
-                  </button>
+                  <div className="mt-auto flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+                    {pkg.note && (
+                      <div className="flex items-start gap-2.5 text-sm text-slate-500 sm:max-w-xs">
+                        <Tv className="mt-0.5 h-4 w-4 flex-shrink-0 text-gs-600" />
+                        <p>{pkg.note}</p>
+                      </div>
+                    )}
+                    <button
+                      onClick={() => handleSelectPackage(pkg.id)}
+                      className="group flex-shrink-0 rounded-full bg-gs-600 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-gs-700"
+                    >
+                      {pkg.cta}
+                      <span className="ml-2 inline-block transition-transform group-hover:translate-x-0.5">→</span>
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             )
