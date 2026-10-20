@@ -349,10 +349,10 @@ export default function WorkshopPage() {
                 </div>
               </div>
               <Image
-                src="/workshop/washmate-example.jpg"
+                src="/workshop/washmate-example.webp"
                 alt="WashMate, an example of a finished mobile car wash website built in this workshop"
-                width={800}
-                height={505}
+                width={1463}
+                height={782}
                 className="h-auto w-full"
                 priority
               />
