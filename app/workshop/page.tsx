@@ -529,52 +529,53 @@ Give the browser tab a clear title using my business name, make sure every butto
             </div>
           </Step>
 
-          {/* Optional: Resend form */}
+          {/* Optional: Web3Forms form */}
           <Step
             badge="Optional"
             time="If you finish early"
             title="Make your contact form email you"
-            intro="Connect your form with Resend so a real email lands in your inbox every time someone enquires."
+            intro="Connect your form with Web3Forms so a real email lands in your inbox every time someone enquires. No API keys to install."
             icon={Mail}
           >
             <div className="space-y-3 rounded-lg border border-blue-500/30 bg-blue-500/10 p-6 text-sm text-gray-300">
-              <p className="font-bold text-white">Set up Resend first</p>
+              <p className="font-bold text-white">Set up Web3Forms first</p>
               <ol className="ml-4 list-decimal space-y-1.5">
                 <li>
                   Go to{' '}
                   <a
-                    href="https://resend.com"
+                    href="https://web3forms.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-accent hover:text-accent-light"
                   >
-                    resend.com
+                    web3forms.com
                   </a>{' '}
-                  and sign up for free.
+                  and click Create Access Key.
                 </li>
-                <li>Create an API key and copy it.</li>
-                <li>
-                  In your project settings (in v0, or in Vercel), add an environment variable named{' '}
-                  <span className="rounded bg-black/40 px-1.5 py-0.5 font-mono text-xs text-yellow-400">RESEND_API_KEY</span>{' '}
-                  and paste your key.
-                </li>
+                <li>Enter the email address where you want enquiries to land.</li>
+                <li>Check that inbox and copy the access key they send you.</li>
               </ol>
             </div>
-            <p className="text-sm text-gray-300">Then paste this into v0 to connect the form.</p>
+            <p className="text-sm text-gray-300">
+              Then paste this into v0, with your key in place of{' '}
+              <span className="rounded bg-black/40 px-1.5 py-0.5 font-mono text-xs text-yellow-400">[YOUR ACCESS KEY]</span>.
+            </p>
             <ToolPrompt
               toolName="v0"
               tone="v0"
               promptNumber={9}
-              prompt={`Connect my contact form so it emails me when someone submits it, using Resend.
+              prompt={`Make my contact form send me an email when someone submits it, using Web3Forms.
 
-Create a server action (or API route) that sends an email with the Resend API, reading the key from an environment variable called RESEND_API_KEY. Send the email from onboarding@resend.dev to [YOUR EMAIL ADDRESS], with the subject "New enquiry from my website". Put the name, email, phone and message from the form in the email body.
+Set the form to POST to https://api.web3forms.com/submit.
 
-When someone submits the form, show a loading state, then a success message that says "Thanks, we will be in touch." Keep the existing form design and layout.`}
+Add a hidden input named "access_key" with the value [YOUR ACCESS KEY].
+Add a hidden input named "subject" with the value "New enquiry from my website".
+
+Keep the visible fields (name, email, phone, message) and the existing design. When someone submits, show a loading state, then a success message that says "Thanks, we will be in touch."`}
             />
             <div className="rounded-lg border border-accent/20 bg-accent/5 p-5 text-sm text-gray-300">
-              Publish again so the change goes live, then fill in the form on your own site and check your email. Resend
-              lets you send test emails to the address you signed up with. To send from your own business email address
-              later, you verify a domain in Resend.
+              Publish again so the change goes live, then fill in the form on your own site and check your email. Your
+              first test submission may ask you to confirm your email with Web3Forms.
             </div>
           </Step>
 
