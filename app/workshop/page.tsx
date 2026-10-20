@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Lock, Copy, Check, Lightbulb, PenTool, Image as ImageIcon, LayoutTemplate, Sparkles } from 'lucide-react'
+import { Lock, Copy, Check, Lightbulb, PenTool, Image as ImageIcon, LayoutTemplate, Rocket, Mail, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Navigation from '@/components/Navigation'
@@ -251,8 +251,9 @@ export default function WorkshopPage() {
               </span>
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-gray-300">
-              In four steps you will plan a business, create its brand and build its website with ChatGPT and v0. Our
-              example business is a mobile car wash, but these steps work for almost any business. No coding needed.
+              In four steps you will plan a business, create its brand and build its website with ChatGPT and v0, then
+              publish it online. Our example business is a mobile car wash, but these steps work for almost any business.
+              No coding needed.
             </p>
           </motion.div>
 
@@ -500,6 +501,83 @@ v0 will build your website. When it finishes, add your logo and hero image, then
             </div>
           </Step>
 
+          {/* Publish */}
+          <Step
+            badge="Go live"
+            time="5 min"
+            title="Publish your website"
+            intro="Put your site online with a real link anyone can open."
+            icon={Rocket}
+          >
+            <p className="text-sm text-gray-300">Run this final check in v0, then publish.</p>
+            <ToolPrompt
+              toolName="v0"
+              tone="v0"
+              promptNumber={8}
+              prompt={`Before I publish, do a final check on the whole site.
+
+Give the browser tab a clear title using my business name, make sure every button and menu link works and scrolls to the right section, and confirm the page looks great on a phone. Do not change the words or the design.`}
+            />
+            <div className="space-y-3 rounded-lg border border-blue-500/30 bg-blue-500/10 p-6 text-sm text-gray-300">
+              <p className="font-bold text-white">Put it online</p>
+              <ol className="ml-4 list-decimal space-y-1.5">
+                <li>In v0, find the Publish button near the top right.</li>
+                <li>Click Publish. v0 puts your site online and gives you a live link that ends in .vercel.app.</li>
+                <li>Open the link on your phone to check it works.</li>
+                <li>Save your live link in your notes, then share it.</li>
+              </ol>
+            </div>
+          </Step>
+
+          {/* Optional: Resend form */}
+          <Step
+            badge="Optional"
+            time="If you finish early"
+            title="Make your contact form email you"
+            intro="Connect your form with Resend so a real email lands in your inbox every time someone enquires."
+            icon={Mail}
+          >
+            <div className="space-y-3 rounded-lg border border-blue-500/30 bg-blue-500/10 p-6 text-sm text-gray-300">
+              <p className="font-bold text-white">Set up Resend first</p>
+              <ol className="ml-4 list-decimal space-y-1.5">
+                <li>
+                  Go to{' '}
+                  <a
+                    href="https://resend.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-accent-light"
+                  >
+                    resend.com
+                  </a>{' '}
+                  and sign up for free.
+                </li>
+                <li>Create an API key and copy it.</li>
+                <li>
+                  In your project settings (in v0, or in Vercel), add an environment variable named{' '}
+                  <span className="rounded bg-black/40 px-1.5 py-0.5 font-mono text-xs text-yellow-400">RESEND_API_KEY</span>{' '}
+                  and paste your key.
+                </li>
+              </ol>
+            </div>
+            <p className="text-sm text-gray-300">Then paste this into v0 to connect the form.</p>
+            <ToolPrompt
+              toolName="v0"
+              tone="v0"
+              promptNumber={9}
+              prompt={`Connect my contact form so it emails me when someone submits it, using Resend.
+
+Create a server action (or API route) that sends an email with the Resend API, reading the key from an environment variable called RESEND_API_KEY. Send the email from onboarding@resend.dev to [YOUR EMAIL ADDRESS], with the subject "New enquiry from my website". Put the name, email, phone and message from the form in the email body.
+
+When someone submits the form, show a loading state, then a success message that says "Thanks, we will be in touch." Keep the existing form design and layout.`}
+            />
+            <div className="rounded-lg border border-accent/20 bg-accent/5 p-5 text-sm text-gray-300">
+              Publish again so the change goes live, then fill in the form on your own site and check your email. Resend
+              lets you send test emails to the address you signed up with. To send from your own business email address
+              later, you verify a domain in Resend.
+            </div>
+          </Step>
+
           {/* Finish */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -520,7 +598,7 @@ v0 will build your website. When it finishes, add your logo and hero image, then
                 website. That is a genuine skill you can use again and again.
               </p>
               <p className="font-semibold text-accent-light">
-                Share your preview link and show off what you made.
+                Share your live link and show off what you made.
               </p>
             </div>
           </motion.div>
