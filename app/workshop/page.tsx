@@ -490,12 +490,14 @@ Write it as one clear block of instructions I can paste straight into v0.`}
 v0 will build your website. When it finishes, add your logo and hero image, then ask it to tidy anything you want to change.`}
             />
             <div className="space-y-3 rounded-lg border border-blue-500/30 bg-blue-500/10 p-6 text-sm text-gray-300">
-              <p className="font-bold text-white">Refine it, one change at a time</p>
-              <p>Try prompts like these in v0, sending one at a time:</p>
+              <p className="font-bold text-white">Refine it, one change at a time (optional)</p>
+              <p>
+                Each prompt uses some of your free v0 credit, so only change what really matters and make each prompt
+                count. Useful tweaks, sent one at a time:
+              </p>
               <ul className="ml-4 list-disc space-y-1">
                 <li>Make the brand colours [YOUR BRAND COLOURS] across the whole site.</li>
                 <li>Make the hero headline bigger and the Book a wash button stand out.</li>
-                <li>Make sure it looks great on a phone.</li>
               </ul>
               <p className="text-gray-400">If a change makes it worse, tell v0 to undo the last change.</p>
             </div>
@@ -509,15 +511,14 @@ v0 will build your website. When it finishes, add your logo and hero image, then
             intro="Put your site online with a real link anyone can open."
             icon={Rocket}
           >
-            <p className="text-sm text-gray-300">Run this final check in v0, then publish.</p>
-            <ToolPrompt
-              toolName="v0"
-              tone="v0"
-              promptNumber={8}
-              prompt={`Before I publish, do a final check on the whole site.
-
-Give the browser tab a clear title using my business name, make sure every button and menu link works and scrolls to the right section, and confirm the page looks great on a phone. Do not change the words or the design.`}
-            />
+            <div className="space-y-2 rounded-lg border border-accent/20 bg-accent/5 p-5 text-sm text-gray-300">
+              <p className="font-bold text-white">Check it on a phone first (no prompt needed)</p>
+              <p>
+                In v0's preview, switch to the mobile view (look for the phone icon) and scroll the whole page yourself.
+                Check the text, buttons and images look good and nothing runs off the edge. Most sites already look great
+                on mobile, so only send a prompt if something is actually broken.
+              </p>
+            </div>
             <div className="space-y-3 rounded-lg border border-blue-500/30 bg-blue-500/10 p-6 text-sm text-gray-300">
               <p className="font-bold text-white">Put it online</p>
               <ol className="ml-4 list-decimal space-y-1.5">
@@ -563,7 +564,7 @@ Give the browser tab a clear title using my business name, make sure every butto
             <ToolPrompt
               toolName="v0"
               tone="v0"
-              promptNumber={9}
+              promptNumber={8}
               prompt={`Make my contact form send me an email when someone submits it, using Web3Forms.
 
 Set the form to POST to https://api.web3forms.com/submit.
