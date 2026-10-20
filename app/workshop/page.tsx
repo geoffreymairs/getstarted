@@ -541,9 +541,9 @@ Then put everything together as one clear, concise website brief I can paste str
             <div className="overflow-hidden rounded-xl border border-slate-200">
               <Image
                 src="/workshop/carwash-hero.webp"
-                alt="Example hero image: a detailer washing a glossy black car in a driveway with a mobile van, no text"
-                width={1672}
-                height={941}
+                alt="Example hero image: a detailer washing a glossy car on a driveway with a mobile van and a sea view, no text"
+                width={1947}
+                height={808}
                 className="h-auto w-full"
               />
             </div>
