@@ -36,7 +36,7 @@ const packages = [
       'Practical examples using your own business',
       'Q&A session',
     ],
-    note: null as string | null,
+    note: 'You just need your own laptop and a quiet place to focus.',
   },
   {
     id: 'team' as PackageId,
@@ -69,7 +69,7 @@ const packages = [
       'Delivered on-site at your school',
       'Runs in about 60 minutes, and flexes to your class time',
       'Students invent a business, brand it and build a real website',
-      'Uses ChatGPT and v0, no coding needed',
+      'No coding or experience needed',
       'Every student finishes with their own published website',
     ],
     note: 'Works best with a computer or tablet per student or pair, plus a projector or large screen.',
@@ -196,7 +196,7 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                 <p className="text-slate-600 mb-6">{pkg.tagline}</p>
 
                 {/* Features */}
-                <ul className="space-y-3 mb-6 flex-1">
+                <ul className="space-y-3 mb-6">
                   {pkg.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-gs-600 flex-shrink-0 mt-0.5" />
@@ -205,22 +205,22 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                   ))}
                 </ul>
 
-                {/* Requirement note */}
-                {pkg.note && (
-                  <div className="flex items-start gap-3 mb-6 p-4 rounded-lg bg-gs-50 border border-gs-100">
-                    <Tv className="w-5 h-5 text-gs-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm text-slate-600">{pkg.note}</p>
-                  </div>
-                )}
-
-                {/* CTA */}
-                <button
-                  onClick={() => handleSelectPackage(pkg.id)}
-                  className="group w-full rounded-full px-6 py-3.5 bg-gs-600 text-white font-semibold text-base hover:bg-gs-700 transition-colors"
-                >
-                  {pkg.cta}
-                  <span className="group-hover:translate-x-0.5 inline-block transition-transform ml-2">→</span>
-                </button>
+                {/* Pinned bottom: note + CTA */}
+                <div className="mt-auto space-y-5 pt-2">
+                  {pkg.note && (
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-gs-50 border border-gs-100">
+                      <Tv className="w-5 h-5 text-gs-600 flex-shrink-0 mt-0.5" />
+                      <p className="text-sm text-slate-600">{pkg.note}</p>
+                    </div>
+                  )}
+                  <button
+                    onClick={() => handleSelectPackage(pkg.id)}
+                    className="group w-full rounded-full px-6 py-3.5 bg-gs-600 text-white font-semibold text-base hover:bg-gs-700 transition-colors"
+                  >
+                    {pkg.cta}
+                    <span className="group-hover:translate-x-0.5 inline-block transition-transform ml-2">→</span>
+                  </button>
+                </div>
               </motion.div>
             )
           })}
