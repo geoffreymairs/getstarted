@@ -57,13 +57,15 @@ const ToolPrompt = ({
 /* Numbered workshop step card */
 const Step = ({
   number,
+  badge,
   time,
   title,
   intro,
   icon: Icon,
   children,
 }: {
-  number: number
+  number?: number
+  badge?: string
   time: string
   title: string
   intro: string
@@ -92,7 +94,7 @@ const Step = ({
           <div className="flex-1">
             <div className="mb-2 flex flex-wrap items-center gap-2">
               <span className="inline-block rounded-full border border-accent/50 bg-accent/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent">
-                Step {number}
+                {badge ?? `Step ${number}`}
               </span>
               <span className="inline-block rounded-full border border-purple-glow/50 bg-purple-glow/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-purple-glow">
                 {time}
@@ -132,7 +134,7 @@ export default function WorkshopPage() {
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-md">
             <div className="mb-8 text-center">
               <Lock className="mx-auto mb-4 h-16 w-16 text-accent" />
-              <h1 className="mb-2 text-4xl font-black text-white">Mobile Car Wash Workshop</h1>
+              <h1 className="mb-2 text-4xl font-black text-white">Build a Business Workshop</h1>
               <p className="text-gray-300">Enter your access password to start the workshop</p>
             </div>
             <form onSubmit={handlePasswordSubmit} className="space-y-4">
@@ -179,15 +181,15 @@ export default function WorkshopPage() {
               60 minute AI workshop
             </div>
             <h1 className="mb-4 text-5xl font-black leading-tight text-white sm:text-7xl">
-              Build a Mobile
+              Build a Business
               <br />
               <span className="bg-gradient-to-r from-accent via-accent-light to-purple-glow bg-clip-text text-transparent">
-                Car Wash Website
+                with AI
               </span>
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-gray-300">
-              Follow each step below. You will use ChatGPT to plan the business, create a name, logo and hero image,
-              then build a real one-page website with v0. No coding needed.
+              In four steps you will plan a business, create its brand and build its website with ChatGPT and v0. Our
+              example business is a mobile car wash, but these steps work for almost any business. No coding needed.
             </p>
           </motion.div>
 
@@ -226,9 +228,9 @@ export default function WorkshopPage() {
 
           {/* Before you start */}
           <Step
-            number={0}
+            badge="Before you begin"
             time="5 min"
-            title="Before you start"
+            title="Set up your tools"
             intro="You need two free accounts. Sign in to both before step 1."
             icon={Lock}
           >
@@ -270,13 +272,13 @@ export default function WorkshopPage() {
           <Step
             number={1}
             time="15 min"
-            title="Plan your business with ChatGPT"
-            intro="Turn the idea, a mobile car wash that comes to the customer, into a real business with services and prices."
+            title="Plan the business"
+            intro="Use ChatGPT to turn the idea, a mobile car wash that comes to the customer, into a real business plan: who it is for, what it sells, and its prices."
             icon={Lightbulb}
           >
             <p className="text-sm text-gray-300">
               First, give ChatGPT its role so it answers like a real business expert. Paste prompt 1, read the reply,
-              then paste prompt 2.
+              then paste prompt 2 to create your business plan.
             </p>
             <ToolPrompt
               toolName="ChatGPT"

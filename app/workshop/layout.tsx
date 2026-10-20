@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Mobile Car Wash Workshop | GetStarted',
+  title: 'Build a Business Workshop | GetStarted',
   description:
-    'A password-protected, step-by-step AI workshop. Plan a mobile car wash business, create its name, logo and hero image, then build a one-page website with ChatGPT and v0.',
+    'A password-protected, step-by-step AI workshop. Plan a business, create its name, logo and hero image, then build a one-page website with ChatGPT and v0. Example business: a mobile car wash.',
   robots: { index: false, follow: false },
 }
 
