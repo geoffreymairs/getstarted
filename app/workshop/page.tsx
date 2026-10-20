@@ -11,7 +11,6 @@ import {
   ClipboardList,
   Image as ImageIcon,
   LayoutTemplate,
-  Users,
   Rocket,
   Mail,
   Sparkles,
@@ -202,7 +201,12 @@ const programme = [
     time: '27-52 min',
     blurb: 'Paste your brief into v0, build a one-page site and preview it.',
   },
-  { n: 6, name: 'Showcase', time: '52-60 min', blurb: 'Preview, present and talk about how AI helped.' },
+  {
+    n: 6,
+    name: 'Publish and showcase',
+    time: '52-60 min',
+    blurb: 'Check it on desktop and mobile, publish it live, then present.',
+  },
 ]
 
 export default function WorkshopPage() {
@@ -579,22 +583,39 @@ v0 will build a complete, responsive, one page website. When it finishes, upload
               <p className="text-slate-500">If a change makes it worse, tell v0 to undo the last change.</p>
             </div>
             <div className="rounded-lg border border-gs-200 bg-gs-50 p-5 text-sm text-slate-700">
-              That preview in v0 is your finished prototype for today. It is a working website you can show and share,
-              even before it is published online.
+              This preview is your website. In the final step you will check it on desktop and mobile, then publish it
+              live.
             </div>
           </Step>
 
-          {/* Step 6: Showcase */}
+          {/* Step 6: Check, publish and showcase */}
           <Step
             number={6}
             time="52-60 min"
-            title="Showcase"
-            intro="Show off what you made and talk about how AI helped."
-            icon={Users}
+            title="Publish and showcase"
+            intro="Check your website looks great, put it online for real, then show it off. Getting it live is the goal of the workshop."
+            icon={Rocket}
           >
+            <div className="space-y-2 rounded-lg border border-gs-200 bg-gs-50 p-6 text-sm text-slate-700">
+              <p className="font-bold text-slate-900">1. Check it looks good</p>
+              <p>
+                In v0's preview, look at your site in both desktop and mobile view (use the phone icon to switch).
+                Scroll the whole page and check the text, buttons and image look good and nothing runs off the edge. Fix
+                anything that is clearly broken.
+              </p>
+            </div>
+            <div className="space-y-2 rounded-lg border border-blue-200 bg-blue-50 p-6 text-sm text-slate-700">
+              <p className="font-bold text-slate-900">2. Publish it</p>
+              <p>
+                Look for a Publish or Deploy option in v0 and follow the steps it shows. v0 gives you a live link (it
+                ends in .vercel.app) that anyone can open. Check what v0 asks for at the time, and do not enter any
+                payment details.
+              </p>
+            </div>
             <div className="space-y-3 rounded-lg border border-gs-200 bg-gs-50 p-6 text-sm text-slate-700">
+              <p className="font-bold text-slate-900">3. Showcase</p>
               <ul className="ml-4 list-disc space-y-1.5">
-                <li>Open your website preview and scroll through it.</li>
+                <li>Open your live link and scroll through your site.</li>
                 <li>
                   A few of you present: what is your business called, who is it for, and what do you like most about your
                   site?
@@ -602,28 +623,6 @@ v0 will build a complete, responsive, one page website. When it finishes, upload
                 <li>Talk about where AI helped: the name, the words, the image, the build.</li>
                 <li>Notice what you decided yourselves. AI made the pieces, but you made the choices.</li>
               </ul>
-            </div>
-          </Step>
-
-          {/* Optional bonus: publish */}
-          <Step
-            badge="Optional bonus"
-            time="After the hour"
-            title="Publish your website"
-            intro="Your preview is already a shareable prototype. Publishing puts it on its own public web address."
-            icon={Rocket}
-          >
-            <div className="space-y-3 rounded-lg border border-gs-200 bg-gs-50 p-6 text-sm text-slate-700">
-              <p>
-                <span className="font-bold text-slate-900">Preview vs published:</span> the v0 preview is a working
-                prototype you can view and share a link to. Publishing deploys it as a live website on its own address.
-                You do not need to publish to finish the workshop.
-              </p>
-              <p>
-                To publish, look for a Publish or Deploy option in v0 and follow the steps it shows. Requirements and
-                free limits can change, so check what v0 asks for at the time, and do not enter any payment details. If
-                publishing is not available to you, your preview link is still enough to share your work.
-              </p>
             </div>
           </Step>
 
@@ -693,10 +692,10 @@ Keep the visible fields (name, email, phone, message) and the existing design. W
                 }}
               />
               <div className="relative">
-                <h2 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl">You turned an idea into a website</h2>
+                <h2 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl">You put a website online</h2>
                 <p className="mx-auto max-w-2xl text-gs-50">
-                  In just 60 minutes, you used AI to develop a business concept, create a brand, plan a website and build
-                  your own website prototype.
+                  In just 60 minutes, you used AI to develop a business concept, create a brand, plan a website, and
+                  build and publish your own website.
                 </p>
               </div>
             </div>
