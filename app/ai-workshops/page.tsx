@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { User, Users, GraduationCap, CheckCircle2 } from 'lucide-react'
 import WebNav from '@/components/site/WebNav'
@@ -9,7 +10,13 @@ import AITrainingWeDeliver from '@/components/AITrainingWeDeliver'
 import WorkshopBreakdown from '@/components/WorkshopBreakdown'
 import FinalCTA from '@/components/FinalCTA'
 
-const offerings = [
+const offerings: {
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  description: string
+  audiences: string[]
+  href?: string
+}[] = [
   {
     icon: User,
     title: '1-on-1 AI Training',
@@ -27,6 +34,7 @@ const offerings = [
     title: 'AI Workshops for Schools',
     description: 'A hands-on session where students use AI to invent a business and build a real website.',
     audiences: ['Students aged 16 to 18', 'Auckland secondary schools', 'Classes and groups'],
+    href: '/ai-workshops-for-schools',
   },
 ]
 
@@ -92,6 +100,15 @@ export default function AIWorkshopsPage() {
                       </li>
                     ))}
                   </ul>
+                  {offering.href && (
+                    <Link
+                      href={offering.href}
+                      className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-gs-600 transition-colors hover:text-gs-700"
+                    >
+                      Learn more
+                      <span>→</span>
+                    </Link>
+                  )}
                 </motion.div>
               )
             })}

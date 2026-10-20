@@ -228,7 +228,7 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="max-w-2xl mx-auto rounded-2xl p-8 sm:p-12 bg-white border border-slate-200 shadow-xl shadow-slate-200/60"
+          className="rounded-2xl p-8 sm:p-12 bg-white border border-slate-200 shadow-xl shadow-slate-200/60"
         >
           {!isSubmitted ? (
             <>
@@ -259,6 +259,7 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
               </div>
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid gap-6 sm:grid-cols-2">
                 {/* Name */}
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
@@ -311,6 +312,7 @@ export default function FinalCTA({ ctaRef }: FinalCTAProps) {
                     {...register('phone', { required: 'Phone number is required' })}
                   />
                   {errors.phone && <p className="text-red-600 text-sm mt-2">{errors.phone.message}</p>}
+                </div>
                 </div>
 
                 {/* Selected option */}

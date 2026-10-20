@@ -54,6 +54,7 @@ export default function WebFooter() {
               {[
                 ['AI Consultancy', '/ai'],
                 ['AI Workshops', '/ai-workshops'],
+                ['AI Workshops for Schools', '/ai-workshops-for-schools'],
                 ['About', '/about'],
                 ['Contact', '/contact'],
                 ['Privacy', '/privacy'],
