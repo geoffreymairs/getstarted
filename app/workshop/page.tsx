@@ -284,7 +284,7 @@ export default function WorkshopPage() {
               toolName="ChatGPT"
               tone="chatgpt"
               promptNumber={1}
-              prompt={`You are my business strategist for a school workshop.
+              prompt={`You are my business strategist for a hands-on workshop.
 
 We are creating a mobile car wash business in New Zealand. A mobile car wash drives to the customer's home or workplace and washes their car on site, so they do not have to go anywhere.
 
@@ -302,7 +302,7 @@ Help me build it like a real, trustworthy local business that could launch today
 4. A one line tagline
 5. Three reasons a customer would choose us
 
-Keep the prices realistic for a car wash, and remember this is an example business for a classroom.`}
+Keep the prices realistic for a car wash, and remember this is an example business for a demo.`}
             />
             <div className="rounded-lg border border-accent/20 bg-accent/5 p-5 text-sm text-gray-300">
               Write your favourite name, your three packages and your prices somewhere safe. You will need them in the
@@ -446,7 +446,7 @@ v0 will build your website. When it finishes, add your logo and hero image, then
                 website. That is a genuine skill you can use again and again.
               </p>
               <p className="font-semibold text-accent-light">
-                Share your preview link with the class and show what you made.
+                Share your preview link and show off what you made.
               </p>
             </div>
           </motion.div>
