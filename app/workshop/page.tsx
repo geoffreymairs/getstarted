@@ -486,19 +486,14 @@ Package 3 (name + price):`}
             icon={ClipboardList}
           >
             <p className="text-sm text-slate-600">
-              Replace the words in [SQUARE BRACKETS] with your own from the box above, then paste.
+              Use the same ChatGPT chat as before. It already knows your business from step 2, so this prompt just tells
+              it to use the name, brand and packages you decided. You do not need to type them again.
             </p>
             <ToolPrompt
               toolName="ChatGPT"
               tone="chatgpt"
               promptNumber={3}
-              prompt={`Write the words for a one page website for our mobile car wash, then turn them into a short build brief.
-
-Business: [YOUR BUSINESS NAME]
-Tagline: [YOUR TAGLINE]
-Target customer: [YOUR TARGET CUSTOMER]
-Brand colours: [YOUR BRAND COLOURS]
-Packages and prices: [YOUR PACKAGES AND PRICES]
+              prompt={`Using the mobile car wash business we just created together, with the name, tagline, target customer, brand colours, packages and prices we decided, write the words for a one page website, then turn them into a short build brief.
 
 Give me:
 1. A short, punchy headline
@@ -507,7 +502,7 @@ Give me:
 4. A one line description for each of the three packages
 5. A call to action button label, for example "Book a wash"
 
-Then put everything together as one clear, concise website brief I can paste straight into an AI website builder. The brief should ask for a modern, mobile-friendly one page site with a hero, how it works, the packages, why choose us, and a simple contact form (with a note that bookings are not real).`}
+Then put everything together as one clear, concise website brief I can paste straight into an AI website builder. The brief should ask for a modern, mobile-friendly one page site with a hero, how it works, the packages, why choose us, and a simple contact form (with a note that bookings are not real). Remember to use our business name and the details we agreed.`}
             />
             <div className="rounded-lg border border-gs-200 bg-gs-50 p-5 text-sm text-slate-700">
               Copy the final website brief ChatGPT writes. You will paste it into v0 in step 5.
