@@ -504,9 +504,13 @@ Give me:
 
 Then put everything together as one clear, concise website brief I can paste straight into an AI website builder. The brief should ask for a modern, mobile-friendly one page site with a hero, how it works, the packages, why choose us, and a simple contact form (with a note that bookings are not real). Remember to use our business name and the details we agreed.`}
             />
-            <div className="rounded-lg border border-gs-200 bg-gs-50 p-5 text-sm text-slate-700">
-              Copy the final website brief ChatGPT writes. You will paste it into v0 in step 5.
-            </div>
+            <WorkshopNote
+              storageKey="workshop-website-brief"
+              title="Save your website brief"
+              intro="Paste the final website brief ChatGPT writes. You will paste it into v0 in step 5."
+              placeholder="Paste your website brief here..."
+              rows={8}
+            />
           </Step>
 
           {/* Step 4: Hero image */}
@@ -544,6 +548,13 @@ Do not put any text, words, letters, logos or buttons in the image.`}
               Download the image you like best. The headline, tagline and buttons are not part of this image, v0 will
               add them as real text on top in the next step, which is easier to edit and never misspelt.
             </div>
+            <WorkshopNote
+              storageKey="workshop-hero-image-notes"
+              title="Save your image prompt"
+              intro="Paste the final image prompt you used, so you can make the image again or tweak it. Remember to download the image to your device too."
+              placeholder="Paste the image prompt you used, and any notes about the image you picked..."
+              rows={4}
+            />
           </Step>
 
           {/* Step 5: Build the website */}
@@ -581,6 +592,13 @@ v0 will build a complete, responsive, one page website. When it finishes, upload
               This preview is your website. In the final step you will check it on desktop and mobile, then publish it
               live.
             </div>
+            <WorkshopNote
+              storageKey="workshop-v0-link"
+              title="Save your v0 link"
+              intro="Paste the link to your v0 project or preview so you can find it again."
+              placeholder="Paste your v0 project or preview link here..."
+              rows={2}
+            />
           </Step>
 
           {/* Step 6: Check, publish and showcase */}
@@ -619,6 +637,13 @@ v0 will build a complete, responsive, one page website. When it finishes, upload
                 <li>Notice what you decided yourselves. AI made the pieces, but you made the choices.</li>
               </ul>
             </div>
+            <WorkshopNote
+              storageKey="workshop-live-link"
+              title="Save your live link"
+              intro="Paste the live website link you published (it ends in .vercel.app) so you can share it."
+              placeholder="Paste your live .vercel.app link here..."
+              rows={2}
+            />
           </Step>
 
           {/* Optional: Web3Forms form */}
