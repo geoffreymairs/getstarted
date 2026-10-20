@@ -334,27 +334,44 @@ export default function WorkshopPage() {
             className="mb-16"
           >
             <p className="mb-4 text-center text-sm font-bold uppercase tracking-wider text-gs-600">What you are building</p>
-            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-xl shadow-slate-300/40">
+            <a
+              href="https://washmate-delta.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded-2xl border border-slate-200 shadow-xl shadow-slate-300/40 transition-shadow hover:shadow-2xl"
+            >
               <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-50 px-4 py-2.5">
                 <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
                 <div className="ml-3 flex-1 rounded-md border border-slate-200 bg-white px-3 py-1 text-[11px] text-slate-400">
-                  your-car-wash.vercel.app
+                  washmate-delta.vercel.app
                 </div>
               </div>
               <Image
-                src="/workshop/carwash-example.webp"
-                alt="Example of a finished mobile car wash website hero section"
-                width={1672}
-                height={941}
+                src="/workshop/washmate-example.jpg"
+                alt="WashMate, an example of a finished mobile car wash website built in this workshop"
+                width={800}
+                height={505}
                 className="h-auto w-full"
                 priority
               />
+            </a>
+            <div className="mt-4 flex flex-col items-center gap-3">
+              <p className="max-w-xl text-center text-sm text-slate-500">
+                This is WashMate, a finished example built the same way you will build yours. Yours will be unique to the
+                business you invent together.
+              </p>
+              <a
+                href="https://washmate-delta.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-gs-600 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-gs-700"
+              >
+                Open the live example
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
-            <p className="mt-3 text-center text-sm text-slate-500">
-              An example of a finished website prototype. You will build your own for the business you invent together.
-            </p>
           </motion.div>
 
           {/* Before you begin */}
