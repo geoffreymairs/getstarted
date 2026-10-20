@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Lock, Copy, Check, Lightbulb, PenTool, Image as ImageIcon, LayoutTemplate, Sparkles } from 'lucide-react'
 import Link from 'next/link'
@@ -50,6 +50,69 @@ const ToolPrompt = ({
           <code>{prompt}</code>
         </pre>
       </div>
+    </div>
+  )
+}
+
+/* Editable note that saves on this device so answers carry to later steps */
+const WorkshopNote = ({
+  storageKey,
+  title,
+  intro,
+  placeholder,
+  rows = 5,
+}: {
+  storageKey: string
+  title: string
+  intro: string
+  placeholder: string
+  rows?: number
+}) => {
+  const [value, setValue] = useState('')
+  const [saved, setSaved] = useState(false)
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(storageKey)
+      if (stored) {
+        setValue(stored)
+        setSaved(true)
+      }
+    } catch {
+      /* storage unavailable, the box still works for this session */
+    }
+  }, [storageKey])
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const next = e.target.value
+    setValue(next)
+    try {
+      localStorage.setItem(storageKey, next)
+      setSaved(next.trim().length > 0)
+    } catch {
+      /* ignore */
+    }
+  }
+
+  return (
+    <div className="rounded-lg border border-accent/30 bg-accent/5 p-5">
+      <div className="mb-2 flex items-center justify-between gap-3">
+        <p className="font-bold text-white">{title}</p>
+        {saved && (
+          <span className="inline-flex items-center gap-1 text-xs font-semibold text-green-400">
+            <Check className="h-3.5 w-3.5" /> Saved
+          </span>
+        )}
+      </div>
+      <p className="mb-3 text-sm text-gray-300">{intro}</p>
+      <textarea
+        value={value}
+        onChange={handleChange}
+        placeholder={placeholder}
+        rows={rows}
+        className="w-full resize-y rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-gray-500 transition-all focus:border-accent focus:ring-1 focus:ring-accent/50"
+      />
+      <p className="mt-2 text-xs text-gray-500">Saves automatically on this device, so it is still here if you refresh.</p>
     </div>
   )
 }
@@ -304,10 +367,19 @@ Help me build it like a real, trustworthy local business that could launch today
 
 Keep the prices realistic for a car wash, and remember this is an example business for a demo.`}
             />
-            <div className="rounded-lg border border-accent/20 bg-accent/5 p-5 text-sm text-gray-300">
-              Write your favourite name, your three packages and your prices somewhere safe. You will need them in the
-              next steps.
-            </div>
+            <WorkshopNote
+              storageKey="workshop-business-notes"
+              title="Save your business here"
+              intro="Write your favourite name, your three packages and your prices. You will need them in the next steps."
+              placeholder={`Business name:
+
+Package 1 (name + price):
+Package 2 (name + price):
+Package 3 (name + price):
+
+Tagline:`}
+              rows={7}
+            />
           </Step>
 
           {/* Step 2: Name and logo */}
@@ -370,7 +442,9 @@ Design a clean, modern logo for a mobile car wash called [YOUR BUSINESS NAME]. S
               promptNumber={5}
               prompt={`Create a realistic, premium hero image for a mobile car wash website.
 
-Show a professional detailer in a branded uniform washing a glossy black car on a driveway, with a mobile work van in the background, water spray and bright natural sunlight. Make it look like a real New Zealand suburban street. High quality, sharp detail, wide landscape shape so it fits the top of a website.`}
+Show a professional detailer in a branded uniform washing a glossy black car on a driveway, with a mobile work van in the background, water spray and bright natural sunlight. Make it look like a real New Zealand suburban street. High quality, sharp detail, wide landscape shape so it fits the top of a website.
+
+Do not include any text, words, letters or logos in the image.`}
             />
             <div className="rounded-lg border border-accent/20 bg-accent/5 p-5 text-sm text-gray-300">
               Download the image you like best. You will add it to your website in the next step.
