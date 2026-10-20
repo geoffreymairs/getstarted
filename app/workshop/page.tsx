@@ -2,7 +2,21 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Lock, Copy, Check, Lightbulb, PenTool, Image as ImageIcon, LayoutTemplate, Rocket, Mail, Sparkles } from 'lucide-react'
+import {
+  Lock,
+  Copy,
+  Check,
+  Flag,
+  Lightbulb,
+  ClipboardList,
+  Image as ImageIcon,
+  LayoutTemplate,
+  Users,
+  Rocket,
+  Mail,
+  Sparkles,
+  ArrowRight,
+} from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import WebNav from '@/components/site/WebNav'
@@ -166,35 +180,49 @@ const Step = ({
   </motion.div>
 )
 
-/* The four core steps, summarised for the overview at the top */
+/* The 60-minute plan, shown at the top. Times add up to exactly 60. */
 const programme = [
   {
     n: 1,
-    name: 'Plan the business',
-    time: '15 min',
-    icon: Lightbulb,
-    blurb: 'Use ChatGPT to create your business plan: who it is for, what it sells and its prices.',
+    name: 'The challenge',
+    time: '0-5 min',
+    icon: Flag,
+    blurb: 'Meet the challenge and the two AI tools you will use.',
   },
   {
     n: 2,
-    name: 'Name and logo',
-    time: '10 min',
-    icon: PenTool,
-    blurb: 'Choose your business name and design a simple logo with AI.',
+    name: 'Invent the business',
+    time: '5-15 min',
+    icon: Lightbulb,
+    blurb: 'Brainstorm and agree a name, brand, packages and prices with ChatGPT.',
   },
   {
     n: 3,
-    name: 'Hero image',
-    time: '10 min',
-    icon: ImageIcon,
-    blurb: 'Create the main photo that sits at the top of your website.',
+    name: 'Plan the website',
+    time: '15-22 min',
+    icon: ClipboardList,
+    blurb: 'Turn your brand into website words and a brief for v0.',
   },
   {
     n: 4,
+    name: 'Create the hero image',
+    time: '22-27 min',
+    icon: ImageIcon,
+    blurb: 'Generate a striking, text-free photo for the top of the site.',
+  },
+  {
+    n: 5,
     name: 'Build the website',
-    time: '20 min',
+    time: '27-52 min',
     icon: LayoutTemplate,
-    blurb: 'Turn it all into a real one-page site with v0, then publish it online.',
+    blurb: 'Paste your brief into v0, build a one-page site and preview it.',
+  },
+  {
+    n: 6,
+    name: 'Showcase',
+    time: '52-60 min',
+    icon: Users,
+    blurb: 'Preview, present and talk about how AI helped.',
   },
 ]
 
@@ -263,9 +291,9 @@ export default function WorkshopPage() {
           <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-gs-50 via-gs-50/50 to-white" />
           <div className="mx-auto max-w-5xl px-6 pb-16 pt-14 text-center sm:pt-16">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-600 shadow-sm">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gs-200 bg-white px-4 py-1.5 text-sm font-bold uppercase tracking-wider text-gs-700 shadow-sm">
                 <Sparkles className="h-4 w-4 text-gs-600" />
-                60 minute AI workshop
+                60 minute workshop
               </div>
               <h1 className="mb-4 text-5xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-7xl">
                 Build a Business
@@ -273,24 +301,33 @@ export default function WorkshopPage() {
                 <span className="bg-gradient-to-r from-gs-500 to-sky-400 bg-clip-text text-transparent">with AI</span>
               </h1>
               <p className="mx-auto max-w-2xl text-lg text-slate-600">
-                In four steps you will plan a business, create its brand and build its website with ChatGPT and v0, then
-                publish it online. Our example business is a mobile car wash, but these steps work for almost any
-                business. No coding needed.
+                Turn a simple business idea into a branded website in just 60 minutes. Our example is a mobile car wash,
+                invented live with ChatGPT and v0. No coding needed.
               </p>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm font-bold uppercase tracking-wider text-slate-500">
+                <span>Invent</span>
+                <ArrowRight className="h-4 w-4 text-gs-500" />
+                <span>Plan</span>
+                <ArrowRight className="h-4 w-4 text-gs-500" />
+                <span className="text-gs-600">Build</span>
+              </div>
             </motion.div>
           </div>
         </section>
 
         <div className="mx-auto max-w-5xl px-6 pb-16 pt-14">
-          {/* The four steps overview */}
+          {/* The 60-minute plan */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-16"
           >
-            <p className="mb-6 text-center text-sm font-bold uppercase tracking-wider text-gs-600">The four steps</p>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mb-6 flex flex-col items-center gap-1 text-center">
+              <p className="text-sm font-bold uppercase tracking-wider text-gs-600">The 60-minute plan</p>
+              <p className="text-sm text-slate-500">Six stages, one hour, a finished website prototype.</p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {programme.map((s) => (
                 <div key={s.n} className="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                   <div className="mb-4 flex items-center justify-between">
@@ -338,24 +375,24 @@ export default function WorkshopPage() {
               />
             </div>
             <p className="mt-3 text-center text-sm text-slate-500">
-              An example of a finished mobile car wash site. Yours will be unique to the business you create today.
+              An example of a finished website prototype. You will build your own for the business you invent together.
             </p>
           </motion.div>
 
-          {/* Before you start */}
+          {/* Before you begin */}
           <Step
             badge="Before you begin"
-            time="5 min"
+            time="Prep"
             title="Set up your tools"
-            intro="You need two free accounts. Sign in to both before step 1."
+            intro="Get these ready before the hour starts so the whole 60 minutes goes into inventing and building."
             icon={Lock}
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-3 rounded-lg border border-green-200 bg-green-50 p-6">
                 <p className="font-bold text-slate-900">1. ChatGPT</p>
                 <p className="text-sm text-slate-600">
-                  Your AI thinking partner. You will use it to plan the business, write the words, and create the logo
-                  and hero image. A free account works to start.
+                  Your AI thinking partner, used to invent the business, write the website words and create the hero
+                  image. A free account is enough to start.
                 </p>
                 <a
                   href="https://chat.openai.com/"
@@ -369,8 +406,8 @@ export default function WorkshopPage() {
               <div className="space-y-3 rounded-lg border border-blue-200 bg-blue-50 p-6">
                 <p className="font-bold text-slate-900">2. v0 by Vercel</p>
                 <p className="text-sm text-slate-600">
-                  The AI website builder. You describe the site you want and v0 builds it. Sign up free, the quickest
-                  way is to continue with Google or GitHub.
+                  The AI website builder. You describe the site and v0 builds it, then lets you preview it. Signing in
+                  with Google is usually the quickest way.
                 </p>
                 <a
                   href="https://v0.app/"
@@ -382,170 +419,200 @@ export default function WorkshopPage() {
                 </a>
               </div>
             </div>
+            <div className="space-y-2 rounded-lg border border-amber-200 bg-amber-50 p-5 text-sm text-slate-700">
+              <p className="font-bold text-slate-900">Facilitator notes</p>
+              <ul className="ml-4 list-disc space-y-1">
+                <li>
+                  ChatGPT and v0 each set their own age and account rules, and free usage limits, which can change.
+                  Check each tool's current sign-up requirements before the session rather than assuming.
+                </li>
+                <li>No payment details or paid subscriptions are needed to complete this workshop.</li>
+                <li>
+                  If not everyone can sign in, students can pair up and share one account, or follow along on your
+                  screen.
+                </li>
+                <li>Keep a website you built earlier ready as a demonstration and a fallback.</li>
+                <li>All business and customer details are made up. Do not use anyone's real personal information.</li>
+              </ul>
+            </div>
           </Step>
 
-          {/* Step 1: Plan the business */}
+          {/* Step 1: The challenge */}
           <Step
             number={1}
-            time="15 min"
-            title="Plan the business"
-            intro="Use ChatGPT to turn the idea, a mobile car wash that comes to the customer, into a real business plan: who it is for, what it sells, and its prices."
+            time="0-5 min"
+            title="The challenge"
+            intro="Invent a mobile car wash business and build its website, with AI, in under an hour."
+            icon={Flag}
+          >
+            <div className="space-y-3 rounded-lg border border-gs-200 bg-gs-50 p-6 text-sm text-slate-700">
+              <p>
+                <span className="font-bold text-slate-900">The idea:</span> a mobile car wash that drives to the
+                customer and washes their car at their home or workplace. Everything else, the name, the look, the
+                packages and the prices, you invent together as you go.
+              </p>
+              <p>
+                <span className="font-bold text-slate-900">Your tools:</span> ChatGPT helps you think, name, write and
+                picture the business. v0 by Vercel turns your plan into a real website you can preview.
+              </p>
+              <p>
+                <span className="font-bold text-slate-900">The goal:</span> by the end, everyone has a website prototype
+                they helped create.
+              </p>
+            </div>
+          </Step>
+
+          {/* Step 2: Invent the business */}
+          <Step
+            number={2}
+            time="5-15 min"
+            title="Invent the business together"
+            intro="Brainstorm names with ChatGPT, agree one as a group, then build out the brand, packages and prices."
             icon={Lightbulb}
           >
-            <p className="text-sm text-slate-600">
-              First, give ChatGPT its role so it answers like a real business expert. Paste prompt 1, read the reply,
-              then paste prompt 2 to create your business plan.
-            </p>
+            <p className="text-sm text-slate-600">Paste prompt 1, read the ideas, and vote on a name as a group.</p>
             <ToolPrompt
               toolName="ChatGPT"
               tone="chatgpt"
               promptNumber={1}
-              prompt={`You are my business strategist for a hands-on workshop.
+              prompt={`You are helping a group invent a business in a hands-on workshop.
 
-We are creating a mobile car wash business in New Zealand. A mobile car wash drives to the customer's home or workplace and washes their car on site, so they do not have to go anywhere.
+The business is a mobile car wash in New Zealand that drives to the customer and washes their car at their home or workplace.
 
-Help me build it like a real, trustworthy local business that could launch today. Keep your answers clear, practical and easy to understand. Ask me nothing yet, just wait for my next message.`}
+Brainstorm 8 catchy business name ideas. For each one, add a short tagline. Keep the names easy to say and spell, and make them feel like a real, friendly local business.`}
             />
+            <p className="text-sm text-slate-600">
+              Once you have agreed a name, paste prompt 2 to finish the brand and the packages.
+            </p>
             <ToolPrompt
               toolName="ChatGPT"
               tone="chatgpt"
               promptNumber={2}
-              prompt={`Create the business for me. Give:
+              prompt={`We chose the name [YOUR BUSINESS NAME] for our mobile car wash.
 
-1. Three business name options, with a one line reason for each
-2. Who the ideal customer is
-3. Three wash packages, each with a short name, what is included, and an example price in New Zealand dollars
-4. A one line tagline
-5. Three reasons a customer would choose us
+Help us finish the brand. Give:
+1. A one line tagline
+2. The ideal target customer, in one or two sentences
+3. A brand personality in three words
+4. Two or three brand colours that would suit it
+5. Three service packages (a basic, a middle and a premium), each with a short name, what is included, and an example price in New Zealand dollars
 
 Keep the prices realistic for a car wash, and remember this is an example business for a demo.`}
             />
             <WorkshopNote
               storageKey="workshop-business-notes"
               title="Save your business here"
-              intro="Write your favourite name, your three packages and your prices. You will need them in the next steps."
+              intro="Write your name, tagline, customer, brand colours, packages and prices. You will need them in the next steps."
               placeholder={`Business name:
+Tagline:
+Target customer:
+Brand colours:
 
 Package 1 (name + price):
 Package 2 (name + price):
-Package 3 (name + price):
-
-Tagline:`}
-              rows={7}
+Package 3 (name + price):`}
+              rows={8}
             />
           </Step>
 
-          {/* Step 2: Name and logo */}
+          {/* Step 3: Plan the website */}
           <Step
-            number={2}
-            time="10 min"
-            title="Choose your name and create a logo"
-            intro="Lock in the business name, then use ChatGPT to design a simple logo."
-            icon={PenTool}
+            number={3}
+            time="15-22 min"
+            title="Plan the website"
+            intro="Turn your brand into the words for the website, and a short brief you will paste into v0."
+            icon={ClipboardList}
           >
             <p className="text-sm text-slate-600">
-              Replace the words in [SQUARE BRACKETS] with your own choices before you paste.
+              Replace the words in [SQUARE BRACKETS] with your own from the box above, then paste.
             </p>
             <ToolPrompt
               toolName="ChatGPT"
               tone="chatgpt"
               promptNumber={3}
-              prompt={`We have chosen the business name [YOUR BUSINESS NAME] for our mobile car wash.
+              prompt={`Write the words for a one page website for our mobile car wash, then turn them into a short build brief.
 
-Suggest a simple, modern logo idea for it: what the icon could be, two or three brand colours, and the overall feeling. Keep it clean and easy to recognise.`}
-            />
-            <ToolPrompt
-              toolName="ChatGPT"
-              tone="chatgpt"
-              promptNumber={4}
-              prompt={`Now create the logo as an image.
+Business: [YOUR BUSINESS NAME]
+Tagline: [YOUR TAGLINE]
+Target customer: [YOUR TARGET CUSTOMER]
+Brand colours: [YOUR BRAND COLOURS]
+Packages and prices: [YOUR PACKAGES AND PRICES]
 
-Design a clean, modern logo for a mobile car wash called [YOUR BUSINESS NAME]. Simple icon, the business name in a bold friendly font, a water or shine theme, two or three brand colours, on a plain background. Make it look professional and ready to use on a website.`}
+Give me:
+1. A short, punchy headline
+2. A one line supporting sentence
+3. Three key benefits
+4. A one line description for each of the three packages
+5. A call to action button label, for example "Book a wash"
+
+Then put everything together as one clear, concise website brief I can paste straight into an AI website builder. The brief should ask for a modern, mobile-friendly one page site with a hero, how it works, the packages, why choose us, and a simple contact form (with a note that bookings are not real).`}
             />
             <div className="rounded-lg border border-gs-200 bg-gs-50 p-5 text-sm text-slate-700">
-              Save the logo image and note your brand colours. If you do not love the first logo, ask ChatGPT to try a
-              different style or colours.
+              Copy the final website brief ChatGPT writes. You will paste it into v0 in step 5.
             </div>
           </Step>
 
-          {/* Step 3: Hero image */}
+          {/* Step 4: Hero image */}
           <Step
-            number={3}
-            time="10 min"
+            number={4}
+            time="22-27 min"
             title="Create your hero image"
-            intro="The hero image is the big photo at the top of the site. Create one that looks real and professional."
+            intro="The hero image is the big photo at the top of the site. Generate one that looks real, with no text in it."
             icon={ImageIcon}
           >
             <div className="overflow-hidden rounded-xl border border-slate-200">
               <Image
                 src="/workshop/carwash-hero.webp"
-                alt="Example hero image: a detailer washing a glossy black car in a driveway with a mobile van"
+                alt="Example hero image: a detailer washing a glossy black car in a driveway with a mobile van, no text"
                 width={1672}
                 height={941}
                 className="h-auto w-full"
               />
             </div>
             <p className="text-sm text-slate-600">
-              This is the kind of hero image you are aiming for: real, bright and premium. Use the prompt below to make
-              your own, then pick your favourite version.
+              This is the kind of image you want: a clean car being washed, a professional photographic look, and space
+              for words to go on top later. Generate your own with the prompt below.
             </p>
             <ToolPrompt
               toolName="ChatGPT"
               tone="chatgpt"
-              promptNumber={5}
+              promptNumber={4}
               prompt={`Create a realistic, premium hero image for a mobile car wash website.
 
-Show a professional detailer in a branded uniform washing a glossy black car on a driveway, with a mobile work van in the background, water spray and bright natural sunlight. Make it look like a real New Zealand suburban street. High quality, sharp detail, wide landscape shape so it fits the top of a website.
+Show a clean, glossy car being washed in a mobile car wash or detailing setting, with a professional, visually striking photographic style and bright natural light. Leave plenty of empty space on one side so website text can be added on top later. Make it a wide landscape shape, suitable for the top of a website.
 
-Do not include any text, words, letters or logos in the image.`}
+Do not put any text, words, letters, logos or buttons in the image.`}
             />
             <div className="rounded-lg border border-gs-200 bg-gs-50 p-5 text-sm text-slate-700">
-              Download the image you like best. You will add it to your website in the next step.
+              Download the image you like best. The headline, tagline and buttons are not part of this image, v0 will
+              add them as real text on top in the next step, which is easier to edit and never misspelt.
             </div>
           </Step>
 
-          {/* Step 4: Build the website */}
+          {/* Step 5: Build the website */}
           <Step
-            number={4}
-            time="20 min"
-            title="Build your website with v0"
-            intro="Bring the business, name, logo and hero image together into one real web page."
+            number={5}
+            time="27-52 min"
+            title="Build the website in v0"
+            intro="This is the main event. You have 25 minutes to build your website, preview it, and improve it."
             icon={LayoutTemplate}
           >
             <p className="text-sm text-slate-600">
-              First ask ChatGPT to write the build instructions, then paste those into v0.
+              Paste the website brief from step 3 into v0 and let it build, then preview the result.
             </p>
-            <ToolPrompt
-              toolName="ChatGPT"
-              tone="chatgpt"
-              promptNumber={6}
-              prompt={`Write a copy and paste prompt for the AI website builder v0.
-
-It should tell v0 to build a modern, mobile-friendly one-page website for my mobile car wash business [YOUR BUSINESS NAME], tagline "[YOUR TAGLINE]", brand colours [YOUR BRAND COLOURS].
-
-Include these sections, top to bottom:
-1. A hero with a big headline, a short line underneath, and a "Book a wash" button
-2. How it works in three simple steps
-3. Our packages, showing my three packages and prices as cards
-4. Why choose us, with three or four short reasons
-5. A simple contact or booking form (name, suburb, car type, preferred time), with a note that bookings are not real
-6. A footer with the business name
-
-Write it as one clear block of instructions I can paste straight into v0.`}
-            />
             <ToolPrompt
               toolName="v0"
               tone="v0"
-              promptNumber={7}
-              prompt={`Paste the full build prompt that ChatGPT just wrote into v0, then press send.
+              promptNumber={5}
+              prompt={`Paste the website brief ChatGPT wrote in step 3 into v0 and press send.
 
-v0 will build your website. When it finishes, add your logo and hero image, then ask it to tidy anything you want to change.`}
+v0 will build a complete, responsive, one page website. When it finishes, upload your hero image from step 4 to the top of the page, and check the preview.`}
             />
             <div className="space-y-3 rounded-lg border border-blue-200 bg-blue-50 p-6 text-sm text-slate-700">
-              <p className="font-bold text-slate-900">Refine it, one change at a time (optional)</p>
+              <p className="font-bold text-slate-900">Improve it, one change at a time (optional)</p>
               <p>
-                Each prompt uses some of your free v0 credit, so only change what really matters and make each prompt
-                count. Useful tweaks, sent one at a time:
+                Each prompt uses some of your free v0 credit, so only change what really matters. Useful tweaks, sent one
+                at a time:
               </p>
               <ul className="ml-4 list-disc space-y-1">
                 <li>Make the brand colours [YOUR BRAND COLOURS] across the whole site.</li>
@@ -553,32 +620,52 @@ v0 will build your website. When it finishes, add your logo and hero image, then
               </ul>
               <p className="text-slate-500">If a change makes it worse, tell v0 to undo the last change.</p>
             </div>
+            <div className="rounded-lg border border-gs-200 bg-gs-50 p-5 text-sm text-slate-700">
+              That preview in v0 is your finished prototype for today. It is a working website you can show and share,
+              even before it is published online.
+            </div>
           </Step>
 
-          {/* Publish */}
+          {/* Step 6: Showcase */}
           <Step
-            badge="Go live"
-            time="5 min"
+            number={6}
+            time="52-60 min"
+            title="Showcase"
+            intro="Show off what you made and talk about how AI helped."
+            icon={Users}
+          >
+            <div className="space-y-3 rounded-lg border border-gs-200 bg-gs-50 p-6 text-sm text-slate-700">
+              <ul className="ml-4 list-disc space-y-1.5">
+                <li>Open your website preview and scroll through it.</li>
+                <li>
+                  A few of you present: what is your business called, who is it for, and what do you like most about your
+                  site?
+                </li>
+                <li>Talk about where AI helped: the name, the words, the image, the build.</li>
+                <li>Notice what you decided yourselves. AI made the pieces, but you made the choices.</li>
+              </ul>
+            </div>
+          </Step>
+
+          {/* Optional bonus: publish */}
+          <Step
+            badge="Optional bonus"
+            time="After the hour"
             title="Publish your website"
-            intro="Put your site online with a real link anyone can open."
+            intro="Your preview is already a shareable prototype. Publishing puts it on its own public web address."
             icon={Rocket}
           >
-            <div className="space-y-2 rounded-lg border border-gs-200 bg-gs-50 p-5 text-sm text-slate-700">
-              <p className="font-bold text-slate-900">Check it on a phone first (no prompt needed)</p>
+            <div className="space-y-3 rounded-lg border border-gs-200 bg-gs-50 p-6 text-sm text-slate-700">
               <p>
-                In v0's preview, switch to the mobile view (look for the phone icon) and scroll the whole page yourself.
-                Check the text, buttons and images look good and nothing runs off the edge. Most sites already look great
-                on mobile, so only send a prompt if something is actually broken.
+                <span className="font-bold text-slate-900">Preview vs published:</span> the v0 preview is a working
+                prototype you can view and share a link to. Publishing deploys it as a live website on its own address.
+                You do not need to publish to finish the workshop.
               </p>
-            </div>
-            <div className="space-y-3 rounded-lg border border-blue-200 bg-blue-50 p-6 text-sm text-slate-700">
-              <p className="font-bold text-slate-900">Put it online</p>
-              <ol className="ml-4 list-decimal space-y-1.5">
-                <li>In v0, find the Publish button near the top right.</li>
-                <li>Click Publish. v0 puts your site online and gives you a live link that ends in .vercel.app.</li>
-                <li>Open the link on your phone to check it works.</li>
-                <li>Save your live link in your notes, then share it.</li>
-              </ol>
+              <p>
+                To publish, look for a Publish or Deploy option in v0 and follow the steps it shows. Requirements and
+                free limits can change, so check what v0 asks for at the time, and do not enter any payment details. If
+                publishing is not available to you, your preview link is still enough to share your work.
+              </p>
             </div>
           </Step>
 
@@ -587,7 +674,7 @@ v0 will build your website. When it finishes, add your logo and hero image, then
             badge="Optional"
             time="If you finish early"
             title="Make your contact form email you"
-            intro="Connect your form with Web3Forms so a real email lands in your inbox every time someone enquires. No API keys to install."
+            intro="Connect your form with Web3Forms so a real email lands in your inbox when someone enquires. No API keys to install."
             icon={Mail}
           >
             <div className="space-y-3 rounded-lg border border-blue-200 bg-blue-50 p-6 text-sm text-slate-700">
@@ -616,7 +703,7 @@ v0 will build your website. When it finishes, add your logo and hero image, then
             <ToolPrompt
               toolName="v0"
               tone="v0"
-              promptNumber={8}
+              promptNumber={6}
               prompt={`Make my contact form send me an email when someone submits it, using Web3Forms.
 
 Set the form to POST to https://api.web3forms.com/submit.
@@ -627,8 +714,8 @@ Add a hidden input named "subject" with the value "New enquiry from my website".
 Keep the visible fields (name, email, phone, message) and the existing design. When someone submits, show a loading state, then a success message that says "Thanks, we will be in touch."`}
             />
             <div className="rounded-lg border border-gs-200 bg-gs-50 p-5 text-sm text-slate-700">
-              Publish again so the change goes live, then fill in the form on your own site and check your email. Your
-              first test submission may ask you to confirm your email with Web3Forms.
+              Test it by filling in the form on your own site and checking your email. Your first test submission may ask
+              you to confirm your email with Web3Forms.
             </div>
           </Step>
 
@@ -648,12 +735,11 @@ Keep the visible fields (name, email, phone, message) and the existing design. W
                 }}
               />
               <div className="relative">
-                <h2 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl">You built a website</h2>
-                <p className="mx-auto mb-6 max-w-2xl text-gs-50">
-                  An hour ago this business did not exist. Now it has a name, a logo, a hero image and a real one-page
-                  website. That is a genuine skill you can use again and again.
+                <h2 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl">You turned an idea into a website</h2>
+                <p className="mx-auto max-w-2xl text-gs-50">
+                  In just 60 minutes, you used AI to develop a business concept, create a brand, plan a website and build
+                  your own website prototype.
                 </p>
-                <p className="font-semibold text-white">Share your live link and show off what you made.</p>
               </div>
             </div>
           </motion.div>
