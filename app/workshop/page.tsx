@@ -393,22 +393,6 @@ export default function WorkshopPage() {
                 </a>
               </div>
             </div>
-            <div className="space-y-2 rounded-lg border border-amber-200 bg-amber-50 p-5 text-sm text-slate-700">
-              <p className="font-bold text-slate-900">Facilitator notes</p>
-              <ul className="ml-4 list-disc space-y-1">
-                <li>
-                  ChatGPT and v0 each set their own age and account rules, and free usage limits, which can change.
-                  Check each tool's current sign-up requirements before the session rather than assuming.
-                </li>
-                <li>No payment details or paid subscriptions are needed to complete this workshop.</li>
-                <li>
-                  If not everyone can sign in, students can pair up and share one account, or follow along on your
-                  screen.
-                </li>
-                <li>Keep a website you built earlier ready as a demonstration and a fallback.</li>
-                <li>All business and customer details are made up. Do not use anyone's real personal information.</li>
-              </ul>
-            </div>
           </Step>
 
           {/* Step 1: The challenge */}
