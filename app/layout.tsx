@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import LiveChatWidget from '@/components/LiveChatWidget'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className="bg-white text-slate-900 font-sans">
         {children}
+        <LiveChatWidget />
       </body>
     </html>
   )
